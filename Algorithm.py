@@ -22,24 +22,22 @@ class Algorithm():
         self.VISION_ENDPOINT = 'https://macomputervisionservice.cognitiveservices.azure.com/'
 
     def computerVision(self, cleanedData):
-        # examine data 'hasContent': None, 'content': 'no', 'hasHuman': 'no', 'hasFace': 'no',
-        # 'ObjectsInPic': None, 'NumOfObjectsInPic': 0
 
         computervision_client = ComputerVisionClient(self.VISION_ENDPOINT,
                                                      CognitiveServicesCredentials(self.VISION_KEY))
+        # collect picture data set
 
         remote_image_url = cleanedData[1]['algorithm']['photo']
 
-        # weg an Microsoft
+        # get the image description in general
+        # hier muss Schleife for picture in pictures rein
+
         description_results = computervision_client.describe_image(remote_image_url)
 
-        if len(description_results.captions) == 0:
-            cleanedData[1]['results']['hasContent'] = 'no'
-        #test
+        if len(description_results.captions) > 0:
 
-        else:
             tags = description_results.tags
-            cleanedData[1]['results']['ObjectsInPic'] = tags
+            cleanedData[1]['results']['TagsInPic'] = tags
             cleanedData[1]['results']['NumOfObjectsInPic'] = len(tags)
 
             for caption in description_results.captions:
@@ -49,32 +47,54 @@ class Algorithm():
                     cleanedData[1]['results']['content'].append(caption.text)
                 else:
                     cleanedData[1]['results']['hasContent'] = 'unsure'
-        #test
 
-        remote_image_features = ["categories"]
-        categorize_results_remote = computervision_client.analyze_image(remote_image_url, remote_image_features) #ist da auch schon die discription drin
-        if len(categorize_results_remote.categories) == 0:
-            cleanedData[1]['results']['imageCategory'] = None
-        else:
-            for category in categorize_results_remote.categories:
-                if category.score * 100 > 60:
-                    cleanedData[1]['results']['imageCategory'].append(category.name)
-                else:
-                    cleanedData[1]['results']['imageCategory'].append('unsure')
-        #test
+            # get the picture category
 
-        remote_image_features = ["faces"]
-        detect_faces_results_remote = computervision_client.analyze_image(remote_image_url, remote_image_features)
-        print("Faces in the remote image: ")
-        if (len(detect_faces_results_remote.faces) == 0):
-            print("No faces detected.")
-        else:
-            for face in detect_faces_results_remote.faces:
-                print("'{}' of age {} at location {}, {}, {}, {}".format(face.gender, face.age,
-                                                                         face.face_rectangle.left,
-                                                                         face.face_rectangle.top,
-                                                                         face.face_rectangle.left + face.face_rectangle.width,
-                                                                         face.face_rectangle.top + face.face_rectangle.height))
+            remote_image_features = ["categories"]
+            categorize_results_remote = computervision_client.analyze_image(remote_image_url,
+                                                                            remote_image_features)
+            if len(categorize_results_remote.categories) > 0:
+                for category in categorize_results_remote.categories:
+                    if category.score * 100 > 60:
+                        cleanedData[1]['results']['imageCategory'].append(category.name)
+                    else:
+                        cleanedData[1]['results']['imageCategory'].append('unsure')
 
-    def analyzeFaces(self, data):
+            # get all objects in picture
+
+            detect_objects_results_remote = computervision_client.detect_objects(remote_image_url)
+            print("Detecting objects in remote image:")
+            for objects in detect_objects_results_remote.objects:
+                if objects.object == 'person' and objects.confidence * 100 > 60:
+                    cleanedData[1]['results']['hasHuman'] = True
+
+                    # check if a face of the person in visible
+
+                    remote_image_features = ["faces"]
+                    detect_faces_results_remote = computervision_client.analyze_image(remote_image_url,
+                                                                                      remote_image_features)
+                    if len(detect_faces_results_remote.faces) > 0:
+                        cleanedData[1]['results']['hasFace'] = True
+
+            # Color scheme
+
+            remote_image_features = ["color"]
+            detect_color_results_remote = computervision_client.analyze_image(remote_image_url, remote_image_features)
+            picColor = detect_color_results_remote
+            if not picColor.color.is_bw_img:
+                cleanedData[1]['results']['hasColor'] = True
+                background = picColor.color.dominant_color_background
+                foreground = picColor.color.dominant_color_foreground
+
+
+                if not background == 'Black' and not foreground == 'Black':  # and accent hell:
+                    cleanedData[1]['results']['isBright'] = True
+
+
+
+    def textAnalytics(self, data):
         print('Test')
+
+    def getBrightness(self, color):
+
+

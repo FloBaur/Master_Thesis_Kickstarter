@@ -42,18 +42,19 @@ class Filter():
                             'creator': creator['name']
                         },
                         'results': {
-                            'hasContent': None,
-                            'content': [],
-                            'imageCategory': [],
-                            'hasHuman': 'no',
-                            'hasFace': 'no',
-                            'Emotion': 'no',
+                            'hasContent': 'no', # computerVision  |
+                            'content': [], # computerVision  |
+                            'imageCategory': [], # computerVision  |
+                            'hasHuman': False, # computerVision |
+                            'hasFace': False, # computerVision |
+                            'hasColor': False,   # computerVision |
+                            'isBright': False,   # computerVision
+                            'TagsInPic': [], # computerVision  |
+                            'NumOfObjectsInPic': 0, # computerVision  |
                             'lengthOfText': 0,
-                            'ObjectsInPic': [],
-                            'NumOfObjectsInPic': 0,
                             'TitleMatchPicOCR': 'no',
                             'TextMatchPic': 'no',
-                            'CreatorMatchTitle': 'no'
+                            'CreatorMatchTitle': 'no',
                         }
                     }
                 except:
