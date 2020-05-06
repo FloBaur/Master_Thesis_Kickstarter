@@ -1,6 +1,9 @@
+from Aux import Aux
 import sys
 
 sys.path.append('/home/florian/anaconda3/lib/python3.7/site-packages')
+
+
 
 # imports for computer-vision
 
@@ -21,38 +24,15 @@ class Algorithm():
         self.VISION_KEY = 'd5fe8761733b42d0a44e3e327174c457'
         self.VISION_ENDPOINT = 'https://macomputervisionservice.cognitiveservices.azure.com/'
 
-    def getHue(self, color):
-        aux = input(color).lstrip('#')
-        rgbColor = tuple(int(aux[i:i+2], 16) for i in (0, 2, 4))
-        red = rgbColor[0]
-        green = rgbColor[1]
-        blue = rgbColor[2]
-
-        minimum = min(min(red, green), blue)
-        maximum = max(max(red, green), blue)
-
-        if minimum == maximum:
-            return 0
-
-        if maximum == red:
-            hue = (green - blue) / (maximum - minimum)
-
-        elif maximum == green:
-            hue = 2 + (blue - red) / (maximum - minimum)
-
-        else:
-            hue = 4 + (red - green) / (maximum - minimum)
-
-        hue = hue * 60
-        if hue < 0:
-            hue = hue + 360
-
-        roundedHue = round(hue)
-
-        #test Hue
-
+    Aux = Aux()
 
     def computerVision(self, cleanedData):
+
+        testColors = ['#BB6D10', '#C6A205']
+
+        testHue = self.Aux.getHue(testColors)
+
+        stop = True
 
         computervision_client = ComputerVisionClient(self.VISION_ENDPOINT,
                                                      CognitiveServicesCredentials(self.VISION_KEY))
@@ -119,12 +99,13 @@ class Algorithm():
                 colors = picColor.color.dominant_colors
                 numOfColors = len(colors)
                 accentColor = picColor.color.accent_color
+                colorsWithAccent = colors.append(accentColor)
                 if not background == 'Black' and not foreground == 'Black':
                     cleanedData[1]['results']['isBright'] = True
                 if numOfColors > 2:
                     cleanedData[1]['results']['isColorful'] = True
 
-                warmHue = self.getHue(accentColor)
+                warmHue = self.Aux.getHue(colorsWithAccent)
 
                 if warmHue:
                     cleanedData[1]['results']['hasWarmHue'] = True
