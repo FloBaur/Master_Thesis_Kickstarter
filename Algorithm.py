@@ -29,25 +29,39 @@ class Algorithm():
                                                      CognitiveServicesCredentials(self.VISION_KEY))
 
         remote_image_url = cleanedData[1]['algorithm']['photo']
-        test = None
+
+        # weg an Microsoft
         description_results = computervision_client.describe_image(remote_image_url)
 
         if len(description_results.captions) == 0:
             cleanedData[1]['results']['hasContent'] = 'no'
+        #test
 
         else:
             tags = description_results.tags
-            numOfTags = len(tags)
             cleanedData[1]['results']['ObjectsInPic'] = tags
-            cleanedData[1]['results']['NumOfObjectsInPic'] = numOfTags
-
-            # hier muss noch was gemacht werden
+            cleanedData[1]['results']['NumOfObjectsInPic'] = len(tags)
 
             for caption in description_results.captions:
-                text = caption.text
                 confidence = caption.confidence * 100
-                cleanedData[1]['results']['hasContent'] = 'yes'
-                cleanedData[1]['results']['content'] = text
+                if confidence > 60:
+                    cleanedData[1]['results']['hasContent'] = 'yes'
+                    cleanedData[1]['results']['content'].append(caption.text)
+                else:
+                    cleanedData[1]['results']['hasContent'] = 'unsure'
+        #test
+
+        remote_image_features = ["categories"]
+        categorize_results_remote = computervision_client.analyze_image(remote_image_url, remote_image_features) #ist da auch schon die discription drin
+        if len(categorize_results_remote.categories) == 0:
+            cleanedData[1]['results']['imageCategory'] = None
+        else:
+            for category in categorize_results_remote.categories:
+                if category.score * 100 > 60:
+                    cleanedData[1]['results']['imageCategory'].append(category.name)
+                else:
+                    cleanedData[1]['results']['imageCategory'].append('unsure')
+        #test
 
         remote_image_features = ["faces"]
         detect_faces_results_remote = computervision_client.analyze_image(remote_image_url, remote_image_features)
