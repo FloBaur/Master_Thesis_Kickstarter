@@ -21,6 +21,37 @@ class Algorithm():
         self.VISION_KEY = 'd5fe8761733b42d0a44e3e327174c457'
         self.VISION_ENDPOINT = 'https://macomputervisionservice.cognitiveservices.azure.com/'
 
+    def getHue(self, color):
+        aux = input(color).lstrip('#')
+        rgbColor = tuple(int(aux[i:i+2], 16) for i in (0, 2, 4))
+        red = rgbColor[0]
+        green = rgbColor[1]
+        blue = rgbColor[2]
+
+        minimum = min(min(red, green), blue)
+        maximum = max(max(red, green), blue)
+
+        if minimum == maximum:
+            return 0
+
+        if maximum == red:
+            hue = (green - blue) / (maximum - minimum)
+
+        elif maximum == green:
+            hue = 2 + (blue - red) / (maximum - minimum)
+
+        else:
+            hue = 4 + (red - green) / (maximum - minimum)
+
+        hue = hue * 60
+        if hue < 0:
+            hue = hue + 360
+
+        roundedHue = round(hue)
+
+        #test Hue
+
+
     def computerVision(self, cleanedData):
 
         computervision_client = ComputerVisionClient(self.VISION_ENDPOINT,
@@ -85,16 +116,18 @@ class Algorithm():
                 cleanedData[1]['results']['hasColor'] = True
                 background = picColor.color.dominant_color_background
                 foreground = picColor.color.dominant_color_foreground
-
-
-                if not background == 'Black' and not foreground == 'Black':  # and accent hell:
+                colors = picColor.color.dominant_colors
+                numOfColors = len(colors)
+                accentColor = picColor.color.accent_color
+                if not background == 'Black' and not foreground == 'Black':
                     cleanedData[1]['results']['isBright'] = True
+                if numOfColors > 2:
+                    cleanedData[1]['results']['isColorful'] = True
 
+                warmHue = self.getHue(accentColor)
 
+                if warmHue:
+                    cleanedData[1]['results']['hasWarmHue'] = True
 
     def textAnalytics(self, data):
         print('Test')
-
-    def getBrightness(self, color):
-
-

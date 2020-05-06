@@ -42,15 +42,17 @@ class Filter():
                             'creator': creator['name']
                         },
                         'results': {
-                            'hasContent': 'no', # computerVision  |
-                            'content': [], # computerVision  |
-                            'imageCategory': [], # computerVision  |
-                            'hasHuman': False, # computerVision |
-                            'hasFace': False, # computerVision |
+                            'hasContent': 'no',  # computerVision  |
+                            'content': [],  # computerVision  |
+                            'imageCategory': [],  # computerVision  |
+                            'hasHuman': False,  # computerVision |
+                            'hasFace': False,  # computerVision |
                             'hasColor': False,   # computerVision |
-                            'isBright': False,   # computerVision
-                            'TagsInPic': [], # computerVision  |
-                            'NumOfObjectsInPic': 0, # computerVision  |
+                            'isBright': False,   # computerVision |
+                            'isColorful': False,  # computerVision |
+                            'hasWarmHue': False,  # computerVision
+                            'TagsInPic': [],  # computerVision |
+                            'NumOfObjectsInPic': 0,  # computerVision |
                             'lengthOfText': 0,
                             'TitleMatchPicOCR': 'no',
                             'TextMatchPic': 'no',
