@@ -50,7 +50,7 @@ class Filter():
                             'hasColor': False,   # computerVision |
                             'isBright': False,   # computerVision |
                             'isColorful': False,  # computerVision |
-                            'hasWarmHue': False,  # computerVision
+                            'hasWarmHue': False,  # computerVision |
                             'TagsInPic': [],  # computerVision |
                             'NumOfObjectsInPic': 0,  # computerVision |
                             'lengthOfText': 0,

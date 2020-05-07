@@ -28,12 +28,6 @@ class Algorithm():
 
     def computerVision(self, cleanedData):
 
-        testColors = ['#BB6D10', '#C6A205']
-
-        testHue = self.Aux.getHue(testColors)
-
-        stop = True
-
         computervision_client = ComputerVisionClient(self.VISION_ENDPOINT,
                                                      CognitiveServicesCredentials(self.VISION_KEY))
         # collect picture data set
@@ -41,7 +35,6 @@ class Algorithm():
         remote_image_url = cleanedData[1]['algorithm']['photo']
 
         # get the image description in general
-        # hier muss Schleife for picture in pictures rein
 
         description_results = computervision_client.describe_image(remote_image_url)
 
@@ -97,15 +90,14 @@ class Algorithm():
                 background = picColor.color.dominant_color_background
                 foreground = picColor.color.dominant_color_foreground
                 colors = picColor.color.dominant_colors
-                numOfColors = len(colors)
                 accentColor = picColor.color.accent_color
-                colorsWithAccent = colors.append(accentColor)
+
                 if not background == 'Black' and not foreground == 'Black':
                     cleanedData[1]['results']['isBright'] = True
-                if numOfColors > 2:
+                if len(colors) > 2:
                     cleanedData[1]['results']['isColorful'] = True
 
-                warmHue = self.Aux.getHue(colorsWithAccent)
+                warmHue = self.Aux.getHue(accentColor)
 
                 if warmHue:
                     cleanedData[1]['results']['hasWarmHue'] = True
