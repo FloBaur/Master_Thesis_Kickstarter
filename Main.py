@@ -1,28 +1,31 @@
 from Filter import Filter
 from Algorithm import Algorithm
 
-# Daten holen
+# get raw Data from CSV File
+
 DataFilter = Filter()
 
-# Ziehen der gewünschten Daten aus CSV
+# extract relevant data
 
 data = DataFilter.cleanColumns()
 
-# Filtern der Daten anhand von Kriterien
+# Data filtering with diverse criteria
 
 cleanedData = DataFilter.filterCriteria(data)
 
-stop = None
-
-# schreiben der Daten in neue CSV
+# write Data in CSV and print results grouped by category
 
 DataFilter.overViewCleanedData(cleanedData)
 
-#Übergabe der Daten an den Deep Learning Algorithmus für die Auswertung
-
 Algorithm = Algorithm()
 
-Algorithm.computerVision(cleanedData)
+# pass data to MS DL algorithm for analyzing the content of project pictures
+
+VCleanData = Algorithm.computerVision(cleanedData)  # UnitTest!!!
+
+# pass data to MS DL algorithm for analyzing the content of project text
+
+TVCleanData = Algorithm.textAnalytics(VCleanData)
 
 
 

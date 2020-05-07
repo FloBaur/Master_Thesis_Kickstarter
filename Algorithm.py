@@ -3,8 +3,6 @@ import sys
 
 sys.path.append('/home/florian/anaconda3/lib/python3.7/site-packages')
 
-
-
 # imports for computer-vision
 
 from azure.cognitiveservices.vision.computervision import ComputerVisionClient
@@ -13,16 +11,18 @@ from azure.cognitiveservices.vision.computervision.models import TextRecognition
 from azure.cognitiveservices.vision.computervision.models import VisualFeatureTypes
 from msrest.authentication import CognitiveServicesCredentials
 
-from array import array
-from PIL import Image
-import sys
-import time
+# imports for Text analysis
+
+from azure.ai.textanalytics import TextAnalyticsClient
+from azure.core.credentials import AzureKeyCredential
 
 
 class Algorithm():
     def __init__(self):
         self.VISION_KEY = 'd5fe8761733b42d0a44e3e327174c457'
         self.VISION_ENDPOINT = 'https://macomputervisionservice.cognitiveservices.azure.com/'
+        self.TEXT_KEY = 'cd15a763eaf74a0d8d3744933a0d3e38'
+        self.TEXT_ENDPOINT = 'https://matextanalyticsservice.cognitiveservices.azure.com/'
 
     Aux = Aux()
 
@@ -30,7 +30,7 @@ class Algorithm():
 
         computervision_client = ComputerVisionClient(self.VISION_ENDPOINT,
                                                      CognitiveServicesCredentials(self.VISION_KEY))
-        # collect picture data set
+        # prepare picture data set
 
         remote_image_url = cleanedData[1]['algorithm']['photo']
 
@@ -102,5 +102,62 @@ class Algorithm():
                 if warmHue:
                     cleanedData[1]['results']['hasWarmHue'] = True
 
-    def textAnalytics(self, data):
-        print('Test')
+        return cleanedData
+
+    def getLengthSentiment(self, Text, client):
+
+        response = client.analyze_sentiment(documents=Text)[0]
+        sentimentTitle = response.sentiment
+        sentiScoresTitle = [response.confidence_scores.positive, response.confidence_scores.neutral,
+                            response.confidence_scores.negative]
+
+        textLength = 0
+
+        for idx, sentence in enumerate(response.sentences):
+            textLength = textLength + sentence.grapheme_length
+
+        result = [textLength, sentimentTitle, sentiScoresTitle]
+
+        return result
+
+    def textAnalytics(self, VCleanData):
+
+        ta_credential = AzureKeyCredential(self.TEXT_KEY)
+        text_analytics_client = TextAnalyticsClient(endpoint=self.TEXT_ENDPOINT, credential=ta_credential)
+
+        # analyze Title
+
+        title = [VCleanData[1]['algorithm']['title']]
+
+        # sentiment and length
+
+        sentimentTitle = self.getLengthSentiment(title, text_analytics_client)
+
+        VCleanData[1]['results']['lengthOfTitle'] = sentimentTitle[0]
+        VCleanData[1]['results']['sentimentTitle'] = sentimentTitle[1]
+        VCleanData[1]['results']['sentiScoresTitle'] = sentimentTitle[2]
+
+        # get Key Phrases
+
+        # -----------------------------
+
+        # analyze Text
+
+        text = [VCleanData[1]['algorithm']['text']]
+
+        # sentiment and length
+
+        sentimentText = self.getLengthSentiment(text, text_analytics_client)
+
+        VCleanData[1]['results']['lengthOfTitle'] = sentimentText[0]
+        VCleanData[1]['results']['sentimentText'] = sentimentText[1]
+        VCleanData[1]['results']['sentiScoresText'] = sentimentText[2]
+
+
+
+
+
+
+
+
+

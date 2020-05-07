@@ -53,10 +53,16 @@ class Filter():
                             'hasWarmHue': False,  # computerVision |
                             'TagsInPic': [],  # computerVision |
                             'NumOfObjectsInPic': 0,  # computerVision |
-                            'lengthOfText': 0,
+
+                            'lengthOfTitle': 0,  # textAnalytics |
+                            'sentimentTitle': '',  # textAnalytics |
+                            'sentiScoresTitle': [],  # textAnalytics |
+                            'lengthOfText': 0,  # textAnalytics |
+                            'sentimentText': '',  # textAnalytics |
+                            'sentiScoresText': [],  # textAnalytics |
                             'TitleMatchPicOCR': 'no',
-                            'TextMatchPic': 'no',
-                            'CreatorMatchTitle': 'no',
+                            'TextMatchPic': 'no',   # textAnalytics
+                            'CreatorMatchTitle': 'no'
                         }
                     }
                 except:
