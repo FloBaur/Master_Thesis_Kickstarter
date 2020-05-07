@@ -3,6 +3,8 @@ import sys
 
 sys.path.append('/home/florian/anaconda3/lib/python3.7/site-packages')
 
+import requests
+
 # imports for computer-vision
 
 from azure.cognitiveservices.vision.computervision import ComputerVisionClient
@@ -23,6 +25,7 @@ class Algorithm():
         self.VISION_ENDPOINT = 'https://macomputervisionservice.cognitiveservices.azure.com/'
         self.TEXT_KEY = 'cd15a763eaf74a0d8d3744933a0d3e38'
         self.TEXT_ENDPOINT = 'https://matextanalyticsservice.cognitiveservices.azure.com/'
+        self.OCR_URL = 'https://westeurope.api.cognitive.microsoft.com/vision/v2.0/ocr?language=unk&detectOrientation=true'
 
     Aux = Aux()
 
@@ -120,6 +123,26 @@ class Algorithm():
 
         return result
 
+    def getPhrases(self, Text, client):
+
+        phrases = []
+
+        try:
+            response = client.extract_key_phrases(documents=Text)[0]
+
+            if not response.is_error:
+                for phrase in response.key_phrases:
+                    phrases.append(phrase)
+            else:
+                phrases.append('Error')
+
+        except Exception as err:
+            print("Encountered exception. {}".format(err))
+
+        return phrases
+
+
+
     def textAnalytics(self, VCleanData):
 
         ta_credential = AzureKeyCredential(self.TEXT_KEY)
@@ -139,6 +162,8 @@ class Algorithm():
 
         # get Key Phrases
 
+        phrasesTitle = self.getPhrases(title, text_analytics_client)
+
         # -----------------------------
 
         # analyze Text
@@ -152,6 +177,37 @@ class Algorithm():
         VCleanData[1]['results']['lengthOfTitle'] = sentimentText[0]
         VCleanData[1]['results']['sentimentText'] = sentimentText[1]
         VCleanData[1]['results']['sentiScoresText'] = sentimentText[2]
+
+        # get Key Phrases
+
+        phrasesText = self.getPhrases(title, text_analytics_client)
+
+        # -----------------------------
+
+        # analyze Title and Picture
+
+        picTags = VCleanData[1]['results']['TagsInPic']
+        phrases = phrasesTitle + phrasesText
+        matchPic = self.Aux.textMatch(phrases, picTags)
+        VCleanData[1]['results']['TextMatchPic'] = matchPic
+
+        # analyze creator and title
+
+        creator = [VCleanData[1]['algorithm']['creator']]
+        matchCreator = self.Aux.textMatch(phrases, creator)
+        VCleanData[1]['results']['TextMatchPic'] = matchCreator
+
+        # analyze OCR in picture
+
+        picUrl = {"url": VCleanData[1]['algorithm']['photo']}
+        OCR_URL = self.OCR_URL
+
+        resultOCR = requests.post(OCR_URL, data=picUrl, )
+
+        # Api Key holen für OCR
+
+
+
 
 
 

@@ -61,8 +61,8 @@ class Filter():
                             'sentimentText': '',  # textAnalytics |
                             'sentiScoresText': [],  # textAnalytics |
                             'TitleMatchPicOCR': 'no',
-                            'TextMatchPic': 'no',   # textAnalytics
-                            'CreatorMatchTitle': 'no'
+                            'TextMatchPic': None,   # textAnalytics |
+                            'CreatorMatchTitle': None  # textAnalytics |
                         }
                     }
                 except:
@@ -139,7 +139,6 @@ class Filter():
                 'Funding ratio AVG[%]': round(FundingRatio / ProjectCounter, 2),
                 'Backers AVG': round(BackersSum / ProjectCounter),
                 'Duration AVG[days]': round(Duration / ProjectCounter, 1)
-
             }
 
             catOverview.append(cat)

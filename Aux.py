@@ -38,3 +38,15 @@ class Aux():
             isWarm = True
 
         return isWarm
+
+    def textMatch(self, phrases, Tags):
+
+        result = None
+
+        if len(Tags) > 0 and len(phrases) > 0:
+            if bool(set(phrases) & set(Tags)):
+                result = True
+
+        return result
+
+
