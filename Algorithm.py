@@ -1,8 +1,6 @@
 from Aux import Aux
 import sys
 
-sys.path.append('/home/florian/anaconda3/lib/python3.7/site-packages')
-
 import requests
 
 # imports for computer-vision
@@ -18,6 +16,8 @@ from msrest.authentication import CognitiveServicesCredentials
 from azure.ai.textanalytics import TextAnalyticsClient
 from azure.core.credentials import AzureKeyCredential
 
+sys.path.append('/home/florian/anaconda3/lib/python3.7/site-packages')
+
 
 class Algorithm():
     def __init__(self):
@@ -25,7 +25,6 @@ class Algorithm():
         self.VISION_ENDPOINT = 'https://macomputervisionservice.cognitiveservices.azure.com/'
         self.TEXT_KEY = 'cd15a763eaf74a0d8d3744933a0d3e38'
         self.TEXT_ENDPOINT = 'https://matextanalyticsservice.cognitiveservices.azure.com/'
-        self.OCR_URL = 'https://westeurope.api.cognitive.microsoft.com/vision/v2.0/ocr?language=unk&detectOrientation=true'
 
     Aux = Aux()
 
@@ -70,7 +69,7 @@ class Algorithm():
             # get all objects in picture
 
             detect_objects_results_remote = computervision_client.detect_objects(remote_image_url)
-            print("Detecting objects in remote image:")
+
             for objects in detect_objects_results_remote.objects:
                 if objects.object == 'person' and objects.confidence * 100 > 60:
                     cleanedData[1]['results']['hasHuman'] = True
@@ -141,7 +140,28 @@ class Algorithm():
 
         return phrases
 
+    def getOCRTags(self, picURL):
 
+        picTags = []
+
+        ocr_url = self.VISION_ENDPOINT + "vision/v2.1/ocr"
+        headers = {'Ocp-Apim-Subscription-Key': self.VISION_KEY}
+        params = {'language': 'unk', 'detectOrientation': 'true'}
+        data = {'url': picURL}
+        response = requests.post(ocr_url, headers=headers, params=params, json=data)
+        response.raise_for_status()
+        analysis = response.json()
+        line_infos = [region["lines"] for region in analysis["regions"]]
+        word_infos = []
+        for line in line_infos:
+            for word_metadata in line:
+                for word_info in word_metadata["words"]:
+                    word_infos.append(word_info)
+        for word in word_infos:
+            text = word["text"]
+            picTags.append(text)
+
+        return picTags
 
     def textAnalytics(self, VCleanData):
 
@@ -200,20 +220,4 @@ class Algorithm():
         # analyze OCR in picture
 
         picUrl = {"url": VCleanData[1]['algorithm']['photo']}
-        OCR_URL = self.OCR_URL
-
-        resultOCR = requests.post(OCR_URL, data=picUrl, )
-
-        # Api Key holen für OCR
-
-
-
-
-
-
-
-
-
-
-
-
+        picTags = self.getOCRTags(picUrl)
