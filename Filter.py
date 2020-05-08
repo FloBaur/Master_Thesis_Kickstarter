@@ -60,7 +60,7 @@ class Filter():
                             'lengthOfText': 0,  # textAnalytics |
                             'sentimentText': '',  # textAnalytics |
                             'sentiScoresText': [],  # textAnalytics |
-                            'TitleMatchPicOCR': 'no',
+                            'TitleMatchPicOCR': None,
                             'TextMatchPic': None,   # textAnalytics |
                             'CreatorMatchTitle': None  # textAnalytics |
                         }

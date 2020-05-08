@@ -221,3 +221,9 @@ class Algorithm():
 
         picUrl = {"url": VCleanData[1]['algorithm']['photo']}
         picTags = self.getOCRTags(picUrl)
+        TextMatchOCR = self.Aux.textMatch(phrases, picTags)
+        VCleanData[1]['results']['TitleMatchPicOCR'] = TextMatchOCR
+
+        return VCleanData
+
+
