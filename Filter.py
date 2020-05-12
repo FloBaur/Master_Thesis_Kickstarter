@@ -1,11 +1,14 @@
 import pandas as pd
 import json
 from datetime import datetime
+from Aux import Aux
 
 
 class Filter():
     def __init__(self):
         self.data = pd.read_csv('./Data/Kickstarter.csv')
+
+    Aux = Aux()
 
     def cleanColumns(self):
         global singleProject
@@ -60,7 +63,7 @@ class Filter():
                             'lengthOfText': 0,  # textAnalytics |
                             'sentimentText': '',  # textAnalytics |
                             'sentiScoresText': [],  # textAnalytics |
-                            'TitleMatchPicOCR': None,
+                            'TitleMatchPicOCR': None,   # textAnalytics |
                             'TextMatchPic': None,   # textAnalytics |
                             'CreatorMatchTitle': None  # textAnalytics |
                         }
@@ -93,7 +96,6 @@ class Filter():
 
         global cat
         dataOverview = []
-        categories = []
         catOverview = []
 
         for row in cleanedData:
@@ -108,12 +110,9 @@ class Filter():
             }
             dataOverview.append(singleCleaned)
 
-        for row in dataOverview:
-            categories.append(row['category'])
+        cats = self.Aux.getCats(cleanedData)
 
-        setCat = set(categories)
-
-        for rowCat in setCat:
+        for rowCat in cats:
             GoalSum = 0
             ProjectCounter = 0
             SuccessCounter = 0

@@ -32,9 +32,17 @@ TVCleanData = Algorithm.textAnalytics(VCleanData)  # UnitTest!!!
 
 Analysis = Analysis()
 
-Analysis.buildCats(TVCleanData)
+Analysis.buildCatsWithGoalVars(TVCleanData)  # UnitTest!!!
+
+# build Statistics
+
+Analysis.descriptiveStats(TVCleanData)  # UnitTest!!!
 
 # make Regression
+
+Analysis.makeRegression(TVCleanData)  # UnitTest!!!
+
+
 
 
 

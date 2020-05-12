@@ -49,4 +49,14 @@ class Aux():
 
         return result
 
+    def getCats(self, data):
+        categories = []
+
+        for row in data:
+            categories.append(row['filter']['category'])
+
+        setCat = set(categories)
+
+        return setCat
+
 
