@@ -18,11 +18,12 @@ class Analysis():
 
         for row in data:
             targetVars = {
+                'hasContent': row['results']['hasContent'],
                 'hasHuman': row['results']['hasHuman'],
                 'hasFace': row['results']['hasFace'],
                 'hasColor': row['results']['hasColor'],
-                'isColorful': row['results']['isColorful'],
-                'hasWarmHue': row['results']['hasWarmHue'],
+                'hasManyDomColors': row['results']['hasManyDomColors'],
+                'hasWarmHueAccent': row['results']['hasWarmHueAccent'],
                 'isBright': row['results']['isBright'],
                 'sentimentTitle': row['results']['sentimentTitle'],
                 'sentimentText': row['results']['sentimentText'],
@@ -87,12 +88,13 @@ class Analysis():
 
         for rowCat in cats:
             proCounter = 0
+            hasContent = 0
             hasHuman = 0
             hasFace = 0
             hasColor = 0
             isBright = 0
-            isColorful = 0
-            hasWarmHue = 0
+            hasManyDomColors = 0
+            hasWarmHueAccent = 0
             NumOfObjectsInPic = 0  # sum
             lengthOfTitle = 0  # sum
             sentimentTitlePos = 0
@@ -107,6 +109,8 @@ class Analysis():
             CreatorMatchTitle = 0
 
             for row in AlgoData:
+                if row['results']['hasContent'] == 'yes':
+                    hasContent = hasContent + 1
                 if row['results']['hasHuman']:
                     hasHuman = hasHuman + 1
                 if row['results']['hasFace']:
@@ -116,9 +120,9 @@ class Analysis():
                 if row['results']['isBright']:
                     isBright = isBright + 1
                 if row['results']['isColorful']:
-                    isColorful = isColorful + 1
-                if row['results']['hasWarmHue']:
-                    hasWarmHue = hasWarmHue + 1
+                    hasManyDomColors = hasManyDomColors + 1
+                if row['results']['hasWarmHueAccent']:
+                    hasWarmHueAccent = hasWarmHueAccent + 1
                 if row['results']['sentimentTitle'] == 'positive':
                     sentimentTitlePos = sentimentTitlePos + 1
                 if row['results']['sentimentTitle'] == 'neutral':
@@ -150,8 +154,8 @@ class Analysis():
                 'faces': hasFace,
                 'color': hasColor,
                 'bright': isBright,
-                'colorful': isColorful,
-                'warm hue': hasWarmHue,
+                'many dominant colors': hasManyDomColors,
+                'warm hue accent': hasWarmHueAccent,
                 'objects in pic AVG': round(NumOfObjectsInPic / proCounter),
                 'positive Title': sentimentTitlePos,
                 'neutral Title': sentimentTitleNeu,
@@ -169,7 +173,7 @@ class Analysis():
             resultData.append(catResult)
 
         df = pd.DataFrame(resultData)
-        column_order1 = ['projects', 'persons', 'faces', 'color', 'bright', 'colorful', 'warm hue',
+        column_order1 = ['projects', 'persons', 'faces', 'color', 'bright', 'many dominant colors', 'warm hue accent',
                          'objects in pic AVG', 'positive Title', 'neutral Title', 'negative Title', 'positive Text',
                          'neutral Text', 'negative Text', 'writing in pic match text', 'text tags match pic Tags',
                          'creator match title', 'length of title AVG', 'length of text AVG']

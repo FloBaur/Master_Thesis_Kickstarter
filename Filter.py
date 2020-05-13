@@ -17,7 +17,7 @@ class Filter():
         counter = 0
 
         for pos, con in self.data.iterrows():
-            if counter < 4000:
+            if counter <= 6:
                 try:
                     category = json.loads(con['category'])
                     creator = json.loads(con['creator'])
@@ -44,15 +44,22 @@ class Filter():
                             'state': con['state'],
                             'creator': creator['name']
                         },
+                        'colors': {
+                            'background': '',
+                            'foreground': '',
+                            'dominantColors': [],
+                            'accentColor': '',
+                            'hue': 0
+                        },
                         'results': {
                             'hasContent': 'no',  # computerVision  |
                             'content': [],  # computerVision  |
                             'imageCategory': [],  # computerVision  |
                             'hasHuman': False,  # computerVision |
                             'hasFace': False,  # computerVision |
-                            'hasColor': False,   # computerVision |
-                            'isBright': False,   # computerVision |
-                            'isColorful': False,  # computerVision |
+                            'hasColor': False,  # computerVision |
+                            'isBright': True,  # computerVision |
+                            'hasManyDomColors': False,  # computerVision |
                             'hasWarmHue': False,  # computerVision |
                             'TagsInPic': [],  # computerVision |
                             'NumOfObjectsInPic': 0,  # computerVision |
@@ -63,16 +70,18 @@ class Filter():
                             'lengthOfText': 0,  # textAnalytics |
                             'sentimentText': '',  # textAnalytics |
                             'sentiScoresText': [],  # textAnalytics |
-                            'TitleMatchPicOCR': None,   # textAnalytics |
-                            'TextMatchPic': None,   # textAnalytics |
+                            'TitleMatchPicOCR': None,  # textAnalytics |
+                            'TextMatchPic': None,  # textAnalytics |
                             'CreatorMatchTitle': None  # textAnalytics |
                         }
                     }
+                    rightData.append(singleProject)
                 except:
+                    print('jump over')
                     continue
 
                 counter = counter + 1
-                rightData.append(singleProject)
+
 
         return rightData
 

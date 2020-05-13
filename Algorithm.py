@@ -1,14 +1,8 @@
 from Aux import Aux
 import sys
-
-import requests
-
-# imports for computer-vision
+sys.path.append('/home/florian/anaconda3/lib/python3.7/site-packages')
 
 from azure.cognitiveservices.vision.computervision import ComputerVisionClient
-from azure.cognitiveservices.vision.computervision.models import TextOperationStatusCodes
-from azure.cognitiveservices.vision.computervision.models import TextRecognitionMode
-from azure.cognitiveservices.vision.computervision.models import VisualFeatureTypes
 from msrest.authentication import CognitiveServicesCredentials
 
 # imports for Text analysis
@@ -16,7 +10,7 @@ from msrest.authentication import CognitiveServicesCredentials
 from azure.ai.textanalytics import TextAnalyticsClient
 from azure.core.credentials import AzureKeyCredential
 
-sys.path.append('/home/florian/anaconda3/lib/python3.7/site-packages')
+import requests
 
 
 class Algorithm():
@@ -32,78 +26,90 @@ class Algorithm():
 
         computervision_client = ComputerVisionClient(self.VISION_ENDPOINT,
                                                      CognitiveServicesCredentials(self.VISION_KEY))
-        # prepare picture data set
+        # # prepare picture data set
+        for dataset in cleanedData:
 
-        remote_image_url = cleanedData[1]['algorithm']['photo']
+        # dataset = cleanedData[6]
 
-        # get the image description in general
+            remote_image_url = dataset['algorithm']['photo']
 
-        description_results = computervision_client.describe_image(remote_image_url)
+            # get the image description in general
 
-        if len(description_results.captions) > 0:
+            description_results = computervision_client.describe_image(remote_image_url)
 
-            tags = description_results.tags
-            cleanedData[1]['results']['TagsInPic'] = tags
-            cleanedData[1]['results']['NumOfObjectsInPic'] = len(tags)
+            if len(description_results.captions) > 0:
 
-            for caption in description_results.captions:
-                confidence = caption.confidence * 100
-                if confidence > 60:
-                    cleanedData[1]['results']['hasContent'] = 'yes'
-                    cleanedData[1]['results']['content'].append(caption.text)
-                else:
-                    cleanedData[1]['results']['hasContent'] = 'unsure'
+                tags = description_results.tags
+                dataset['results']['TagsInPic'] = tags
+                dataset['results']['NumOfObjectsInPic'] = len(tags)
 
-            # get the picture category
-
-            remote_image_features = ["categories"]
-            categorize_results_remote = computervision_client.analyze_image(remote_image_url,
-                                                                            remote_image_features)
-            if len(categorize_results_remote.categories) > 0:
-                for category in categorize_results_remote.categories:
-                    if category.score * 100 > 60:
-                        cleanedData[1]['results']['imageCategory'].append(category.name)
+                for caption in description_results.captions:
+                    confidence = caption.confidence * 100
+                    if confidence > 50:
+                        dataset['results']['hasContent'] = 'yes'
+                        dataset['results']['content'].append(caption.text)
                     else:
-                        cleanedData[1]['results']['imageCategory'].append('unsure')
+                        dataset['results']['hasContent'] = 'unsure'
+                        break
 
-            # get all objects in picture
+                # get the picture category
 
-            detect_objects_results_remote = computervision_client.detect_objects(remote_image_url)
+                remote_image_features = ["categories"]
+                categorize_results_remote = computervision_client.analyze_image(remote_image_url,
+                                                                                remote_image_features)
+                if len(categorize_results_remote.categories) > 0:
+                    for category in categorize_results_remote.categories:
+                        if category.score * 100 > 50:
+                            dataset['results']['imageCategory'].append(category.name)
+                        else:
+                            dataset['results']['imageCategory'].append('unsure')
 
-            for objects in detect_objects_results_remote.objects:
-                if objects.object == 'person' and objects.confidence * 100 > 60:
-                    cleanedData[1]['results']['hasHuman'] = True
+                # get all objects in picture
 
-                    # check if a face of the person in visible
+                detect_objects_results_remote = computervision_client.detect_objects(remote_image_url)
 
-                    remote_image_features = ["faces"]
-                    detect_faces_results_remote = computervision_client.analyze_image(remote_image_url,
-                                                                                      remote_image_features)
-                    if len(detect_faces_results_remote.faces) > 0:
-                        cleanedData[1]['results']['hasFace'] = True
+                for objects in detect_objects_results_remote.objects:
+                    if objects.object_property == 'person' and objects.confidence * 100 > 50:
+                        dataset['results']['hasHuman'] = True
 
-            # Color scheme
+                        # check if a face of the person in visible
 
-            remote_image_features = ["color"]
-            detect_color_results_remote = computervision_client.analyze_image(remote_image_url, remote_image_features)
-            picColor = detect_color_results_remote
-            if not picColor.color.is_bw_img:
-                cleanedData[1]['results']['hasColor'] = True
-                background = picColor.color.dominant_color_background
-                foreground = picColor.color.dominant_color_foreground
-                colors = picColor.color.dominant_colors
-                accentColor = picColor.color.accent_color
+                        remote_image_features = ["faces"]
+                        detect_faces_results_remote = computervision_client.analyze_image(remote_image_url,
+                                                                                          remote_image_features)
+                        if len(detect_faces_results_remote.faces) > 0:
+                            dataset['results']['hasFace'] = True
 
-                if not background == 'Black' and not foreground == 'Black':
-                    cleanedData[1]['results']['isBright'] = True
-                if len(colors) > 2:
-                    cleanedData[1]['results']['isColorful'] = True
+                # Color scheme
 
-                warmHue = self.Aux.getHue(accentColor)
+                remote_image_features = ["color"]
+                detect_color_results_remote = computervision_client.analyze_image(remote_image_url, remote_image_features)
+                picColor = detect_color_results_remote
+                if not picColor.color.is_bw_img:
+                    dataset['results']['hasColor'] = True
+                    background = picColor.color.dominant_color_background
+                    dataset['colors']['background'] = background
+                    foreground = picColor.color.dominant_color_foreground
+                    dataset['colors']['foreground'] = foreground
+                    dominantColors = picColor.color.dominant_colors
+                    dataset['colors']['dominantColors'] = dominantColors
+                    accentColor = picColor.color.accent_color
+                    dataset['colors']['accentColor'] = accentColor
 
-                if warmHue:
-                    cleanedData[1]['results']['hasWarmHue'] = True
+                    if background == 'Black' and foreground == 'Black':
+                        dataset['results']['isBright'] = False
+                    if len(dominantColors) > 2:
+                        dataset['results']['hasManyDomColors'] = True
 
+                    answer = self.Aux.getHue(accentColor)
+                    hue = answer[1]
+                    dataset['colors']['hue'] = hue
+                    warmHue = answer[0]
+
+                    if warmHue:
+                        dataset['results']['hasWarmHueAccent'] = True
+
+        stop = True
         return cleanedData
 
     def getLengthSentiment(self, Text, client):
@@ -165,6 +171,8 @@ class Algorithm():
 
     def textAnalytics(self, VCleanData):
 
+        stop = True
+
         ta_credential = AzureKeyCredential(self.TEXT_KEY)
         text_analytics_client = TextAnalyticsClient(endpoint=self.TEXT_ENDPOINT, credential=ta_credential)
 
@@ -178,9 +186,9 @@ class Algorithm():
 
         VCleanData[1]['results']['lengthOfTitle'] = sentimentTitle[0]
         VCleanData[1]['results']['sentimentTitle'] = sentimentTitle[1]
-        VCleanData[1]['results']['sentiScoresTitle'] = sentimentTitle[2]
+        VCleanData[1]['results']['sentiScoresTitle'] = sentimentTitle[2]  # pos neu neg share
 
-        # get Key Phrases
+        # get Key Phrases in text
 
         phrasesTitle = self.getPhrases(title, text_analytics_client)
 

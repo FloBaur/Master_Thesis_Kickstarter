@@ -37,7 +37,9 @@ class Aux():
                 342 <= roundedHue <= 360:
             isWarm = True
 
-        return isWarm
+        answer = [isWarm, roundedHue]
+
+        return answer
 
     def textMatch(self, phrases, Tags):
 
