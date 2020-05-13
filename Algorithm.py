@@ -1,4 +1,5 @@
 from Aux import Aux
+
 import sys
 sys.path.append('/home/florian/anaconda3/lib/python3.7/site-packages')
 
@@ -11,6 +12,8 @@ from azure.ai.textanalytics import TextAnalyticsClient
 from azure.core.credentials import AzureKeyCredential
 
 import requests
+import re
+
 
 
 class Algorithm():
@@ -27,11 +30,9 @@ class Algorithm():
         computervision_client = ComputerVisionClient(self.VISION_ENDPOINT,
                                                      CognitiveServicesCredentials(self.VISION_KEY))
         # # prepare picture data set
-        for dataset in cleanedData:
+        for row in cleanedData:
 
-        # dataset = cleanedData[6]
-
-            remote_image_url = dataset['algorithm']['photo']
+            remote_image_url = row['algorithm']['photo']
 
             # get the image description in general
 
@@ -40,16 +41,16 @@ class Algorithm():
             if len(description_results.captions) > 0:
 
                 tags = description_results.tags
-                dataset['results']['TagsInPic'] = tags
-                dataset['results']['NumOfObjectsInPic'] = len(tags)
+                row['results']['TagsInPic'] = tags
+                row['results']['NumOfObjectsInPic'] = len(tags)
 
                 for caption in description_results.captions:
                     confidence = caption.confidence * 100
                     if confidence > 50:
-                        dataset['results']['hasContent'] = 'yes'
-                        dataset['results']['content'].append(caption.text)
+                        row['results']['hasContent'] = 'yes'
+                        row['results']['content'].append(caption.text)
                     else:
-                        dataset['results']['hasContent'] = 'unsure'
+                        row['results']['hasContent'] = 'unsure'
                         break
 
                 # get the picture category
@@ -60,9 +61,9 @@ class Algorithm():
                 if len(categorize_results_remote.categories) > 0:
                     for category in categorize_results_remote.categories:
                         if category.score * 100 > 50:
-                            dataset['results']['imageCategory'].append(category.name)
+                            row['results']['imageCategory'].append(category.name)
                         else:
-                            dataset['results']['imageCategory'].append('unsure')
+                            row['results']['imageCategory'].append('unsure')
 
                 # get all objects in picture
 
@@ -70,7 +71,7 @@ class Algorithm():
 
                 for objects in detect_objects_results_remote.objects:
                     if objects.object_property == 'person' and objects.confidence * 100 > 50:
-                        dataset['results']['hasHuman'] = True
+                        row['results']['hasHuman'] = True
 
                         # check if a face of the person in visible
 
@@ -78,7 +79,7 @@ class Algorithm():
                         detect_faces_results_remote = computervision_client.analyze_image(remote_image_url,
                                                                                           remote_image_features)
                         if len(detect_faces_results_remote.faces) > 0:
-                            dataset['results']['hasFace'] = True
+                            row['results']['hasFace'] = True
 
                 # Color scheme
 
@@ -86,30 +87,29 @@ class Algorithm():
                 detect_color_results_remote = computervision_client.analyze_image(remote_image_url, remote_image_features)
                 picColor = detect_color_results_remote
                 if not picColor.color.is_bw_img:
-                    dataset['results']['hasColor'] = True
+                    row['results']['hasColor'] = True
                     background = picColor.color.dominant_color_background
-                    dataset['colors']['background'] = background
+                    row['colors']['background'] = background
                     foreground = picColor.color.dominant_color_foreground
-                    dataset['colors']['foreground'] = foreground
+                    row['colors']['foreground'] = foreground
                     dominantColors = picColor.color.dominant_colors
-                    dataset['colors']['dominantColors'] = dominantColors
+                    row['colors']['dominantColors'] = dominantColors
                     accentColor = picColor.color.accent_color
-                    dataset['colors']['accentColor'] = accentColor
+                    row['colors']['accentColor'] = accentColor
 
                     if background == 'Black' and foreground == 'Black':
-                        dataset['results']['isBright'] = False
+                        row['results']['isBright'] = False
                     if len(dominantColors) > 2:
-                        dataset['results']['hasManyDomColors'] = True
+                        row['results']['hasManyDomColors'] = True
 
                     answer = self.Aux.getHue(accentColor)
                     hue = answer[1]
-                    dataset['colors']['hue'] = hue
+                    row['colors']['hue'] = hue
                     warmHue = answer[0]
 
                     if warmHue:
-                        dataset['results']['hasWarmHueAccent'] = True
+                        row['results']['hasWarmHueAccent'] = True
 
-        stop = True
         return cleanedData
 
     def getLengthSentiment(self, Text, client):
@@ -137,7 +137,7 @@ class Algorithm():
 
             if not response.is_error:
                 for phrase in response.key_phrases:
-                    phrases.append(phrase)
+                    phrases.append(phrase.lower())
             else:
                 phrases.append('Error')
 
@@ -153,7 +153,8 @@ class Algorithm():
         ocr_url = self.VISION_ENDPOINT + "vision/v2.1/ocr"
         headers = {'Ocp-Apim-Subscription-Key': self.VISION_KEY}
         params = {'language': 'unk', 'detectOrientation': 'true'}
-        data = {'url': picURL}
+        test = str(picURL).replace("'", '"')
+        data = {'url':  test}
         response = requests.post(ocr_url, headers=headers, params=params, json=data)
         response.raise_for_status()
         analysis = response.json()
@@ -165,72 +166,88 @@ class Algorithm():
                     word_infos.append(word_info)
         for word in word_infos:
             text = word["text"]
-            picTags.append(text)
+            picTags.append(text.lower())
 
         return picTags
 
     def textAnalytics(self, VCleanData):
 
-        stop = True
-
         ta_credential = AzureKeyCredential(self.TEXT_KEY)
         text_analytics_client = TextAnalyticsClient(endpoint=self.TEXT_ENDPOINT, credential=ta_credential)
 
-        # analyze Title
+        for row in VCleanData:
+            title = [row['algorithm']['title']]
 
-        title = [VCleanData[1]['algorithm']['title']]
+            # sentiment and length TITLE
 
-        # sentiment and length
+            sentimentTitle = self.getLengthSentiment(title, text_analytics_client)
 
-        sentimentTitle = self.getLengthSentiment(title, text_analytics_client)
+            row['results']['lengthOfTitle'] = sentimentTitle[0]
+            row['results']['sentimentTitle'] = sentimentTitle[1]
+            row['results']['sentiScoresTitle'] = sentimentTitle[2]  # pos neu neg share
 
-        VCleanData[1]['results']['lengthOfTitle'] = sentimentTitle[0]
-        VCleanData[1]['results']['sentimentTitle'] = sentimentTitle[1]
-        VCleanData[1]['results']['sentiScoresTitle'] = sentimentTitle[2]  # pos neu neg share
+            # get Key Phrases in TITLE
 
-        # get Key Phrases in text
+            phrasesTitle = self.getPhrases(title, text_analytics_client)
+            keyPhrasesTitle = []
+            for phrase in phrasesTitle:
+                phrase.replace('-', ' ')
+                wordList = re.sub("[^\w]", " ",  phrase).split()
+                keyPhrasesTitle.append(wordList)
 
-        phrasesTitle = self.getPhrases(title, text_analytics_client)
+            flattenedKeyPhrasesTitle = list(self.Aux.flatten(keyPhrasesTitle))
+            row['results']['keyPhrasesTitle'] = flattenedKeyPhrasesTitle
 
-        # -----------------------------
+            # analyze TEXT
 
-        # analyze Text
+            text = [row['algorithm']['text']]
 
-        text = [VCleanData[1]['algorithm']['text']]
+            # sentiment and length TEXT
 
-        # sentiment and length
+            sentimentText = self.getLengthSentiment(text, text_analytics_client)
 
-        sentimentText = self.getLengthSentiment(text, text_analytics_client)
+            row['results']['lengthOfText'] = sentimentText[0]
+            row['results']['sentimentText'] = sentimentText[1]
+            row['results']['sentiScoresText'] = sentimentText[2]
 
-        VCleanData[1]['results']['lengthOfTitle'] = sentimentText[0]
-        VCleanData[1]['results']['sentimentText'] = sentimentText[1]
-        VCleanData[1]['results']['sentiScoresText'] = sentimentText[2]
+            # get Key Phrases TEXT
 
-        # get Key Phrases
+            phrasesText = self.getPhrases(text, text_analytics_client)
+            keyPhrasesText = []
+            for phrase in phrasesText:
+                phrase.replace('-', ' ')
+                wordList = re.sub("[^\w]", " ",  phrase).split()
+                keyPhrasesText.append(wordList)
 
-        phrasesText = self.getPhrases(title, text_analytics_client)
+            flattenedKeyPhrasesText = list(self.Aux.flatten(keyPhrasesText))
 
-        # -----------------------------
+            row['results']['keyPhrasesText'] = flattenedKeyPhrasesText
 
-        # analyze Title and Picture
+            # analyze TITLE TEXT and Picture
 
-        picTags = VCleanData[1]['results']['TagsInPic']
-        phrases = phrasesTitle + phrasesText
-        matchPic = self.Aux.textMatch(phrases, picTags)
-        VCleanData[1]['results']['TextMatchPic'] = matchPic
+            picTags = row['results']['TagsInPic']
+            phrases = flattenedKeyPhrasesText + flattenedKeyPhrasesTitle
+            matchPic = self.Aux.textMatch(phrases, picTags)
+            row['results']['TextMatchPic'] = matchPic[1]
 
-        # analyze creator and title
+            # analyze creator and TITLE TEXT
 
-        creator = [VCleanData[1]['algorithm']['creator']]
-        matchCreator = self.Aux.textMatch(phrases, creator)
-        VCleanData[1]['results']['TextMatchPic'] = matchCreator
+            creator = row['algorithm']['creator']
+            matchCreator = self.Aux.textMatch(phrases, creator)
+            row['results']['CreatorMatchTitle'] = matchCreator[1]
 
-        # analyze OCR in picture
+            # analyze OCR in picture
 
-        picUrl = {"url": VCleanData[1]['algorithm']['photo']}
-        picTags = self.getOCRTags(picUrl)
-        TextMatchOCR = self.Aux.textMatch(phrases, picTags)
-        VCleanData[1]['results']['TitleMatchPicOCR'] = TextMatchOCR
+            picUrl = row['algorithm']['photo'].lstrip("'")
+            OCRTags = self.getOCRTags(picUrl)
+            if len(OCRTags) > 0:
+                row['results']['OCRTags'] = OCRTags
+
+            TextMatchOCR = self.Aux.textMatch(phrases, OCRTags)
+            row['results']['OCRMatches'] = TextMatchOCR[0]
+            row['results']['TitleMatchPicOCR'] = TextMatchOCR[1]
+
+        stop = True
 
         return VCleanData
 

@@ -17,7 +17,7 @@ class Filter():
         counter = 0
 
         for pos, con in self.data.iterrows():
-            if counter <= 6:
+            if counter < 5:
                 try:
                     category = json.loads(con['category'])
                     creator = json.loads(con['creator'])
@@ -60,19 +60,24 @@ class Filter():
                             'hasColor': False,  # computerVision |
                             'isBright': True,  # computerVision |
                             'hasManyDomColors': False,  # computerVision |
-                            'hasWarmHue': False,  # computerVision |
+                            'hasWarmHueAccent': False,  # computerVision |
                             'TagsInPic': [],  # computerVision |
                             'NumOfObjectsInPic': 0,  # computerVision |
 
                             'lengthOfTitle': 0,  # textAnalytics |
                             'sentimentTitle': '',  # textAnalytics |
                             'sentiScoresTitle': [],  # textAnalytics |
+                            'keyPhrasesTitle': [], # textAnalytics |
                             'lengthOfText': 0,  # textAnalytics |
                             'sentimentText': '',  # textAnalytics |
                             'sentiScoresText': [],  # textAnalytics |
-                            'TitleMatchPicOCR': None,  # textAnalytics |
-                            'TextMatchPic': None,  # textAnalytics |
-                            'CreatorMatchTitle': None  # textAnalytics |
+                            'keyPhrasesText': [],  # textAnalytics |
+
+                            'TextMatchPic': False,  # textAnalytics |
+                            'CreatorMatchTitle': False,  # textAnalytics |+
+                            'TitleMatchPicOCR': False,  # textAnalytics |
+                            'OCRTags': False,
+                            'OCRMatches': False
                         }
                     }
                     rightData.append(singleProject)

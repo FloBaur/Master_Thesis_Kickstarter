@@ -1,3 +1,6 @@
+from collections import Iterable
+
+
 class Aux():
 
     def getHue(self, color):
@@ -41,15 +44,21 @@ class Aux():
 
         return answer
 
-    def textMatch(self, phrases, Tags):
+    def textMatch(self, phrases, tags):
 
-        result = None
+        result = False
 
-        if len(Tags) > 0 and len(phrases) > 0:
-            if bool(set(phrases) & set(Tags)):
+        match = {}
+
+        if len(tags) > 0 and len(phrases) > 0:
+
+            if bool(set(phrases).intersection(tags)):
+                match = set(phrases).intersection(tags)
                 result = True
 
-        return result
+        answer = [match, result]
+
+        return answer
 
     def getCats(self, data):
         categories = []
@@ -60,5 +69,15 @@ class Aux():
         setCat = set(categories)
 
         return setCat
+
+    def flatten(self, lis):
+        for item in lis:
+            if isinstance(item, Iterable) and not isinstance(item, str):
+                for x in self.flatten(item):
+                    yield x
+            else:
+                yield item
+
+        return lis
 
 
