@@ -1,6 +1,7 @@
 import pandas as pd
 from Aux import Aux
 import sys
+print(sys)
 sys.path.append('/home/florian/anaconda3/lib/python3.7/site-packages')
 import numpy as np
 from sklearn import datasets, linear_model
@@ -40,9 +41,9 @@ class Analysis():
 
         return results
 
-    def makeRegression(self, AlgoData):
+    def makeRegression(self, data):
 
-        targetVars = self.getTargetVariables(AlgoData)
+        targetVars = self.getTargetVariables(data)
         results = datasets.load_diabetes(targetVars)
         X = results.data
         y = results.target
@@ -88,9 +89,10 @@ class Analysis():
         orderedDf = df[column_order]
         replacedDf = orderedDf.replace({'unsure': 0, 'positive': 1, 'negative': 0, 'neutral': 0.5,
                                         'successful': 1, 'failed': 0, 'yes': 1, 'no': 0, True: 1, False: 0})
-        replacedDf[column_order].to_csv('./Data/singleRowResult.csv')
+        replacedDf[column_order].round(1).to_csv('./Data/singleRowResult.csv')
         descriptiveStatistic = replacedDf.describe()
-        descriptiveStatistic.to_csv('./Data/descriptiveStatisticResults.csv')
+        descriptiveStatistic.round(1).T.to_csv('./Data/descriptiveStatisticResults.csv')
+
         stop = True
 
     def buildCatsWithTargetVars(self, data):
