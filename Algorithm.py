@@ -247,8 +247,6 @@ class Algorithm():
             row['results']['OCRMatches'] = TextMatchOCR[0]
             row['results']['TitleMatchPicOCR'] = TextMatchOCR[1]
 
-        stop = True
-
         return VCleanData
 
 

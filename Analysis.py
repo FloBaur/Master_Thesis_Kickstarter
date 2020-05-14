@@ -1,12 +1,12 @@
 import pandas as pd
 from Aux import Aux
 import sys
+sys.path.append('/home/florian/anaconda3/lib/python3.7/site-packages')
 import numpy as np
 from sklearn import datasets, linear_model
 from sklearn.linear_model import LinearRegression
-import statsmodels.api as sm
+# import statsmodels.api as sm
 from scipy import stats
-sys.path.append('/home/florian/anaconda3/lib/python3.7/site-packages')
 
 
 class Analysis():
@@ -18,13 +18,17 @@ class Analysis():
 
         for row in data:
             targetVars = {
+                'category': row['filter']['category'],
                 'hasContent': row['results']['hasContent'],
                 'hasHuman': row['results']['hasHuman'],
                 'hasFace': row['results']['hasFace'],
                 'hasColor': row['results']['hasColor'],
+                'isBright': row['results']['isBright'],
                 'hasManyDomColors': row['results']['hasManyDomColors'],
                 'hasWarmHueAccent': row['results']['hasWarmHueAccent'],
-                'isBright': row['results']['isBright'],
+                'NumOfObjectsInPic': row['results']['NumOfObjectsInPic'],
+                'lengthOfTitle': row['results']['lengthOfTitle'],
+                'lengthOfText': row['results']['lengthOfText'],
                 'sentimentTitle': row['results']['sentimentTitle'],
                 'sentimentText': row['results']['sentimentText'],
                 'TitleMatchPicOCR': row['results']['TitleMatchPicOCR'],
@@ -73,18 +77,27 @@ class Analysis():
             [params, sd_b, ts_b, p_values]
         print(myDF3)
 
-    def descriptiveStats(self, AlgoData):
+    def descriptiveStats(self, data):
 
-        results = self.getTargetVariables(AlgoData)
+        results = self.getTargetVariables(data)
         df = pd.DataFrame(results)
-        df.describe()
-        df.to_csv('./Data/Results4.csv')
 
-    def buildCatsWithGoalVars(self, AlgoData):
+        column_order = ['category', 'hasContent', 'hasHuman', 'hasFace', 'hasColor', 'isBright', 'hasManyDomColors',
+                        'hasWarmHueAccent', 'sentimentTitle', 'sentimentText', 'TitleMatchPicOCR', 'TextMatchPic',
+                        'CreatorMatchTitle', 'NumOfObjectsInPic', 'lengthOfTitle', 'lengthOfText', 'successful']
+        orderedDf = df[column_order]
+        replacedDf = orderedDf.replace({'unsure': 0, 'positive': 1, 'negative': 0, 'neutral': 0.5,
+                                        'successful': 1, 'failed': 0, 'yes': 1, 'no': 0, True: 1, False: 0})
+        replacedDf[column_order].to_csv('./Data/singleRowResult.csv')
+        descriptiveStatistic = replacedDf.describe()
+        descriptiveStatistic.to_csv('./Data/descriptiveStatisticResults.csv')
+        stop = True
+
+    def buildCatsWithTargetVars(self, data):
 
         resultData = []
 
-        cats = self.Aux.getCats(AlgoData)
+        cats = self.Aux.getCats(data)
 
         for rowCat in cats:
             proCounter = 0
@@ -108,64 +121,64 @@ class Analysis():
             TextMatchPic = 0
             CreatorMatchTitle = 0
 
-            for row in AlgoData:
-                if row['results']['hasContent'] == 'yes':
-                    hasContent = hasContent + 1
-                if row['results']['hasHuman']:
-                    hasHuman = hasHuman + 1
-                if row['results']['hasFace']:
-                    hasFace = hasFace + 1
-                if row['results']['hasColor']:
-                    hasColor = hasColor + 1
-                if row['results']['isBright']:
-                    isBright = isBright + 1
-                if row['results']['isColorful']:
-                    hasManyDomColors = hasManyDomColors + 1
-                if row['results']['hasWarmHueAccent']:
-                    hasWarmHueAccent = hasWarmHueAccent + 1
-                if row['results']['sentimentTitle'] == 'positive':
-                    sentimentTitlePos = sentimentTitlePos + 1
-                if row['results']['sentimentTitle'] == 'neutral':
-                    sentimentTitleNeu = sentimentTitleNeu + 1
-                if row['results']['sentimentTitle'] == 'negative':
-                    sentimentTitleNeg = sentimentTitleNeg + 1
-                if row['results']['sentimentText'] == 'positive':
-                    sentimentTextPos = sentimentTextPos + 1
-                if row['results']['sentimentTitle'] == 'neutral':
-                    sentimentTextNeu = sentimentTextNeu + 1
-                if row['results']['sentimentTitle'] == 'negative':
-                    sentimentTextNeg = sentimentTextNeg + 1
-                if row['results']['TitleMatchPicOCR']:
-                    TitleMatchPicOCR = TitleMatchPicOCR + 1
-                if row['results']['TextMatchPic']:
-                    TextMatchPic = TextMatchPic + 1
-                if row['results']['CreatorMatchTitle']:
-                    CreatorMatchTitle = CreatorMatchTitle + 1
-
-                NumOfObjectsInPic = NumOfObjectsInPic + row['results']['NumOfObjectsInPic']
-                lengthOfTitle = lengthOfTitle + row['results']['lengthOfTitle']
-                lengthOfText = lengthOfText + row['results']['lengthOfText']
-                proCounter = proCounter + 1
+            for row in data:
+                if row['filter']['category'] == rowCat:
+                    proCounter = proCounter + 1
+                    NumOfObjectsInPic = NumOfObjectsInPic + row['results']['NumOfObjectsInPic']
+                    lengthOfTitle = lengthOfTitle + row['results']['lengthOfTitle']
+                    lengthOfText = lengthOfText + row['results']['lengthOfText']
+                    if row['results']['hasContent'] == 'yes':
+                        hasContent = hasContent + 1
+                    if row['results']['hasHuman']:
+                        hasHuman = hasHuman + 1
+                    if row['results']['hasFace']:
+                        hasFace = hasFace + 1
+                    if row['results']['hasColor']:
+                        hasColor = hasColor + 1
+                    if row['results']['isBright']:
+                        isBright = isBright + 1
+                    if row['results']['hasManyDomColors']:
+                        hasManyDomColors = hasManyDomColors + 1
+                    if row['results']['hasWarmHueAccent']:
+                        hasWarmHueAccent = hasWarmHueAccent + 1
+                    if row['results']['sentimentTitle'] == 'positive':
+                        sentimentTitlePos = sentimentTitlePos + 1
+                    if row['results']['sentimentTitle'] == 'neutral':
+                        sentimentTitleNeu = sentimentTitleNeu + 1
+                    if row['results']['sentimentTitle'] == 'negative':
+                        sentimentTitleNeg = sentimentTitleNeg + 1
+                    if row['results']['sentimentText'] == 'positive':
+                        sentimentTextPos = sentimentTextPos + 1
+                    if row['results']['sentimentText'] == 'neutral':
+                        sentimentTextNeu = sentimentTextNeu + 1
+                    if row['results']['sentimentText'] == 'negative':
+                        sentimentTextNeg = sentimentTextNeg + 1
+                    if row['results']['TitleMatchPicOCR']:
+                        TitleMatchPicOCR = TitleMatchPicOCR + 1
+                    if row['results']['TextMatchPic']:
+                        TextMatchPic = TextMatchPic + 1
+                    if row['results']['CreatorMatchTitle']:
+                        CreatorMatchTitle = CreatorMatchTitle + 1
 
             catResult = {
-                'Category': rowCat,
+                'category': rowCat,
                 'projects': proCounter,
-                'persons': hasHuman,
-                'faces': hasFace,
-                'color': hasColor,
-                'bright': isBright,
-                'many dominant colors': hasManyDomColors,
-                'warm hue accent': hasWarmHueAccent,
+                'persons': round(hasHuman / proCounter * 100),
+                'faces': round(hasFace / proCounter * 100),
+                'color': round(hasColor / proCounter * 100),
+                'bright': round(isBright / proCounter * 100),
+                'many dominant colors': round(hasManyDomColors / proCounter * 100),
+                'warm hue accent': round(hasWarmHueAccent / proCounter * 100),
+                'positive title': round(sentimentTitlePos / proCounter * 100),
+                'neutral title': round(sentimentTitleNeu / proCounter * 100),
+                'negative title': round(sentimentTitleNeg / proCounter * 100),
+                'positive text': round(sentimentTextPos / proCounter * 100),
+                'neutral text': round(sentimentTextNeu / proCounter * 100),
+                'negative text': round(sentimentTextNeg / proCounter * 100),
+                'OCR match text': round(TitleMatchPicOCR / proCounter * 100),
+                'text match pic tags': round(TextMatchPic / proCounter * 100),
+                'creator match title': round(CreatorMatchTitle / proCounter * 100),
                 'objects in pic AVG': round(NumOfObjectsInPic / proCounter),
-                'positive Title': sentimentTitlePos,
-                'neutral Title': sentimentTitleNeu,
-                'negative Title': sentimentTitleNeg,
-                'positive Text': sentimentTextPos,
-                'neutral Text': sentimentTextNeu,
-                'negative Text': sentimentTextNeg,
-                'writing in pic match text': TitleMatchPicOCR,
-                'text tags match pic Tags': TextMatchPic,
-                'creator match title': CreatorMatchTitle,
                 'length of title AVG': round(lengthOfTitle / proCounter),
                 'length of text AVG': round(lengthOfText / proCounter)
             }
@@ -173,8 +186,9 @@ class Analysis():
             resultData.append(catResult)
 
         df = pd.DataFrame(resultData)
-        column_order1 = ['projects', 'persons', 'faces', 'color', 'bright', 'many dominant colors', 'warm hue accent',
-                         'objects in pic AVG', 'positive Title', 'neutral Title', 'negative Title', 'positive Text',
-                         'neutral Text', 'negative Text', 'writing in pic match text', 'text tags match pic Tags',
-                         'creator match title', 'length of title AVG', 'length of text AVG']
-        df[column_order1].to_csv('./Data/Results3.csv')
+        column_order1 = ['category', 'projects', 'persons', 'faces', 'color', 'bright', 'many dominant colors',
+                         'warm hue accent', 'positive title', 'neutral title', 'negative title',
+                         'positive text', 'neutral text', 'negative text', 'OCR match text',
+                         'text match pic tags', 'creator match title', 'objects in pic AVG', 'length of title AVG',
+                         'length of text AVG']
+        df[column_order1].to_csv('./Data/categoryResult.csv')

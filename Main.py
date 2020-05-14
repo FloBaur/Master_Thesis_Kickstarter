@@ -1,6 +1,6 @@
 from Filter import Filter
 from Algorithm import Algorithm
-# from Analysis import Analysis
+from Analysis import Analysis
 
 # get raw Data from CSV File
 
@@ -26,17 +26,17 @@ VCleanData = Algorithm.computerVision(cleanedData)  # UnitTest!!! -> passed, che
 
 # pass data to MS DL algorithm for analyzing the content of project text
 
-TVCleanData = Algorithm.textAnalytics(VCleanData)  # UnitTest!!!
+TVCleanData = Algorithm.textAnalytics(VCleanData)  # UnitTest!!! -> passed, check with DV
 
 # group data by categories
 
-# Analysis = Analysis()
+Analysis = Analysis()
 
-# Analysis.buildCatsWithGoalVars(TVCleanData)  # UnitTest!!!
+Analysis.buildCatsWithTargetVars(TVCleanData)
 
 # build Statistics
 
-# Analysis.descriptiveStats(TVCleanData)  # UnitTest!!!
+Analysis.descriptiveStats(TVCleanData)  # UnitTest!!!
 
 # make Regression
 
