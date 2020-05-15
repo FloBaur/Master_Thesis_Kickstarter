@@ -27,7 +27,7 @@ class Analysis():
                 'lengthOfText': row['results']['lengthOfText'],
                 'sentimentTitle': row['results']['sentimentTitle'],
                 'sentimentText': row['results']['sentimentText'],
-                'TitleMatchPicOCR': row['results']['TitleMatchPicOCR'],
+                'TitleMatchPicOCR': row['results']['TitleMatchPicOCR'],  # doesn't work because of Api regulation
                 'TextMatchPic': row['results']['TextMatchPic'],
                 'CreatorMatchTitle': row['results']['CreatorMatchTitle'],
                 'successful': row['algorithm']['state']
@@ -51,60 +51,25 @@ class Analysis():
     def makeRegression(self, data):
 
         array = self.getTargetVariables(data)
+
         rawDf = pd.DataFrame(array)
         df = rawDf.replace({'unsure': 0, 'positive': 1, 'negative': 0, 'neutral': 0.5,
                             'successful': 1, 'failed': 0, 'yes': 1, 'no': 0, True: 1, False: 0})
-        y = np.array(df['successful'].tolist())
+        y = np.array(df['successful'])
         regResults = {}
 
-        test2 = df.keys()
+        TEST = ['hasHuman', 'hasFace', 'hasColor', 'isBright', 'hasManyDomColors', 'hasWarmHueAccent',
+                'NumOfObjectsInPic', 'lengthOfTitle', 'lengthOfText', 'sentimentTitle', 'sentimentText',
+                'TextMatchPic', 'CreatorMatchTitle']
 
-        x = np.array(df['hasContent'].tolist())
-        regResults.update({'hasContent': self.plotAndRegress(x, y)})
+        for key in TEST:
 
-        test3 = self.plotAndRegress(x, y)
-
-        x = np.array(df['hasHuman'].tolist())
-        regResults.update({'hasHuman': self.plotAndRegress(x, y)})
-
-        x = np.array(df['hasFace'].tolist())
-        regResults.update({'hasFace': self.plotAndRegress(x, y)})
-
-        # x = np.array(df['hasColor'].tolist())
-        # regResults.update({'hasColor': self.plotAndRegress(x, y)})
-        #
-        # x = np.array(df['isBright'].tolist())
-        # regResults.update({'isBright': self.plotAndRegress(x, y)})
-        #
-        # x = np.array(df['hasManyDomColors'].tolist())
-        # regResults.update({'hasManyDomColors': self.plotAndRegress(x, y)})
-        #
-        # x = np.array(df['hasWarmHueAccent'].tolist())
-        # regResults.update({'hasWarmHueAccent': self.plotAndRegress(x, y)})
-        #
-        # x = np.array(df['NumOfObjectsInPic'].tolist())
-        # regResults.update({'NumOfObjectsInPic': self.plotAndRegress(x, y)})
-        #
-        # x = np.array(df['lengthOfTitle'].tolist())
-        # regResults.update({'lengthOfTitle': self.plotAndRegress(x, y)})
-        #
-        # x = np.array(df['lengthOfText'].tolist())
-        # regResults.update({'lengthOfText': self.plotAndRegress(x, y)})
-        #
-        # x = np.array(df['sentimentTitle'].tolist())
-        # regResults.update({'sentimentTitle': self.plotAndRegress(x, y)})
-        #
-        # x = np.array(df['sentimentText'].tolist())
-        # regResults.update({'sentimentText': self.plotAndRegress(x, y)})
-        #
-        # x = np.array(df['TitleMatchPicOCR'].tolist())
-        # regResults.update({'TitleMatchPicOCR': self.plotAndRegress(x, y)})
-        #
-        # x = np.array(df['TextMatchPic'].tolist())
-        # regResults.update({'TextMatchPic': self.plotAndRegress(x, y)})
-        #
-        # x = np.array(df['CreatorMatchTitle'].tolist())
-        # regResults.update({'CreatorMatchTitle': self.plotAndRegress(x, y)})
+            x = np.array(df[key])
+            answer = self.plotAndRegress(x, y)
+            regResults.update({key: {
+                'r2': answer[0],
+                'significance': answer[1]
+            }})
 
         stop = True
 

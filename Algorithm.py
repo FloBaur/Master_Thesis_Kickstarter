@@ -238,14 +238,14 @@ class Algorithm():
 
             # analyze OCR in picture
 
-            picUrl = row['algorithm']['photo'].lstrip("'")
-            OCRTags = self.getOCRTags(picUrl)
-            if len(OCRTags) > 0:
-                row['results']['OCRTags'] = OCRTags
-
-            TextMatchOCR = self.Aux.textMatch(phrases, OCRTags)
-            row['results']['OCRMatches'] = TextMatchOCR[0]
-            row['results']['TitleMatchPicOCR'] = TextMatchOCR[1]
+            # picUrl = row['algorithm']['photo'].lstrip("'")
+            # OCRTags = self.getOCRTags(picUrl)
+            # if len(OCRTags) > 0:
+            #     row['results']['OCRTags'] = OCRTags
+            #
+            # TextMatchOCR = self.Aux.textMatch(phrases, OCRTags)
+            # row['results']['OCRMatches'] = TextMatchOCR[0]
+            # row['results']['TitleMatchPicOCR'] = TextMatchOCR[1]
 
         return VCleanData
 
