@@ -22,11 +22,11 @@ DataFilter.overViewCleanedData(cleanedData)
 
 Algorithm = Algorithm()
 
-VCleanData = Algorithm.computerVision(cleanedData)  # UnitTest!!! -> passed, check with DV
+VCleanData = Algorithm.computerVision(cleanedData)
 
 # pass data to MS DL algorithm for analyzing the content of project text
 
-TVCleanData = Algorithm.textAnalytics(VCleanData)  # UnitTest!!! -> passed, check with DV
+TVCleanData = Algorithm.textAnalytics(VCleanData)
 
 # group data by categories
 
@@ -36,11 +36,11 @@ Analysis.buildCatsWithTargetVars(TVCleanData)
 
 # build Statistics
 
-Analysis.descriptiveStats(TVCleanData)  # UnitTest!!!
+Analysis.descriptiveStats(TVCleanData)
 
 # make Regression
 
-# Analysis.makeRegression(TVCleanData)  # UnitTest!!!
+Analysis.makeRegression(TVCleanData)  # TEST
 
 
 

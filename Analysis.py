@@ -1,13 +1,8 @@
 import pandas as pd
 from Aux import Aux
-import sys
-print(sys)
-sys.path.append('/home/florian/anaconda3/lib/python3.7/site-packages')
+import matplotlib.pyplot as plt
+from scipy.stats import *
 import numpy as np
-from sklearn import datasets, linear_model
-from sklearn.linear_model import LinearRegression
-# import statsmodels.api as sm
-from scipy import stats
 
 
 class Analysis():
@@ -41,42 +36,77 @@ class Analysis():
 
         return results
 
+    def plotAndRegress(self, x, y):
+        p1 = np.polyfit(x, y, 1)
+
+        plt.plot(x, y, 'o')
+        plt.plot(x, np.polyval(p1, x), 'r-')
+        plt.show()
+
+        slope, intercept, r_value, p_value, std_err = linregress(x, y)
+        r_2 = pow(r_value, 2)
+
+        return r_2, p_value
+
     def makeRegression(self, data):
 
-        targetVars = self.getTargetVariables(data)
-        results = datasets.load_diabetes(targetVars)
-        X = results.data
-        y = results.target
+        array = self.getTargetVariables(data)
+        rawDf = pd.DataFrame(array)
+        df = rawDf.replace({'unsure': 0, 'positive': 1, 'negative': 0, 'neutral': 0.5,
+                            'successful': 1, 'failed': 0, 'yes': 1, 'no': 0, True: 1, False: 0})
+        y = np.array(df['successful'].tolist())
+        regResults = {}
 
-        X2 = sm.add_constant(X)
-        est = sm.OLS(y, X2)
-        est2 = est.fit()
-        print('Regression')
-        print(est2.summary())
+        test2 = df.keys()
 
-        lm = LinearRegression()
-        lm.fit(X, y)
-        params = np.append(lm.intercept_, lm.coef_)
-        predictions = lm.predict(X)
+        x = np.array(df['hasContent'].tolist())
+        regResults.update({'hasContent': self.plotAndRegress(x, y)})
 
-        newX = pd.DataFrame({"Constant":np.ones(len(X))}).join(pd.DataFrame(X))
-        MSE = (sum((y-predictions)**2))/(len(newX)-len(newX.columns))
+        test3 = self.plotAndRegress(x, y)
 
-        var_b = MSE*(np.linalg.inv(np.dot(newX.T,newX)).diagonal())
-        sd_b = np.sqrt(var_b)
-        ts_b = params / sd_b
+        x = np.array(df['hasHuman'].tolist())
+        regResults.update({'hasHuman': self.plotAndRegress(x, y)})
 
-        p_values = [2*(1-stats.t.cdf(np.abs(i), (len(newX)-1))) for i in ts_b]
+        x = np.array(df['hasFace'].tolist())
+        regResults.update({'hasFace': self.plotAndRegress(x, y)})
 
-        sd_b = np.round(sd_b, 3)
-        ts_b = np.round(ts_b, 3)
-        p_values = np.round(p_values, 3)
-        params = np.round(params, 4)
+        # x = np.array(df['hasColor'].tolist())
+        # regResults.update({'hasColor': self.plotAndRegress(x, y)})
+        #
+        # x = np.array(df['isBright'].tolist())
+        # regResults.update({'isBright': self.plotAndRegress(x, y)})
+        #
+        # x = np.array(df['hasManyDomColors'].tolist())
+        # regResults.update({'hasManyDomColors': self.plotAndRegress(x, y)})
+        #
+        # x = np.array(df['hasWarmHueAccent'].tolist())
+        # regResults.update({'hasWarmHueAccent': self.plotAndRegress(x, y)})
+        #
+        # x = np.array(df['NumOfObjectsInPic'].tolist())
+        # regResults.update({'NumOfObjectsInPic': self.plotAndRegress(x, y)})
+        #
+        # x = np.array(df['lengthOfTitle'].tolist())
+        # regResults.update({'lengthOfTitle': self.plotAndRegress(x, y)})
+        #
+        # x = np.array(df['lengthOfText'].tolist())
+        # regResults.update({'lengthOfText': self.plotAndRegress(x, y)})
+        #
+        # x = np.array(df['sentimentTitle'].tolist())
+        # regResults.update({'sentimentTitle': self.plotAndRegress(x, y)})
+        #
+        # x = np.array(df['sentimentText'].tolist())
+        # regResults.update({'sentimentText': self.plotAndRegress(x, y)})
+        #
+        # x = np.array(df['TitleMatchPicOCR'].tolist())
+        # regResults.update({'TitleMatchPicOCR': self.plotAndRegress(x, y)})
+        #
+        # x = np.array(df['TextMatchPic'].tolist())
+        # regResults.update({'TextMatchPic': self.plotAndRegress(x, y)})
+        #
+        # x = np.array(df['CreatorMatchTitle'].tolist())
+        # regResults.update({'CreatorMatchTitle': self.plotAndRegress(x, y)})
 
-        myDF3 = pd.DataFrame()
-        myDF3["Coefficients"], myDF3["Standard Errors"], myDF3["t values"], myDF3["Probabilities"] = \
-            [params, sd_b, ts_b, p_values]
-        print(myDF3)
+        stop = True
 
     def descriptiveStats(self, data):
 
@@ -92,8 +122,6 @@ class Analysis():
         replacedDf[column_order].round(1).to_csv('./Data/singleRowResult.csv')
         descriptiveStatistic = replacedDf.describe()
         descriptiveStatistic.round(1).T.to_csv('./Data/descriptiveStatisticResults.csv')
-
-        stop = True
 
     def buildCatsWithTargetVars(self, data):
 
