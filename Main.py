@@ -6,6 +6,7 @@ from Analysis import Analysis
 
 DataFilter = Filter()
 
+stop = True
 # extract relevant data
 
 data = DataFilter.cleanColumns()
