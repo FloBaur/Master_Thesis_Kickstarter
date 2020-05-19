@@ -1,0 +1,4 @@
+,category,hasContent,hasHuman,hasFace,hasColor,isBright,hasManyDomColors,hasWarmHueAccent,sentimentTitle,sentimentText,TitleMatchPicOCR,TextMatchPic,CreatorMatchTitle,NumOfObjectsInPic,lengthOfTitle,lengthOfText,successful
+0,Food,1,0,0,1,1,0,1,1.0,1.0,0,0,0,1,50,115,0
+1,Film & Video,1,1,1,1,1,1,0,0.0,0.5,0,0,0,20,33,129,0
+2,Photography,0,0,0,1,1,0,1,0.5,0.5,0,0,0,1,20,135,0

@@ -1,0 +1,12 @@
+,category,projects,persons,faces,color,bright,many dominant colors,warm hue accent,positive title,neutral title,negative title,positive text,neutral text,negative text,OCR match text,text match pic tags,creator match title,objects in pic AVG,length of title AVG,length of text AVG
+0,Crafts,10,10,10,90,80,10,40,0,90,10,40,50,10,0,30,0,14,30,88
+1,Music,11,36,9,64,73,9,18,0,91,9,18,45,27,0,0,0,8,32,110
+2,Comics,47,43,2,77,87,15,51,0,72,28,11,43,45,0,0,9,6,34,114
+3,Publishing,58,21,7,74,91,7,47,5,81,14,38,45,14,0,17,3,10,35,115
+4,Art,43,16,5,86,93,7,44,12,79,9,16,67,16,0,14,2,14,34,123
+5,Photography,31,23,6,81,84,16,58,13,77,10,39,58,0,0,23,10,17,36,114
+6,Games,45,16,2,73,84,22,44,4,78,18,22,47,31,0,4,9,8,33,97
+7,Technology,1,100,0,100,100,0,0,0,100,0,0,100,0,0,0,0,29,33,55
+8,Food,51,18,6,84,92,16,53,4,88,8,37,53,8,0,16,8,15,34,113
+9,Film & Video,46,43,13,87,91,13,46,9,76,15,30,30,35,0,11,4,13,28,119
+10,Dance,3,33,0,67,100,0,33,0,100,0,33,67,0,0,0,0,11,40,127
