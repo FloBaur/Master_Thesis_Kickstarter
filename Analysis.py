@@ -30,6 +30,27 @@ class Analysis():
                 'TitleMatchPicOCR': row['results']['TitleMatchPicOCR'],  # doesn't work because of Api regulation
                 'TextMatchPic': row['results']['TextMatchPic'],
                 'CreatorMatchTitle': row['results']['CreatorMatchTitle'],
+
+                'CLASS_fewObjects': row['results']['CLASS_fewObjects'],
+                'CLASS_normalObjects': row['results']['CLASS_normalObjects'],
+                'CLASS_manyObjects': row['results']['CLASS_manyObjects'],
+
+                'CLASS_shortTitle': row['results']['CLASS_shortTitle'],
+                'CLASS_normalTitle': row['results']['CLASS_normalTitle'],
+                'CLASS_longTitle': row['results']['CLASS_longTitle'],
+
+                'CLASS_negativeTitle': row['results']['CLASS_negativeTitle'],
+                'CLASS_neutralTitle': row['results']['CLASS_neutralTitle'],
+                'CLASS_positiveTitle': row['results']['CLASS_positiveTitle'],
+
+                'CLASS_shortText': row['results']['CLASS_shortText'],
+                'CLASS_normalText': row['results']['CLASS_normalText'],
+                'CLASS_longText': row['results']['CLASS_longText'],
+
+                'CLASS_negativeText': row['results']['CLASS_negativeText'],
+                'CLASS_neutralText': row['results']['CLASS_neutralText'],
+                'CLASS_positiveText': row['results']['CLASS_positiveText'],
+
                 'successful': row['algorithm']['state']
             }
             results.append(targetVars)
@@ -37,6 +58,8 @@ class Analysis():
         return results
 
     def plotAndRegress(self, x, y):
+
+        isSignificant = False
         p1 = np.polyfit(x, y, 1)
 
         plt.plot(x, y, 'o')
@@ -46,7 +69,10 @@ class Analysis():
         slope, intercept, r_value, p_value, std_err = linregress(x, y)
         r_2 = pow(r_value, 2)
 
-        return r_2, p_value
+        if p_value < 0.1:
+            isSignificant = True
+
+        return r_2, p_value, isSignificant
 
     def makeRegression(self, data):
 
@@ -54,24 +80,29 @@ class Analysis():
 
         rawDf = pd.DataFrame(array)
         df = rawDf.replace({'unsure': 0, 'positive': 1, 'negative': 0, 'neutral': 0.5,
-                            'successful': 1, 'failed': 0, 'yes': 1, 'no': 0, True: 1, False: 0})
+                            'successful': 1, 'failed': 0, 'yes': 1, 'no': 0, True: 1, False: 0, 'mixed': 0.5})
         y = np.array(df['successful'])
         regResults = {}
 
-        TEST = ['hasHuman', 'hasFace', 'hasColor', 'isBright', 'hasManyDomColors', 'hasWarmHueAccent',
-                'NumOfObjectsInPic', 'lengthOfTitle', 'lengthOfText', 'sentimentTitle', 'sentimentText',
-                'TextMatchPic', 'CreatorMatchTitle']
+        CATS = ['hasHuman', 'hasFace', 'hasColor', 'isBright', 'hasManyDomColors', 'hasWarmHueAccent', 'TextMatchPic',
+                'CreatorMatchTitle',  # OCR Variable missing
+                'CLASS_manyObjects', 'CLASS_normalObjects', 'CLASS_fewObjects',
+                'CLASS_positiveTitle', 'CLASS_neutralTitle', 'CLASS_negativeTitle',
+                'CLASS_longTitle', 'CLASS_normalTitle', 'CLASS_shortTitle',
+                'CLASS_longText', 'CLASS_normalText', 'CLASS_shortText',
+                'CLASS_positiveText', 'CLASS_neutralText', 'CLASS_negativeText']
 
-        for key in TEST:
+        stop = True
+
+        for key in CATS:
 
             x = np.array(df[key])
             answer = self.plotAndRegress(x, y)
             regResults.update({key: {
                 'r2': answer[0],
-                'significance': answer[1]
+                'significance': answer[1],
+                'is_Significant': answer[2]
             }})
-
-        stop = True
 
     def descriptiveStats(self, data):
 
@@ -83,10 +114,11 @@ class Analysis():
                         'CreatorMatchTitle', 'NumOfObjectsInPic', 'lengthOfTitle', 'lengthOfText', 'successful']
         orderedDf = df[column_order]
         replacedDf = orderedDf.replace({'unsure': 0, 'positive': 1, 'negative': 0, 'neutral': 0.5,
-                                        'successful': 1, 'failed': 0, 'yes': 1, 'no': 0, True: 1, False: 0})
-        replacedDf[column_order].round(1).to_csv('./Data/singleRowResult.csv')
+                                        'successful': 1, 'failed': 0, 'yes': 1, 'no': 0, True: 1, False: 0,
+                                        'mixed': 0.5})
+        replacedDf[column_order].round(1).to_csv('./Data/ANALYSIS_singleRow.csv')
         descriptiveStatistic = replacedDf.describe()
-        descriptiveStatistic.round(1).T.to_csv('./Data/descriptiveStatisticResults.csv')
+        descriptiveStatistic.round(1).T.to_csv('./Data/ANALYSIS_DescriptiveStatistics.csv')
 
     def buildCatsWithTargetVars(self, data):
 
@@ -136,17 +168,17 @@ class Analysis():
                         hasManyDomColors = hasManyDomColors + 1
                     if row['results']['hasWarmHueAccent']:
                         hasWarmHueAccent = hasWarmHueAccent + 1
-                    if row['results']['sentimentTitle'] == 'positive':
+                    if row['results']['CLASS_positiveTitle']:
                         sentimentTitlePos = sentimentTitlePos + 1
-                    if row['results']['sentimentTitle'] == 'neutral':
+                    if row['results']['CLASS_neutralTitle']:
                         sentimentTitleNeu = sentimentTitleNeu + 1
-                    if row['results']['sentimentTitle'] == 'negative':
+                    if row['results']['CLASS_negativeTitle']:
                         sentimentTitleNeg = sentimentTitleNeg + 1
-                    if row['results']['sentimentText'] == 'positive':
+                    if row['results']['CLASS_positiveText']:
                         sentimentTextPos = sentimentTextPos + 1
-                    if row['results']['sentimentText'] == 'neutral':
+                    if row['results']['CLASS_neutralText']:
                         sentimentTextNeu = sentimentTextNeu + 1
-                    if row['results']['sentimentText'] == 'negative':
+                    if row['results']['CLASS_negativeText']:
                         sentimentTextNeg = sentimentTextNeg + 1
                     if row['results']['TitleMatchPicOCR']:
                         TitleMatchPicOCR = TitleMatchPicOCR + 1
@@ -186,4 +218,4 @@ class Analysis():
                          'positive text', 'neutral text', 'negative text', 'OCR match text',
                          'text match pic tags', 'creator match title', 'objects in pic AVG', 'length of title AVG',
                          'length of text AVG']
-        df[column_order1].to_csv('./Data/categoryResult.csv')
+        df[column_order1].to_csv('./Data/ANALYSIS_CategoryResult.csv')

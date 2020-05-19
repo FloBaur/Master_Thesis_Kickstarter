@@ -17,7 +17,7 @@ class Filter():
         counter = 0
 
         for pos, con in self.data.iterrows():
-            if counter <= 500:
+            if counter <= 4:
                 try:
                     category = json.loads(con['category'])
                     creator = json.loads(con['creator'])
@@ -64,6 +64,10 @@ class Filter():
                             'TagsInPic': [],  # computerVision |
                             'NumOfObjectsInPic': 0,  # computerVision |-
 
+                            'CLASS_fewObjects': False,
+                            'CLASS_normalObjects': False,
+                            'CLASS_manyObjects': False,
+
                             'lengthOfTitle': 0,  # textAnalytics |-
                             'sentimentTitle': '',  # textAnalytics |-
                             'sentiScoresTitle': [],  # textAnalytics |
@@ -72,6 +76,22 @@ class Filter():
                             'sentimentText': '',  # textAnalytics |-
                             'sentiScoresText': [],  # textAnalytics |
                             'keyPhrasesText': [],  # textAnalytics |
+
+                            'CLASS_shortTitle': False,
+                            'CLASS_normalTitle': False,
+                            'CLASS_longTitle': False,
+
+                            'CLASS_negativeTitle': False,
+                            'CLASS_neutralTitle': False,
+                            'CLASS_positiveTitle': False,
+
+                            'CLASS_shortText': False,
+                            'CLASS_normalText': False,
+                            'CLASS_longText': False,
+
+                            'CLASS_negativeText': False,
+                            'CLASS_neutralText': False,
+                            'CLASS_positiveText': False,
 
                             'TextMatchPic': False,  # textAnalytics |-
                             'CreatorMatchTitle': False,  # textAnalytics |-
@@ -161,5 +181,5 @@ class Filter():
         column_order1 = ['category', 'duration', 'success', 'goal', 'pledged', 'backers', '%pledged']
         column_order2 = ['Category', 'Project counter', 'Successful projects', 'Success rate AVG[%]', 'Goal AVG[$]',
                          'Funding ratio AVG[%]', 'Backers AVG', 'Duration AVG[days]']
-        df[column_order1].to_csv('./Data/singleAnalysis.csv')
-        df2[column_order2].to_csv('./Data/categoryAnalysis.csv')
+        df[column_order1].to_csv('./Data/FILTER_singleRow.csv')
+        df2[column_order2].to_csv('./Data/FILTER_categoryAnalysis.csv')

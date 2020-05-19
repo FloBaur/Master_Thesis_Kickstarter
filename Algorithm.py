@@ -43,6 +43,12 @@ class Algorithm():
                 tags = description_results.tags
                 row['results']['TagsInPic'] = tags
                 row['results']['NumOfObjectsInPic'] = len(tags)
+                if len(tags) <= 5:
+                    row['results']['CLASS_fewObjects'] = True
+                elif len(tags) >= 20:
+                    row['results']['CLASS_manyObjects'] = True
+                else:
+                    row['results']['CLASS_normalObjects'] = True
 
                 for caption in description_results.captions:
                     confidence = caption.confidence * 100
@@ -183,7 +189,22 @@ class Algorithm():
             sentimentTitle = self.getLengthSentiment(title, text_analytics_client)
 
             row['results']['lengthOfTitle'] = sentimentTitle[0]
+
+            if sentimentTitle[0] >= 47:
+                row['results']['CLASS_longTitle'] = True
+            elif sentimentTitle[0] <= 21:
+                row['results']['CLASS_shortTitle'] = True
+            else:
+                row['results']['_normalTitle'] = True
+
             row['results']['sentimentTitle'] = sentimentTitle[1]
+            if sentimentTitle[1] == 'positive':
+                row['results']['CLASS_positiveTitle'] = True
+            elif sentimentTitle[1] == 'neutral':
+                row['results']['CLASS_neutralTitle'] = True
+            else:
+                row['results']['CLASS_negativeTitle'] = True
+
             row['results']['sentiScoresTitle'] = sentimentTitle[2]  # pos neu neg share
 
             # get Key Phrases in TITLE
@@ -207,7 +228,21 @@ class Algorithm():
             sentimentText = self.getLengthSentiment(text, text_analytics_client)
 
             row['results']['lengthOfText'] = sentimentText[0]
+            if len(sentimentText[0]) >= 132:
+                row['results']['CLASS_longText'] = True
+            elif sentimentText[0] <= 101:
+                row['results']['CLASS_shortText'] = True
+            else:
+                row['results']['_normalText'] = True
+
             row['results']['sentimentText'] = sentimentText[1]
+            if sentimentText[1] == 'positive':
+                row['results']['CLASS_positiveText'] = True
+            elif sentimentText[1] == 'neutral':
+                row['results']['CLASS_neutralText'] = True
+            else:
+                row['results']['CLASS_negativeText'] = True
+
             row['results']['sentiScoresText'] = sentimentText[2]
 
             # get Key Phrases TEXT
