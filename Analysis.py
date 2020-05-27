@@ -76,7 +76,7 @@ class Analysis():
         if p_value < 0.05:
             isSignificant = True
 
-        return r_2, p_value, isSignificant
+        return r_2, p_value, isSignificant, slope
 
     def makeRegression(self, data):
 
@@ -102,16 +102,22 @@ class Analysis():
 
             x = df[key]
             validCheckSum = 0
+            coefficient = '-'
             for val in x:
                 validCheckSum = validCheckSum + val
             if validCheckSum != 0:
 
                 X = np.array(x)
                 answer = self.plotAndRegress(X, y)
+                if answer[3] > 0:
+                    coefficient = '+'
+
                 regResults.update({key: {
                     'r2': answer[0],
                     'significance': answer[1],
-                    'is_Significant': answer[2]
+                    'is_Significant': answer[2],
+                    'slope': answer[3],
+                    'coefficient': coefficient
                 }})
 
         dfResult = pd.DataFrame(regResults)

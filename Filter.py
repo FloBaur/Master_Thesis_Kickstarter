@@ -17,7 +17,7 @@ class Filter():
         counter = 0
 
         for pos, con in self.data.iterrows():
-            if counter <= 700:
+            if counter <= 20:
                 try:
                     category = json.loads(con['category'])
                     creator = json.loads(con['creator'])
