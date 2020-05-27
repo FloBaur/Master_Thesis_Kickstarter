@@ -1,12 +1,12 @@
 from Filter import Filter
 from Algorithm import Algorithm
 from Analysis import Analysis
+from Aux import Aux
 
 # get raw Data from CSV File
 
 DataFilter = Filter()
 
-stop = True
 # extract relevant data
 
 data = DataFilter.cleanColumns()
@@ -29,19 +29,25 @@ VCleanData = Algorithm.computerVision(cleanedData)
 
 TVCleanData = Algorithm.textAnalytics(VCleanData)
 
+# check Hypothesis
+
+Aux = Aux()
+
+readyData = Aux.checkHypothesis(TVCleanData)
+
 # group data by categories
 
 Analysis = Analysis()
 
-Analysis.buildCatsWithTargetVars(TVCleanData)
+Analysis.buildCatsWithTargetVars(readyData)
 
 # build Statistics
 
-Analysis.descriptiveStats(TVCleanData)
+Analysis.descriptiveStats(readyData)
 
 # make Regression
 
-Analysis.makeRegression(TVCleanData)  # TEST
+Analysis.makeRegression(readyData)
 
 
 

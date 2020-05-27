@@ -17,7 +17,7 @@ class Filter():
         counter = 0
 
         for pos, con in self.data.iterrows():
-            if counter <= 4:
+            if counter <= 700:
                 try:
                     category = json.loads(con['category'])
                     creator = json.loads(con['creator'])
@@ -52,52 +52,56 @@ class Filter():
                             'hue': 0
                         },
                         'results': {
-                            'hasContent': 'no',  # computerVision  |-
+                            'hasContent': 'no',  # computerVision  |
                             'content': [],  # computerVision  |
                             'imageCategory': [],  # computerVision  |
-                            'hasHuman': 0,  # computerVision |-
-                            'hasFace': False,  # computerVision |-
-                            'hasColor': False,  # computerVision |-
-                            'isBright': True,  # computerVision |-
-                            'hasManyDomColors': False,  # computerVision |-
-                            'hasWarmHueAccent': False,  # computerVision |-
+                            'hasHuman': 0,  # computerVision | Emo x
+                            'hasFace': False,  # computerVision | Emo  -------> zweite Variante
+                            'hasColor': False,  # computerVision | Emo
+                            'isBright': True,  # computerVision | Emo
+                            'hasManyDomColors': False,  # computerVision |
+                            'hasWarmHueAccent': False,  # computerVision | Emo
                             'TagsInPic': [],  # computerVision |
-                            'NumOfObjectsInPic': 0,  # computerVision |-
+                            'NumOfObjectsInPic': 0,  # computerVision |
 
-                            'CLASS_fewObjects': False,
-                            'CLASS_normalObjects': False,
+                            'CLASS_fewObjects': False,   # INFO
+                            'CLASS_normalObjects': False,  # INFO
                             'CLASS_manyObjects': False,
 
-                            'lengthOfTitle': 0,  # textAnalytics |-
-                            'sentimentTitle': '',  # textAnalytics |-
+                            'lengthOfTitle': 0,  # textAnalytics |
+                            'sentimentTitle': '',  # textAnalytics |
                             'sentiScoresTitle': [],  # textAnalytics |
                             'keyPhrasesTitle': [], # textAnalytics |
-                            'lengthOfText': 0,  # textAnalytics |-
-                            'sentimentText': '',  # textAnalytics |-
+                            'lengthOfText': 0,  # textAnalytics |
+                            'sentimentText': '',  # textAnalytics |
                             'sentiScoresText': [],  # textAnalytics |
                             'keyPhrasesText': [],  # textAnalytics |
 
-                            'CLASS_shortTitle': False,
-                            'CLASS_normalTitle': False,
+                            'CLASS_shortTitle': False,   # INFO
+                            'CLASS_normalTitle': False,  # INFO
                             'CLASS_longTitle': False,
 
                             'CLASS_negativeTitle': False,
-                            'CLASS_neutralTitle': False,
-                            'CLASS_positiveTitle': False,
+                            'CLASS_neutralTitle': False,  # Emo # INFO
+                            'CLASS_positiveTitle': False,  # Emo # INFO
 
-                            'CLASS_shortText': False,
-                            'CLASS_normalText': False,
+                            'CLASS_shortText': False,  # INFO
+                            'CLASS_normalText': False,   # INFO
                             'CLASS_longText': False,
 
                             'CLASS_negativeText': False,
-                            'CLASS_neutralText': False,
-                            'CLASS_positiveText': False,
+                            'CLASS_neutralText': False,  # INFO
+                            'CLASS_positiveText': False,  # Emo
 
-                            'TextMatchPic': False,  # textAnalytics |-
-                            'CreatorMatchTitle': False,  # textAnalytics |-
-                            'TitleMatchPicOCR': False,  # textAnalytics |-
+                            'TextMatchPic': False,  # textAnalytics | TRUST -------> zweite Variante
+                            'CreatorMatchTitle': False,  # textAnalytics | TRUST
+                            'TitleMatchPicOCR': False,  # textAnalytics | TRUST
                             'OCRTags': False,
-                            'OCRMatches': False
+                            'OCRMatches': False,
+
+                            'H1_Emotion': False,
+                            'H2_ClearMassage': False,
+                            'H3_Trust': False
                         }
                     }
                     rightData.append(singleProject)

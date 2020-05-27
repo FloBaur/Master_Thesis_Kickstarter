@@ -27,7 +27,7 @@ class Analysis():
                 'lengthOfText': row['results']['lengthOfText'],
                 'sentimentTitle': row['results']['sentimentTitle'],
                 'sentimentText': row['results']['sentimentText'],
-                'TitleMatchPicOCR': row['results']['TitleMatchPicOCR'],  # doesn't work because of Api regulation
+                'TitleMatchPicOCR': row['results']['TitleMatchPicOCR'],
                 'TextMatchPic': row['results']['TextMatchPic'],
                 'CreatorMatchTitle': row['results']['CreatorMatchTitle'],
 
@@ -51,6 +51,10 @@ class Analysis():
                 'CLASS_neutralText': row['results']['CLASS_neutralText'],
                 'CLASS_positiveText': row['results']['CLASS_positiveText'],
 
+                'H1_Emotion': row['results']['H1_Emotion'],
+                'H2_ClearMassage': row['results']['H2_ClearMassage'],
+                'H3_Trust': row['results']['H3_Trust'],
+
                 'successful': row['algorithm']['state']
             }
             results.append(targetVars)
@@ -69,7 +73,7 @@ class Analysis():
         slope, intercept, r_value, p_value, std_err = linregress(x, y)
         r_2 = pow(r_value, 2)
 
-        if p_value < 0.1:
+        if p_value < 0.05:
             isSignificant = True
 
         return r_2, p_value, isSignificant
@@ -84,25 +88,39 @@ class Analysis():
         y = np.array(df['successful'])
         regResults = {}
 
-        CATS = ['hasHuman', 'hasFace', 'hasColor', 'isBright', 'hasManyDomColors', 'hasWarmHueAccent', 'TextMatchPic',
-                'CreatorMatchTitle',  # OCR Variable missing
+        CATS = ['hasHuman', 'hasFace', 'hasColor', 'isBright', 'hasManyDomColors', 'hasWarmHueAccent',
+                'TextMatchPic', 'CreatorMatchTitle', 'TitleMatchPicOCR',
                 'CLASS_manyObjects', 'CLASS_normalObjects', 'CLASS_fewObjects',
                 'CLASS_positiveTitle', 'CLASS_neutralTitle', 'CLASS_negativeTitle',
                 'CLASS_longTitle', 'CLASS_normalTitle', 'CLASS_shortTitle',
                 'CLASS_longText', 'CLASS_normalText', 'CLASS_shortText',
-                'CLASS_positiveText', 'CLASS_neutralText', 'CLASS_negativeText']
-
-        stop = True
+                'CLASS_positiveText', 'CLASS_neutralText', 'CLASS_negativeText',
+                'H1_Emotion', 'H2_ClearMassage', 'H3_Trust'
+                ]
 
         for key in CATS:
 
-            x = np.array(df[key])
-            answer = self.plotAndRegress(x, y)
-            regResults.update({key: {
-                'r2': answer[0],
-                'significance': answer[1],
-                'is_Significant': answer[2]
-            }})
+            x = df[key]
+            validCheckSum = 0
+            for val in x:
+                validCheckSum = validCheckSum + val
+            if validCheckSum != 0:
+
+                X = np.array(x)
+                answer = self.plotAndRegress(X, y)
+                regResults.update({key: {
+                    'r2': answer[0],
+                    'significance': answer[1],
+                    'is_Significant': answer[2]
+                }})
+
+        dfResult = pd.DataFrame(regResults)
+
+        dfResult.round(2).T.to_csv('./Data/ANALYSIS_RegressionResult.csv')
+
+
+        stop = True
+
 
     def descriptiveStats(self, data):
 
@@ -111,7 +129,8 @@ class Analysis():
 
         column_order = ['category', 'hasContent', 'hasHuman', 'hasFace', 'hasColor', 'isBright', 'hasManyDomColors',
                         'hasWarmHueAccent', 'sentimentTitle', 'sentimentText', 'TitleMatchPicOCR', 'TextMatchPic',
-                        'CreatorMatchTitle', 'NumOfObjectsInPic', 'lengthOfTitle', 'lengthOfText', 'successful']
+                        'CreatorMatchTitle', 'NumOfObjectsInPic', 'lengthOfTitle', 'lengthOfText',
+                        'H1_Emotion', 'H2_ClearMassage', 'H3_Trust', 'successful']
         orderedDf = df[column_order]
         replacedDf = orderedDf.replace({'unsure': 0, 'positive': 1, 'negative': 0, 'neutral': 0.5,
                                         'successful': 1, 'failed': 0, 'yes': 1, 'no': 0, True: 1, False: 0,
@@ -147,6 +166,9 @@ class Analysis():
             TitleMatchPicOCR = 0
             TextMatchPic = 0
             CreatorMatchTitle = 0
+            H1_Emotion = 0
+            H2_ClearMassage = 0
+            H3_Trust = 0
 
             for row in data:
                 if row['filter']['category'] == rowCat:
@@ -186,6 +208,12 @@ class Analysis():
                         TextMatchPic = TextMatchPic + 1
                     if row['results']['CreatorMatchTitle']:
                         CreatorMatchTitle = CreatorMatchTitle + 1
+                    if row['results']['H1_Emotion']:
+                        H1_Emotion = H1_Emotion + 1
+                    if row['results']['H2_ClearMassage']:
+                        H2_ClearMassage = H2_ClearMassage + 1
+                    if row['results']['H3_Trust']:
+                        H3_Trust = H3_Trust + 1
 
             catResult = {
                 'category': rowCat,
@@ -207,7 +235,10 @@ class Analysis():
                 'creator match title': round(CreatorMatchTitle / proCounter * 100),
                 'objects in pic AVG': round(NumOfObjectsInPic / proCounter),
                 'length of title AVG': round(lengthOfTitle / proCounter),
-                'length of text AVG': round(lengthOfText / proCounter)
+                'length of text AVG': round(lengthOfText / proCounter),
+                'H1_Emotion': round(H1_Emotion / proCounter * 100),
+                'H2_ClearMassage': round(H2_ClearMassage / proCounter * 100),
+                'H3_Trust': round(H3_Trust / proCounter * 100),
             }
 
             resultData.append(catResult)
@@ -217,5 +248,5 @@ class Analysis():
                          'warm hue accent', 'positive title', 'neutral title', 'negative title',
                          'positive text', 'neutral text', 'negative text', 'OCR match text',
                          'text match pic tags', 'creator match title', 'objects in pic AVG', 'length of title AVG',
-                         'length of text AVG']
+                         'length of text AVG', 'H1_Emotion', 'H2_ClearMassage', 'H3_Trust']
         df[column_order1].to_csv('./Data/ANALYSIS_CategoryResult.csv')

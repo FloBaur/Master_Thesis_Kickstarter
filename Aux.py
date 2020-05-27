@@ -80,4 +80,25 @@ class Aux():
 
         return lis
 
+    def checkHypothesis(self, data):
+
+        for row in data:
+
+            if row['results']['hasHuman'] and row['results']['hasColor'] and row['results']['isBright'] and \
+                    not row['results']['CLASS_negativeTitle'] and \
+                    row['results']['CLASS_positiveText'] and row['results']['hasWarmHueAccent']:
+
+                row['results']['H1_Emotion'] = True
+
+            if not row['results']['CLASS_manyObjects'] and not row['results']['CLASS_longTitle'] and \
+                    not row['results']['CLASS_longText'] and \
+                    row['results']['CLASS_neutralText'] and not row['results']['CLASS_negativeTitle']:
+
+                row['results']['H2_ClearMassage'] = True
+
+            if row['results']['CreatorMatchTitle'] and row['results']['TitleMatchPicOCR']:
+
+                row['results']['H3_Trust'] = True
+
+        return data
 

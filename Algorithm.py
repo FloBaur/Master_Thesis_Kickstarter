@@ -192,10 +192,10 @@ class Algorithm():
 
             if sentimentTitle[0] >= 47:
                 row['results']['CLASS_longTitle'] = True
-            elif sentimentTitle[0] <= 21:
+            elif sentimentTitle[0] <= 22:
                 row['results']['CLASS_shortTitle'] = True
             else:
-                row['results']['_normalTitle'] = True
+                row['results']['CLASS_normalTitle'] = True
 
             row['results']['sentimentTitle'] = sentimentTitle[1]
             if sentimentTitle[1] == 'positive':
@@ -228,12 +228,12 @@ class Algorithm():
             sentimentText = self.getLengthSentiment(text, text_analytics_client)
 
             row['results']['lengthOfText'] = sentimentText[0]
-            if len(sentimentText[0]) >= 132:
+            if sentimentText[0] >= 131:
                 row['results']['CLASS_longText'] = True
-            elif sentimentText[0] <= 101:
+            elif sentimentText[0] <= 100:
                 row['results']['CLASS_shortText'] = True
             else:
-                row['results']['_normalText'] = True
+                row['results']['CLASS_normalText'] = True
 
             row['results']['sentimentText'] = sentimentText[1]
             if sentimentText[1] == 'positive':
@@ -273,14 +273,14 @@ class Algorithm():
 
             # analyze OCR in picture
 
-            # picUrl = row['algorithm']['photo'].lstrip("'")
-            # OCRTags = self.getOCRTags(picUrl)
-            # if len(OCRTags) > 0:
-            #     row['results']['OCRTags'] = OCRTags
-            #
-            # TextMatchOCR = self.Aux.textMatch(phrases, OCRTags)
-            # row['results']['OCRMatches'] = TextMatchOCR[0]
-            # row['results']['TitleMatchPicOCR'] = TextMatchOCR[1]
+            picUrl = row['algorithm']['photo'].lstrip("'")
+            OCRTags = self.getOCRTags(picUrl)
+            if len(OCRTags) > 0:
+                row['results']['OCRTags'] = OCRTags
+
+            TextMatchOCR = self.Aux.textMatch(phrases, OCRTags)
+            row['results']['OCRMatches'] = TextMatchOCR[0]
+            row['results']['TitleMatchPicOCR'] = TextMatchOCR[1]
 
         return VCleanData
 
