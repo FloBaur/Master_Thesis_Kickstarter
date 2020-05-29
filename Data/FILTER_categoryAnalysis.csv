@@ -1,7 +1,4 @@
 ,Category,Project counter,Successful projects,Success rate AVG[%],Goal AVG[$],Funding ratio AVG[%],Backers AVG,Duration AVG[days]
-0,Publishing,1,0,0.0,1500,37.0,16,30.0
-1,Comics,3,2,66.67,14333,153.56,104,31.7
-2,Film & Video,5,1,20.0,7540,27.82,19,36.0
-3,Food,1,0,0.0,75000,0.35,6,60.0
-4,Photography,3,1,33.33,778,154.34,6,11.0
-5,Art,2,2,100.0,7500,129.07,58,22.0
+0,Photography,3,1,33.33,778,154.34,6,11.0
+1,Film & Video,3,0,0.0,12000,2.0,4,30.0
+2,Food,1,0,0.0,75000,0.35,6,60.0

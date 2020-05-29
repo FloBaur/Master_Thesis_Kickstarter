@@ -124,9 +124,7 @@ class Analysis():
 
         dfResult.round(2).T.to_csv('./Data/ANALYSIS_RegressionResult.csv')
 
-
         stop = True
-
 
     def descriptiveStats(self, data):
 

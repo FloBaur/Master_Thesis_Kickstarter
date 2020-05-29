@@ -1,7 +1,13 @@
 from collections import Iterable
+import os, os.path
+import pickle
+import shutil
 
 
 class Aux():
+    def __init__(self):
+        self.DIR_RS = './Data/ResponseStack/'
+        self.DIR_R = './Data/Response/'
 
     def getHue(self, color):
 
@@ -80,25 +86,45 @@ class Aux():
 
         return lis
 
-    def checkHypothesis(self, data):
+    def deleteDataFromFolder(self, DIR):
 
-        for row in data:
+        stackFiles = os.listdir(DIR)
 
-            if row['results']['hasHuman'] and row['results']['hasColor'] and row['results']['isBright'] and \
-                    not row['results']['CLASS_negativeTitle'] and \
-                    row['results']['CLASS_positiveText'] and row['results']['hasWarmHueAccent']:
+        for file in stackFiles:
+            os.remove(os.path.join(DIR, file))
 
-                row['results']['H1_Emotion'] = True
+    def getDataFromResponseStack(self):
 
-            if not row['results']['CLASS_manyObjects'] and not row['results']['CLASS_longTitle'] and \
-                    not row['results']['CLASS_longText'] and \
-                    row['results']['CLASS_neutralText'] and not row['results']['CLASS_negativeTitle']:
+        responseStack = []
 
-                row['results']['H2_ClearMassage'] = True
+        for file in sorted(os.listdir(self.DIR_RS)):
 
-            if row['results']['CreatorMatchTitle'] and row['results']['TitleMatchPicOCR']:
+            with open('{0}{1}'.format(self.DIR_RS, file), 'rb') as input:
+                responseStack.append(pickle.load(input))
 
-                row['results']['H3_Trust'] = True
+        return responseStack
 
-        return data
+    def getNumOfFilesInResponseStack(self):
+
+        numOfFiles = len([name for name in os.listdir(self.DIR_RS) if os.path.isfile(os.path.join(self.DIR_RS, name))])
+
+        return numOfFiles
+
+    def getNumOfFilesInStack(self):
+        numOfFiles = len(os.listdir(self.DIR_R))
+        return numOfFiles
+
+    def storeResponseInStack(self):
+
+        self.deleteDataFromFolder(self.DIR_RS)
+
+        responseFiles = os.listdir(self.DIR_R)
+
+        for file in responseFiles:
+            shutil.move(self.DIR_R+file, self.DIR_RS)
+
+
+
+
+
 

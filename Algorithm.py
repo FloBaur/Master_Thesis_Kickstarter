@@ -1,6 +1,9 @@
 from Aux import Aux
+import pickle
+
 
 import sys
+
 sys.path.append('/home/florian/anaconda3/lib/python3.7/site-packages')
 
 from azure.cognitiveservices.vision.computervision import ComputerVisionClient
@@ -15,7 +18,6 @@ import requests
 import re
 
 
-
 class Algorithm():
     def __init__(self):
         self.VISION_KEY = 'd5fe8761733b42d0a44e3e327174c457'
@@ -24,99 +26,6 @@ class Algorithm():
         self.TEXT_ENDPOINT = 'https://matextanalyticsservice.cognitiveservices.azure.com/'
 
     Aux = Aux()
-
-    def computerVision(self, cleanedData):
-
-        computervision_client = ComputerVisionClient(self.VISION_ENDPOINT,
-                                                     CognitiveServicesCredentials(self.VISION_KEY))
-        # # prepare picture data set
-        for row in cleanedData:
-
-            remote_image_url = row['algorithm']['photo']
-
-            # get the image description in general
-
-            description_results = computervision_client.describe_image(remote_image_url)
-
-            if len(description_results.captions) > 0:
-
-                tags = description_results.tags
-                row['results']['TagsInPic'] = tags
-                row['results']['NumOfObjectsInPic'] = len(tags)
-                if len(tags) <= 5:
-                    row['results']['CLASS_fewObjects'] = True
-                elif len(tags) >= 20:
-                    row['results']['CLASS_manyObjects'] = True
-                else:
-                    row['results']['CLASS_normalObjects'] = True
-
-                for caption in description_results.captions:
-                    confidence = caption.confidence * 100
-                    if confidence > 50:
-                        row['results']['hasContent'] = 'yes'
-                        row['results']['content'].append(caption.text)
-                    else:
-                        row['results']['hasContent'] = 'unsure'
-                        break
-
-                # get the picture category
-
-                remote_image_features = ["categories"]
-                categorize_results_remote = computervision_client.analyze_image(remote_image_url,
-                                                                                remote_image_features)
-                if len(categorize_results_remote.categories) > 0:
-                    for category in categorize_results_remote.categories:
-                        if category.score * 100 > 50:
-                            row['results']['imageCategory'].append(category.name)
-                        else:
-                            row['results']['imageCategory'].append('unsure')
-
-                # get all objects in picture
-
-                detect_objects_results_remote = computervision_client.detect_objects(remote_image_url)
-
-                for objects in detect_objects_results_remote.objects:
-                    if objects.object_property == 'person' and objects.confidence * 100 > 50:
-                        row['results']['hasHuman'] = True
-
-                        # check if a face of the person in visible
-
-                        remote_image_features = ["faces"]
-                        detect_faces_results_remote = computervision_client.analyze_image(remote_image_url,
-                                                                                          remote_image_features)
-                        if len(detect_faces_results_remote.faces) > 0:
-                            row['results']['hasFace'] = True
-
-                # Color scheme
-
-                remote_image_features = ["color"]
-                detect_color_results_remote = computervision_client.analyze_image(remote_image_url, remote_image_features)
-                picColor = detect_color_results_remote
-                if not picColor.color.is_bw_img:
-                    row['results']['hasColor'] = True
-                    background = picColor.color.dominant_color_background
-                    row['colors']['background'] = background
-                    foreground = picColor.color.dominant_color_foreground
-                    row['colors']['foreground'] = foreground
-                    dominantColors = picColor.color.dominant_colors
-                    row['colors']['dominantColors'] = dominantColors
-                    accentColor = picColor.color.accent_color
-                    row['colors']['accentColor'] = accentColor
-
-                    if background == 'Black' and foreground == 'Black':
-                        row['results']['isBright'] = False
-                    if len(dominantColors) > 2:
-                        row['results']['hasManyDomColors'] = True
-
-                    answer = self.Aux.getHue(accentColor)
-                    hue = answer[1]
-                    row['colors']['hue'] = hue
-                    warmHue = answer[0]
-
-                    if warmHue:
-                        row['results']['hasWarmHueAccent'] = True
-
-        return cleanedData
 
     def getLengthSentiment(self, Text, client):
 
@@ -160,7 +69,7 @@ class Algorithm():
         headers = {'Ocp-Apim-Subscription-Key': self.VISION_KEY}
         params = {'language': 'unk', 'detectOrientation': 'true'}
         test = str(picURL).replace("'", '"')
-        data = {'url':  test}
+        data = {'url': test}
         response = requests.post(ocr_url, headers=headers, params=params, json=data)
         response.raise_for_status()
         analysis = response.json()
@@ -176,12 +85,103 @@ class Algorithm():
 
         return picTags
 
-    def textAnalytics(self, VCleanData):
+    def getNewDataFromMS(self, cleanedData):
+
+        self.Aux.deleteDataFromFolder('./Data/Response/')
+
+        computervision_client = ComputerVisionClient(self.VISION_ENDPOINT,
+                                                     CognitiveServicesCredentials(self.VISION_KEY))
 
         ta_credential = AzureKeyCredential(self.TEXT_KEY)
         text_analytics_client = TextAnalyticsClient(endpoint=self.TEXT_ENDPOINT, credential=ta_credential)
 
-        for row in VCleanData:
+        for row in cleanedData:
+
+            # PIC ANALYTICS
+
+            remote_image_url = row['algorithm']['photo']
+            description_results = computervision_client.describe_image(remote_image_url)
+            if len(description_results.captions) > 0:
+
+                tags = description_results.tags
+                row['results']['TagsInPic'] = tags
+                row['results']['NumOfObjectsInPic'] = len(tags)
+                if len(tags) <= 5:
+                    row['results']['CLASS_fewObjects'] = True
+                elif len(tags) >= 20:
+                    row['results']['CLASS_manyObjects'] = True
+                else:
+                    row['results']['CLASS_normalObjects'] = True
+
+                for caption in description_results.captions:
+                    confidence = caption.confidence * 100
+                    if confidence > 50:
+                        row['results']['hasContent'] = 'yes'
+                        row['results']['content'].append(caption.text)
+                    else:
+                        row['results']['hasContent'] = 'unsure'
+                        break
+
+                # get the picture category
+
+                remote_image_features = ["categories"]
+                categorize_results_remote = computervision_client.analyze_image(remote_image_url,
+                                                                                remote_image_features)
+                if len(categorize_results_remote.categories) > 0:
+                    for category in categorize_results_remote.categories:
+                        if category.score * 100 > 50:
+                            row['results']['imageCategory'].append(category.name)
+                        else:
+                            row['results']['imageCategory'].append('unsure')
+
+                # get all objects in picture
+
+                detect_objects_results_remote = computervision_client.detect_objects(remote_image_url)
+
+                for objects in detect_objects_results_remote.objects:
+                    if objects.object_property == 'person' and objects.confidence * 100 > 50:
+                        row['results']['hasHuman'] = True
+
+                        # check if a face of the person is visible
+
+                        remote_image_features = ["faces"]
+                        detect_faces_results_remote = computervision_client.analyze_image(remote_image_url,
+                                                                                          remote_image_features)
+                        if len(detect_faces_results_remote.faces) > 0:
+                            row['results']['hasFace'] = True
+
+                # Color scheme
+
+                remote_image_features = ["color"]
+                detect_color_results_remote = computervision_client.analyze_image(remote_image_url,
+                                                                                  remote_image_features)
+                picColor = detect_color_results_remote
+                if not picColor.color.is_bw_img:
+                    row['results']['hasColor'] = True
+                    background = picColor.color.dominant_color_background
+                    row['colors']['background'] = background
+                    foreground = picColor.color.dominant_color_foreground
+                    row['colors']['foreground'] = foreground
+                    dominantColors = picColor.color.dominant_colors
+                    row['colors']['dominantColors'] = dominantColors
+                    accentColor = picColor.color.accent_color
+                    row['colors']['accentColor'] = accentColor
+
+                    if background == 'Black' and foreground == 'Black':
+                        row['results']['isBright'] = False
+                    if len(dominantColors) > 2:
+                        row['results']['hasManyDomColors'] = True
+
+                    answer = self.Aux.getHue(accentColor)
+                    hue = answer[1]
+                    row['colors']['hue'] = hue
+                    warmHue = answer[0]
+
+                    if warmHue:
+                        row['results']['hasWarmHueAccent'] = True
+
+            # TEXT ANALYTICS
+
             title = [row['algorithm']['title']]
 
             # sentiment and length TITLE
@@ -213,13 +213,13 @@ class Algorithm():
             keyPhrasesTitle = []
             for phrase in phrasesTitle:
                 phrase.replace('-', ' ')
-                wordList = re.sub("[^\w]", " ",  phrase).split()
+                wordList = re.sub("[^\w]", " ", phrase).split()
                 keyPhrasesTitle.append(wordList)
 
             flattenedKeyPhrasesTitle = list(self.Aux.flatten(keyPhrasesTitle))
             row['results']['keyPhrasesTitle'] = flattenedKeyPhrasesTitle
 
-            # analyze TEXT
+            #  analyze TEXT
 
             text = [row['algorithm']['text']]
 
@@ -251,7 +251,7 @@ class Algorithm():
             keyPhrasesText = []
             for phrase in phrasesText:
                 phrase.replace('-', ' ')
-                wordList = re.sub("[^\w]", " ",  phrase).split()
+                wordList = re.sub("[^\w]", " ", phrase).split()
                 keyPhrasesText.append(wordList)
 
             flattenedKeyPhrasesText = list(self.Aux.flatten(keyPhrasesText))
@@ -282,6 +282,26 @@ class Algorithm():
             row['results']['OCRMatches'] = TextMatchOCR[0]
             row['results']['TitleMatchPicOCR'] = TextMatchOCR[1]
 
-        return VCleanData
+            # check HYPOTHESIS
+
+            if row['results']['hasHuman'] and row['results']['hasColor'] and row['results']['isBright'] and \
+                    not row['results']['CLASS_negativeTitle'] and \
+                    row['results']['CLASS_positiveText'] and row['results']['hasWarmHueAccent']:
+
+                row['results']['H1_Emotion'] = True
+
+            if not row['results']['CLASS_manyObjects'] and not row['results']['CLASS_longTitle'] and \
+                    not row['results']['CLASS_longText'] and \
+                    row['results']['CLASS_neutralText'] and not row['results']['CLASS_negativeTitle']:
+
+                row['results']['H2_ClearMassage'] = True
+
+            if row['results']['CreatorMatchTitle'] and row['results']['TitleMatchPicOCR']:
+
+                row['results']['H3_Trust'] = True
+
+            with open('./Data/Response/%d.pkl' % row['key'], 'wb') as output:
+                pickle.dump(row, output, pickle.HIGHEST_PROTOCOL)
+
 
 

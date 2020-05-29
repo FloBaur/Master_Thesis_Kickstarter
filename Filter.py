@@ -10,14 +10,21 @@ class Filter():
 
     Aux = Aux()
 
-    def cleanColumns(self):
+    def countDatasets(self):
+        df = pd.DataFrame(self.data)
+        numOfRows = len(df.index)
+
+        return numOfRows
+
+    def cleanColumns(self, numOfDs):
+
         global singleProject
         rightData = []
 
         counter = 0
 
         for pos, con in self.data.iterrows():
-            if counter <= 20:
+            if counter < int(numOfDs):
                 try:
                     category = json.loads(con['category'])
                     creator = json.loads(con['creator'])
@@ -106,7 +113,6 @@ class Filter():
                     }
                     rightData.append(singleProject)
                 except:
-                    print('jump over')
                     continue
 
                 counter = counter + 1
