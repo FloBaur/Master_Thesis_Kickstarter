@@ -2,6 +2,7 @@ import pandas as pd
 import json
 from datetime import datetime
 from Aux import Aux
+from Crawler import Crawler
 
 
 class Filter():
@@ -9,10 +10,10 @@ class Filter():
         self.data = pd.read_csv('./Data/Kickstarter.csv')
 
     Aux = Aux()
+    Crawler = Crawler()
+
 
     def countDatasets(self):
-
-        # das hätte ich auch noch gerne
 
         df = pd.DataFrame(self.data)
         numOfRows = len(df.index)
@@ -29,6 +30,12 @@ class Filter():
         for pos, con in self.data.iterrows():
             if counter < int(numOfDs):
                 try:
+                    # crawling some extraData
+                    webUrl_JSON = json.loads(con['urls'])
+                    webUrl = webUrl_JSON['web']['project']
+                    rewUrl = webUrl_JSON['web']['rewards']
+                    self.Crawler.crawlData(webUrl, rewUrl)
+
                     category = json.loads(con['category'])
                     creator = json.loads(con['creator'])
                     photo = json.loads(con['photo'])
@@ -48,7 +55,7 @@ class Filter():
                             'backers': con['backers_count']
                         },
                         'algorithm': {
-                            'photo': photo['ed'],
+                            'photo': photo['1024x576'],
                             'title': con['slug'],
                             'text': con['blurb'],
                             'state': con['state'],
