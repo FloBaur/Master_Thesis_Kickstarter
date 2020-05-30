@@ -11,6 +11,9 @@ class Filter():
     Aux = Aux()
 
     def countDatasets(self):
+
+        # das hätte ich auch noch gerne
+
         df = pd.DataFrame(self.data)
         numOfRows = len(df.index)
 
