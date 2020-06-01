@@ -21,6 +21,8 @@ if dataRequired == 'y':
 
     data = DataFilter.cleanColumns(numOfDs)
 
+    stop = True
+
     # Data filtering with diverse criteria
 
     cleanedData = DataFilter.filterCriteria(data)

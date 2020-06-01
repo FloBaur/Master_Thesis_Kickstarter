@@ -30,11 +30,12 @@ class Filter():
         for pos, con in self.data.iterrows():
             if counter < int(numOfDs):
                 try:
+
                     # crawling some extraData
                     webUrl_JSON = json.loads(con['urls'])
                     webUrl = webUrl_JSON['web']['project']
                     rewUrl = webUrl_JSON['web']['rewards']
-                    self.Crawler.crawlData(webUrl, rewUrl)
+                    controls = self.Crawler.crawlData(webUrl, rewUrl)
 
                     category = json.loads(con['category'])
                     creator = json.loads(con['creator'])
@@ -52,7 +53,8 @@ class Filter():
                             'goal': con['goal'],
                             'duration': duration.days,
                             'pledged': con['pledged'],
-                            'backers': con['backers_count']
+                            'backers': con['backers_count'],
+                            'WebUrl': webUrl
                         },
                         'algorithm': {
                             'photo': photo['1024x576'],
@@ -60,6 +62,15 @@ class Filter():
                             'text': con['blurb'],
                             'state': con['state'],
                             'creator': creator['name']
+                        },
+                        'controls': {
+                            'numOfImg': controls[0],
+                            'numOfRewards': controls[1],
+                            'hasVideo': controls[2],
+                            'texts': controls[3],
+                            'text_Length': controls[4],
+                            'hasFacebook': controls[5],
+                            'numOfFbFriends': controls[6]
                         },
                         'colors': {
                             'background': '',
