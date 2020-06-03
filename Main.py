@@ -63,15 +63,17 @@ responseStack_Unsorted = Aux.getDataFromResponseStack()
 
 responseStack = sorted(responseStack_Unsorted, key=lambda k: k['key'])
 
-Analysis.buildCatsWithTargetVars(responseStack)  # TEST-CONTROLS
+Analysis.buildCatsWithTargetVars(responseStack)
 
 # build Statistics
 
-Analysis.descriptiveStats(responseStack)  # TEST-CONTROLS
+Analysis.descriptiveStats(responseStack)
 
 # make Regression
 
-Analysis.makeRegression(responseStack)  # TEST-CONTROLS
+Analysis.makeRegression(responseStack)
+
+
 
 
 

@@ -1,8 +1,0 @@
-,category,hasContent,hasHuman,hasFace,hasColor,isBright,hasManyDomColors,hasWarmHueAccent,sentimentTitle,sentimentText,TitleMatchPicOCR,TextMatchPic,CreatorMatchTitle,NumOfObjectsInPic,lengthOfTitle,lengthOfText,H1_Emotion,H2_ClearMassage,H3_Trust,successful
-0,Food,1,0,0,1,1,0,1,1.0,1.0,0,0,0,1,50,115,0,0,0,0
-1,Film & Video,1,1,1,1,1,1,0,0.0,0.5,0,0,0,20,33,129,0,0,0,0
-2,Photography,0,0,0,1,1,0,1,0.5,0.5,0,0,0,1,20,135,0,0,0,0
-3,Film & Video,0,0,0,1,1,0,0,0.0,0.5,1,0,0,1,27,135,0,0,0,0
-4,Film & Video,1,1,0,1,1,0,1,0.5,0.5,1,0,1,17,19,131,0,0,1,0
-5,Photography,1,0,0,1,0,0,0,1.0,1.0,0,0,0,6,15,134,0,0,0,0
-6,Photography,1,1,1,1,0,0,0,1.0,1.0,0,0,0,27,28,133,0,0,0,1

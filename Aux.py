@@ -124,10 +124,20 @@ class Aux():
             shutil.move(self.DIR_R+file, self.DIR_RS)
 
     def stringifyText(self, text):
-
-        stringifyText = str(text.text)
-        num_Array = [int(s) for s in stringifyText.split() if s.isdigit()]
-        number = num_Array[0]
+        try:
+            stringifyText = str(text.text)
+            if ',' in stringifyText:
+                stringifyText = stringifyText.replace(',', '')
+            if '.' in stringifyText:
+                stringifyText = stringifyText.replace('.', '')
+            num_Array = [int(s) for s in stringifyText.split() if s.isdigit()]
+            if len(num_Array) > 0:
+                number = num_Array[0]
+            else:
+                number = 0
+        except Exception as E:
+            number = 0
+            print('Not possible to stringify Text ' + str(E))
 
         return number
 

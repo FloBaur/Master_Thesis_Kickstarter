@@ -7,7 +7,7 @@ from Crawler import Crawler
 
 class Filter():
     def __init__(self):
-        self.data = pd.read_csv('./Data/Kickstarter.csv')
+        self.data = pd.read_csv('./Data/DataSource/Kickstarter.csv')
 
     Aux = Aux()
     Crawler = Crawler()
@@ -201,8 +201,8 @@ class Filter():
         column_order1 = ['category', 'duration', 'success', 'goal', 'pledged', 'backers', '%pledged']
         column_order2 = ['Category', 'Project counter', 'Successful projects', 'Success rate AVG[%]', 'Goal AVG[$]',
                          'Funding ratio AVG[%]', 'Backers AVG', 'Duration AVG[days]']
-        df[column_order1].to_csv('./Data/FILTER_singleRow.csv')
-        df2[column_order2].to_csv('./Data/FILTER_categoryAnalysis.csv')
+        df[column_order1].to_csv('./Data/Results/FILTER_singleRow.csv')
+        df2[column_order2].to_csv('./Data/Results/FILTER_categoryAnalysis.csv')
 
     def getControllVars(self, data):
 
@@ -212,23 +212,26 @@ class Filter():
 
             webUrl = row['filter']['WebUrl']
             rewUrl = row['filter']['RewUrl']
+            try:
+                controls = self.Crawler.crawlData(webUrl, rewUrl)
 
-            controls = self.Crawler.crawlData(webUrl, rewUrl)
-
-            controls = {
-                'controls': {
-                    'numOfImg': controls[0],
-                    'numOfRewards': controls[1],
-                    'hasVideo': controls[2],
-                    'texts': controls[3],
-                    'text_Length': controls[4],
-                    'hasFacebook': controls[5],
-                    'numOfFbFriends': controls[6],
-                    'experience': controls[7]
+                controls = {
+                    'controls': {
+                        'CON_numOfImg': controls[0],
+                        'CON_numOfRewards': controls[1],
+                        'CON_hasVideo': controls[2],
+                        'CON_texts': controls[3],
+                        'CON_text_Length': controls[4],
+                        'CON_hasFacebook': controls[5],
+                        'CON_numOfFbFriends': controls[6],
+                        'CON_experience': controls[7]
+                    }
                 }
-            }
 
-            updatedDict = {**row, **controls}
-            data_Controls.append(updatedDict)
+                updatedDict = {**row, **controls}
+                data_Controls.append(updatedDict)
+            except Exception as E:
+                print('Project cannot be crawled ' + str(E))
+                continue
 
         return data_Controls

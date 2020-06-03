@@ -19,109 +19,117 @@ class Crawler():
     def crawlData(self, WebUrl, rewUrl):
 
         # soup get rewards
+        try:
 
-        request_Rew = requests.get(rewUrl)
-        doc = BeautifulSoup(request_Rew.text, 'html.parser')
+            request_Rew = requests.get(rewUrl)
+            doc = BeautifulSoup(request_Rew.text, 'html.parser')
 
-        numOfRewards = 0
-        for card in doc.select('.hover-group'):
-            numOfRewards = numOfRewards + 1
+            numOfRewards = 0
+            for card in doc.select('.hover-group'):
+                numOfRewards = numOfRewards + 1
 
-        # selenium scroll page
+            # selenium scroll page
 
-        browser = webdriver.Chrome('./ChromeDriver/chromedriver')
-        browser.get(WebUrl)
+            browser = webdriver.Chrome('./ChromeDriver/chromedriver')
+            browser.get(WebUrl)
 
-        time.sleep(1)
+            time.sleep(1)
 
-        elem = browser.find_element_by_tag_name("body")
-        no_of_pagedowns = 15
+            elem = browser.find_element_by_tag_name("body")
+            no_of_pagedowns = 30
 
-        while no_of_pagedowns:
-            elem.send_keys(Keys.PAGE_DOWN)
-            time.sleep(0.2)
-            no_of_pagedowns -= 1
+            while no_of_pagedowns:
+                elem.send_keys(Keys.PAGE_DOWN)
+                time.sleep(0.2)
+                no_of_pagedowns -= 1
 
-        # number of pictures
+            # number of pictures
 
-        project_image = browser.find_elements_by_css_selector('[alt*="Project image"]')
-        feature_image = browser.find_elements_by_class_name('js-feature-image ')
-        post_elems = browser.find_elements_by_xpath("//figure/img")
-        allImages = project_image + post_elems + feature_image
+            project_image = browser.find_elements_by_css_selector('[alt*="Project image"]')
+            feature_image = browser.find_elements_by_class_name('js-feature-image ')
+            post_elems = browser.find_elements_by_xpath("//figure/img")
+            allImages = project_image + post_elems + feature_image
 
-        numOfImages = len(allImages)
+            numOfImages = len(allImages)
 
-        # has video
+            # has video
 
-        hasVideo = False
-        video = browser.find_elements_by_tag_name("video")
+            hasVideo = False
+            video = browser.find_elements_by_tag_name("video")
 
-        if len(video) > 0:
-            hasVideo = True
+            if len(video) > 0:
+                hasVideo = True
 
-        # Length of Text
-        texts = []
-        text_Length = 0
+            # Length of Text
+            texts = []
+            text_Length = 0
 
-        paragraphs = browser.find_elements_by_xpath("//section[@class='project-content']//p")
-        if len(paragraphs) > 0:
-            for paragraph in paragraphs:
-                text = str(paragraph.text)
-                text_Length = text_Length + len(text)
-                texts.append(text)
+            paragraphs = browser.find_elements_by_xpath("//section[@class='project-content']//p")
+            if len(paragraphs) > 0:
+                for paragraph in paragraphs:
+                    text = str(paragraph.text)
+                    text_Length = text_Length + len(text)
+                    texts.append(text)
 
-        # experience
+            # experience
 
-        experience = 0
+            experience = 0
 
-        # facebook friends
-        hasFacebook = False
-        numOfFbFriends = 0
+            # facebook friends
+            hasFacebook = False
+            numOfFbFriends = 0
 
-        creator_Link = browser.find_elements_by_xpath("//div[@class='creator-name']//a")
+            creator_Link = browser.find_elements_by_xpath("//div[@class='creator-name']//a")
 
-        if len(creator_Link) > 0:
+            if len(creator_Link) > 0:
 
-            linkToCreator = creator_Link[0].get_attribute("href")
-            request_Creator = requests.get(linkToCreator)
-            CreatorSoup = BeautifulSoup(request_Creator.text, 'html.parser')
+                linkToCreator = creator_Link[0].get_attribute("href")
+                request_Creator = requests.get(linkToCreator)
+                CreatorSoup = BeautifulSoup(request_Creator.text, 'html.parser')
 
-            fbFriends = CreatorSoup.findAll('a', text=re.compile('friends'))
-            if len(fbFriends) > 0:
-                hasFacebook = True
-                numInText = self.Aux.stringifyText(fbFriends[0])
-                numOfFbFriends = numInText
+                fbFriends = CreatorSoup.findAll('a', text=re.compile('friends'))
+                if len(fbFriends) > 0:
+                    hasFacebook = True
+                    numInText = self.Aux.stringifyText(fbFriends[0])
+                    numOfFbFriends = numInText
 
-            experienceText = CreatorSoup.findAll('a', text=re.compile('created'))
-            if len(experienceText) > 0:
-                numInText = self.Aux.stringifyText(experienceText[0])
-                experience = numInText
-
-        else:
-            beginner = browser.find_elements_by_xpath("//div[contains(text(), 'First created')]")
-
-            if len(beginner) == 0:
-
-                expText = browser.find_elements_by_xpath("//div[contains(text(), 'created')]")
-                if len(expText) > 0:
-                    numInText = self.Aux.stringifyText(expText)
+                experienceText = CreatorSoup.findAll('a', text=re.compile('created'))
+                if len(experienceText) > 0:
+                    numInText = self.Aux.stringifyText(experienceText[0])
                     experience = numInText
 
-            creator_button = browser.find_elements_by_xpath("//div[@id='experimental-creator-bio']/button")
-            if len(creator_button) > 0:
-                creator_button[0].click()
-                links = browser.find_elements_by_link_text('Facebook.com')
-                if len(links) == 0:
-                    links = browser.find_elements_by_link_text('facebook.com')
+            else:
+                beginner = browser.find_elements_by_xpath("//div[contains(text(), 'First created')]")
 
-                if len(links) > 0:
-                    hasFacebook = True
-                    for link in links:
-                        fbLink = link.get_attribute("href")
-                    request_FB = requests.get(fbLink)
-                    fbSoup = BeautifulSoup(request_FB.text, 'html.parser')
-                    classAbo = fbSoup.findAll('div', text=re.compile('haben das abonniert'))
-                    numInText = self.Aux.stringifyText(classAbo[1])
-                    numOfFbFriends = numInText
+                if len(beginner) == 0:
+
+                    expText = browser.find_elements_by_xpath("//div[contains(text(), 'created')]")
+                    if len(expText) > 0:
+                        numInText = self.Aux.stringifyText(expText)
+                        experience = numInText
+
+                creator_button = browser.find_elements_by_xpath("//div[@id='experimental-creator-bio']/button")
+                if len(creator_button) > 0:
+                    creator_button[0].click()
+                    links = browser.find_elements_by_link_text('Facebook.com')
+                    if len(links) == 0:
+                        links = browser.find_elements_by_link_text('facebook.com')
+
+                    if len(links) > 0:
+                        hasFacebook = True
+                        for link in links:
+                            fbLink = link.get_attribute("href")
+                        request_FB = requests.get(fbLink)
+                        fbSoup = BeautifulSoup(request_FB.text, 'html.parser')
+                        classAbo = fbSoup.findAll('div', text=re.compile('haben das abonniert'))
+                        if len(classAbo) > 0:
+                            numInText = self.Aux.stringifyText(classAbo[1])
+                        else:
+                            stop = True
+                            numInText = 0
+                        numOfFbFriends = numInText
+        except Exception as E:
+            numOfImages, numOfRewards, hasVideo, texts, text_Length, hasFacebook, numOfFbFriends, experience = (0,) * 8
+            print('data not crawlable' + str(E))
 
         return numOfImages, numOfRewards, hasVideo, texts, text_Length, hasFacebook, numOfFbFriends, experience

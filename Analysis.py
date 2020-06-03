@@ -14,7 +14,16 @@ class Analysis():
 
         for row in data:
             targetVars = row['results']
-            results.append(targetVars)
+            controlVars = row['controls']
+            extraVars = {
+                'successful': row['algorithm']['state'],
+                'category': row['filter']['category'],
+                'CON_goal': row['filter']['goal'],
+                'CON_duration': row['filter']['duration']
+            }
+
+            TCE_Dict = {**targetVars, **controlVars, **extraVars}
+            results.append(TCE_Dict)
 
         return results
 
@@ -52,7 +61,9 @@ class Analysis():
                 'CLASS_longTitle', 'CLASS_normalTitle', 'CLASS_shortTitle',
                 'CLASS_longText', 'CLASS_normalText', 'CLASS_shortText',
                 'CLASS_positiveText', 'CLASS_neutralText', 'CLASS_negativeText',
-                'H1_Emotion', 'H2_ClearMassage', 'H3_Trust'
+                'H1_Emotion', 'H2_ClearMassage', 'H3_Trust',
+                'CON_numOfImg', 'CON_numOfRewards', 'CON_hasVideo', 'CON_text_Length', 'CON_numOfFbFriends',
+                'CON_experience', 'CON_goal', 'CON_duration'
                 ]
 
         for key in CATS:
@@ -73,13 +84,11 @@ class Analysis():
                     'r2': answer[0],
                     'significance': answer[1],
                     'is_Significant': answer[2],
-                    'slope': answer[3],
                     'coefficient': coefficient
                 }})
 
         dfResult = pd.DataFrame(regResults)
-
-        dfResult.round(2).T.to_csv('./Data/ANALYSIS_RegressionResult.csv')
+        dfResult.round(2).T.to_csv('./Data/Results/ANALYSIS_RegressionResult.csv')
 
     def descriptiveStats(self, data):
 
@@ -89,27 +98,30 @@ class Analysis():
         column_order = ['category', 'hasContent', 'hasHuman', 'hasFace', 'hasColor', 'isBright', 'hasManyDomColors',
                         'hasWarmHueAccent', 'sentimentTitle', 'sentimentText', 'TitleMatchPicOCR', 'TextMatchPic',
                         'CreatorMatchTitle', 'NumOfObjectsInPic', 'lengthOfTitle', 'lengthOfText',
-                        'H1_Emotion', 'H2_ClearMassage', 'H3_Trust', 'successful']
+                        'H1_Emotion', 'H2_ClearMassage', 'H3_Trust',
+                        'CON_numOfImg', 'CON_numOfRewards', 'CON_hasVideo', 'CON_text_Length', 'CON_numOfFbFriends',
+                        'CON_experience', 'CON_goal', 'CON_duration',
+                        'successful']
         orderedDf = df[column_order]
         replacedDf = orderedDf.replace({'unsure': 0, 'positive': 1, 'negative': 0, 'neutral': 0.5,
                                         'successful': 1, 'failed': 0, 'yes': 1, 'no': 0, True: 1, False: 0,
                                         'mixed': 0.5})
-        replacedDf[column_order].round(1).to_csv('./Data/ANALYSIS_singleRow.csv')
+        replacedDf[column_order].round(1).to_csv('./Data/Results/ANALYSIS_singleRow.csv')
         descriptiveStatistic = replacedDf.describe()
-        descriptiveStatistic.round(1).T.to_csv('./Data/ANALYSIS_DescriptiveStatistics.csv')
+        descriptiveStatistic.round(1).T.to_csv('./Data/Results/ANALYSIS_DescriptiveStatistics.csv')
 
     def buildCatsWithTargetVars(self, data):
 
         resultData = []
-
         cats = self.Aux.getCats(data)
 
         for rowCat in cats:
             proCounter, hasContent, hasHuman, hasFace, hasColor, isBright, hasManyDomColors, hasWarmHueAccent, \
-            NumOfObjectsInPic, lengthOfTitle, sentimentTitlePos, sentimentTitleNeu, sentimentTitleNeg, sentimentTextPos, \
-            sentimentTextNeu, sentimentTextNeg, lengthOfText, TitleMatchPicOCR, TextMatchPic, CreatorMatchTitle, \
-            H1_Emotion, H2_ClearMassage, H3_Trust, \
-            numOfImg, numOfRewards, hasVideo, text_Length, numOfFbFriends, experience = (0,) * 29
+                NumOfObjectsInPic, lengthOfTitle, sentimentTitlePos, sentimentTitleNeu, sentimentTitleNeg, \
+                sentimentTextPos, sentimentTextNeu, sentimentTextNeg, lengthOfText, TitleMatchPicOCR, TextMatchPic, \
+                CreatorMatchTitle, H1_Emotion, H2_ClearMassage, H3_Trust, \
+                CON_numOfImg, CON_numOfRewards, CON_hasVideo, CON_text_Length, CON_numOfFbFriends, CON_experience \
+                = (0,) * 29
 
             for row in data:
                 if row['filter']['category'] == rowCat:
@@ -118,11 +130,11 @@ class Analysis():
                     NumOfObjectsInPic = NumOfObjectsInPic + row['results']['NumOfObjectsInPic']
                     lengthOfTitle = lengthOfTitle + row['results']['lengthOfTitle']
                     lengthOfText = lengthOfText + row['results']['lengthOfText']
-                    numOfImg = numOfImg + row['controls']['numOfImg']
-                    numOfRewards = numOfRewards + row['controls']['numOfRewards']
-                    text_Length = text_Length + row['controls']['text_Length']
-                    numOfFbFriends = numOfFbFriends + row['controls']['numOfFbFriends']
-                    experience = experience + row['controls']['experience']
+                    CON_numOfImg = CON_numOfImg + row['controls']['CON_numOfImg']
+                    CON_numOfRewards = CON_numOfRewards + row['controls']['CON_numOfRewards']
+                    CON_text_Length = CON_text_Length + row['controls']['CON_text_Length']
+                    CON_numOfFbFriends = CON_numOfFbFriends + row['controls']['CON_numOfFbFriends']
+                    CON_experience = CON_experience + row['controls']['CON_experience']
 
                     if row['results']['hasContent'] == 'yes':
                         hasContent = hasContent + 1
@@ -162,8 +174,8 @@ class Analysis():
                         H2_ClearMassage = H2_ClearMassage + 1
                     if row['results']['H3_Trust']:
                         H3_Trust = H3_Trust + 1
-                    if row['controls']['hasVideo']:
-                        hasVideo = hasVideo + 1
+                    if row['controls']['CON_hasVideo']:
+                        CON_hasVideo = CON_hasVideo + 1
 
             catResult = {
                 'category': rowCat,
@@ -189,12 +201,12 @@ class Analysis():
                 'H1_Emotion': round(H1_Emotion / proCounter * 100),
                 'H2_ClearMassage': round(H2_ClearMassage / proCounter * 100),
                 'H3_Trust': round(H3_Trust / proCounter * 100),
-                'numOfImg': round(numOfImg / proCounter),
-                'numOfRewards': round(numOfRewards / proCounter),
-                'hasVideo': round(hasVideo / proCounter * 100),
-                'text_Length': round(text_Length / proCounter),
-                'numOfFbFriends': round(numOfFbFriends / proCounter),
-                'experience': round(experience / proCounter)
+                'CON_numOfImg': round(CON_numOfImg / proCounter),
+                'CON_numOfRewards': round(CON_numOfRewards / proCounter),
+                'CON_hasVideo': round(CON_hasVideo / proCounter * 100),
+                'CON_text_Length': round(CON_text_Length / proCounter),
+                'CON_numOfFbFriends': round(CON_numOfFbFriends / proCounter),
+                'CON_experience': round(CON_experience / proCounter)
             }
 
             resultData.append(catResult)
@@ -204,6 +216,7 @@ class Analysis():
                          'warm hue accent', 'positive title', 'neutral title', 'negative title',
                          'positive text', 'neutral text', 'negative text', 'OCR match text',
                          'text match pic tags', 'creator match title', 'objects in pic AVG', 'length of title AVG',
-                         'length of text AVG', 'H1_Emotion', 'H2_ClearMassage', 'H3_Trust'
-                         'numOfImg', 'numOfRewards', 'hasVideo', 'text_Length', 'numOfFbFriends', 'experience']
-        df[column_order1].to_csv('./Data/ANALYSIS_CategoryResult.csv')
+                         'length of text AVG', 'H1_Emotion', 'H2_ClearMassage', 'H3_Trust',
+                         'CON_numOfImg', 'CON_numOfRewards', 'CON_hasVideo', 'CON_text_Length', 'CON_numOfFbFriends',
+                         'CON_experience']
+        df[column_order1].to_csv('./Data/Results/ANALYSIS_CategoryResult.csv')
