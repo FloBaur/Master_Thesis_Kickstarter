@@ -30,12 +30,9 @@ class Filter():
         for pos, con in self.data.iterrows():
             if counter < int(numOfDs):
                 try:
-
-                    # crawling some extraData
                     webUrl_JSON = json.loads(con['urls'])
                     webUrl = webUrl_JSON['web']['project']
                     rewUrl = webUrl_JSON['web']['rewards']
-                    controls = self.Crawler.crawlData(webUrl, rewUrl)
 
                     category = json.loads(con['category'])
                     creator = json.loads(con['creator'])
@@ -54,7 +51,8 @@ class Filter():
                             'duration': duration.days,
                             'pledged': con['pledged'],
                             'backers': con['backers_count'],
-                            'WebUrl': webUrl
+                            'WebUrl': str(webUrl),
+                            'RewUrl': str(rewUrl)
                         },
                         'algorithm': {
                             'photo': photo['1024x576'],
@@ -62,15 +60,6 @@ class Filter():
                             'text': con['blurb'],
                             'state': con['state'],
                             'creator': creator['name']
-                        },
-                        'controls': {
-                            'numOfImg': controls[0],
-                            'numOfRewards': controls[1],
-                            'hasVideo': controls[2],
-                            'texts': controls[3],
-                            'text_Length': controls[4],
-                            'hasFacebook': controls[5],
-                            'numOfFbFriends': controls[6]
                         },
                         'colors': {
                             'background': '',
@@ -157,14 +146,14 @@ class Filter():
 
         return cleanedArray
 
-    def overViewCleanedData(self, cleanedData):
+    def overViewCleanedData(self, data):
 
         global cat
         dataOverview = []
         catOverview = []
 
-        for row in cleanedData:
-            singleCleaned = {
+        for row in data:
+            single = {
                 'category': row['filter']['category'],
                 'duration': row['filter']['duration'],
                 'success': row['algorithm']['state'],
@@ -173,9 +162,9 @@ class Filter():
                 'backers': row['filter']['backers'],
                 '%pledged': round(row['filter']['pledged'] / row['filter']['goal'] * 100, 2)
             }
-            dataOverview.append(singleCleaned)
+            dataOverview.append(single)
 
-        cats = self.Aux.getCats(cleanedData)
+        cats = self.Aux.getCats(data)
 
         for rowCat in cats:
             GoalSum = 0
@@ -214,3 +203,32 @@ class Filter():
                          'Funding ratio AVG[%]', 'Backers AVG', 'Duration AVG[days]']
         df[column_order1].to_csv('./Data/FILTER_singleRow.csv')
         df2[column_order2].to_csv('./Data/FILTER_categoryAnalysis.csv')
+
+    def getControllVars(self, data):
+
+        data_Controls = []
+
+        for row in data:
+
+            webUrl = row['filter']['WebUrl']
+            rewUrl = row['filter']['RewUrl']
+
+            controls = self.Crawler.crawlData(webUrl, rewUrl)
+
+            controls = {
+                'controls': {
+                    'numOfImg': controls[0],
+                    'numOfRewards': controls[1],
+                    'hasVideo': controls[2],
+                    'texts': controls[3],
+                    'text_Length': controls[4],
+                    'hasFacebook': controls[5],
+                    'numOfFbFriends': controls[6],
+                    'experience': controls[7]
+                }
+            }
+
+            updatedDict = {**row, **controls}
+            data_Controls.append(updatedDict)
+
+        return data_Controls

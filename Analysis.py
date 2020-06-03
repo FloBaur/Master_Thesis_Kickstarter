@@ -13,50 +13,7 @@ class Analysis():
         results = []
 
         for row in data:
-            targetVars = {
-                'category': row['filter']['category'],
-                'hasContent': row['results']['hasContent'],
-                'hasHuman': row['results']['hasHuman'],
-                'hasFace': row['results']['hasFace'],
-                'hasColor': row['results']['hasColor'],
-                'isBright': row['results']['isBright'],
-                'hasManyDomColors': row['results']['hasManyDomColors'],
-                'hasWarmHueAccent': row['results']['hasWarmHueAccent'],
-                'NumOfObjectsInPic': row['results']['NumOfObjectsInPic'],
-                'lengthOfTitle': row['results']['lengthOfTitle'],
-                'lengthOfText': row['results']['lengthOfText'],
-                'sentimentTitle': row['results']['sentimentTitle'],
-                'sentimentText': row['results']['sentimentText'],
-                'TitleMatchPicOCR': row['results']['TitleMatchPicOCR'],
-                'TextMatchPic': row['results']['TextMatchPic'],
-                'CreatorMatchTitle': row['results']['CreatorMatchTitle'],
-
-                'CLASS_fewObjects': row['results']['CLASS_fewObjects'],
-                'CLASS_normalObjects': row['results']['CLASS_normalObjects'],
-                'CLASS_manyObjects': row['results']['CLASS_manyObjects'],
-
-                'CLASS_shortTitle': row['results']['CLASS_shortTitle'],
-                'CLASS_normalTitle': row['results']['CLASS_normalTitle'],
-                'CLASS_longTitle': row['results']['CLASS_longTitle'],
-
-                'CLASS_negativeTitle': row['results']['CLASS_negativeTitle'],
-                'CLASS_neutralTitle': row['results']['CLASS_neutralTitle'],
-                'CLASS_positiveTitle': row['results']['CLASS_positiveTitle'],
-
-                'CLASS_shortText': row['results']['CLASS_shortText'],
-                'CLASS_normalText': row['results']['CLASS_normalText'],
-                'CLASS_longText': row['results']['CLASS_longText'],
-
-                'CLASS_negativeText': row['results']['CLASS_negativeText'],
-                'CLASS_neutralText': row['results']['CLASS_neutralText'],
-                'CLASS_positiveText': row['results']['CLASS_positiveText'],
-
-                'H1_Emotion': row['results']['H1_Emotion'],
-                'H2_ClearMassage': row['results']['H2_ClearMassage'],
-                'H3_Trust': row['results']['H3_Trust'],
-
-                'successful': row['algorithm']['state']
-            }
+            targetVars = row['results']
             results.append(targetVars)
 
         return results
@@ -148,36 +105,25 @@ class Analysis():
         cats = self.Aux.getCats(data)
 
         for rowCat in cats:
-            proCounter = 0
-            hasContent = 0
-            hasHuman = 0
-            hasFace = 0
-            hasColor = 0
-            isBright = 0
-            hasManyDomColors = 0
-            hasWarmHueAccent = 0
-            NumOfObjectsInPic = 0  # sum
-            lengthOfTitle = 0  # sum
-            sentimentTitlePos = 0
-            sentimentTitleNeu = 0
-            sentimentTitleNeg = 0
-            sentimentTextPos = 0
-            sentimentTextNeu = 0
-            sentimentTextNeg = 0
-            lengthOfText = 0  # sum
-            TitleMatchPicOCR = 0
-            TextMatchPic = 0
-            CreatorMatchTitle = 0
-            H1_Emotion = 0
-            H2_ClearMassage = 0
-            H3_Trust = 0
+            proCounter, hasContent, hasHuman, hasFace, hasColor, isBright, hasManyDomColors, hasWarmHueAccent, \
+            NumOfObjectsInPic, lengthOfTitle, sentimentTitlePos, sentimentTitleNeu, sentimentTitleNeg, sentimentTextPos, \
+            sentimentTextNeu, sentimentTextNeg, lengthOfText, TitleMatchPicOCR, TextMatchPic, CreatorMatchTitle, \
+            H1_Emotion, H2_ClearMassage, H3_Trust, \
+            numOfImg, numOfRewards, hasVideo, text_Length, numOfFbFriends, experience = (0,) * 29
 
             for row in data:
                 if row['filter']['category'] == rowCat:
+
                     proCounter = proCounter + 1
                     NumOfObjectsInPic = NumOfObjectsInPic + row['results']['NumOfObjectsInPic']
                     lengthOfTitle = lengthOfTitle + row['results']['lengthOfTitle']
                     lengthOfText = lengthOfText + row['results']['lengthOfText']
+                    numOfImg = numOfImg + row['controls']['numOfImg']
+                    numOfRewards = numOfRewards + row['controls']['numOfRewards']
+                    text_Length = text_Length + row['controls']['text_Length']
+                    numOfFbFriends = numOfFbFriends + row['controls']['numOfFbFriends']
+                    experience = experience + row['controls']['experience']
+
                     if row['results']['hasContent'] == 'yes':
                         hasContent = hasContent + 1
                     if row['results']['hasHuman']:
@@ -216,6 +162,8 @@ class Analysis():
                         H2_ClearMassage = H2_ClearMassage + 1
                     if row['results']['H3_Trust']:
                         H3_Trust = H3_Trust + 1
+                    if row['controls']['hasVideo']:
+                        hasVideo = hasVideo + 1
 
             catResult = {
                 'category': rowCat,
@@ -241,6 +189,12 @@ class Analysis():
                 'H1_Emotion': round(H1_Emotion / proCounter * 100),
                 'H2_ClearMassage': round(H2_ClearMassage / proCounter * 100),
                 'H3_Trust': round(H3_Trust / proCounter * 100),
+                'numOfImg': round(numOfImg / proCounter),
+                'numOfRewards': round(numOfRewards / proCounter),
+                'hasVideo': round(hasVideo / proCounter * 100),
+                'text_Length': round(text_Length / proCounter),
+                'numOfFbFriends': round(numOfFbFriends / proCounter),
+                'experience': round(experience / proCounter)
             }
 
             resultData.append(catResult)
@@ -250,5 +204,6 @@ class Analysis():
                          'warm hue accent', 'positive title', 'neutral title', 'negative title',
                          'positive text', 'neutral text', 'negative text', 'OCR match text',
                          'text match pic tags', 'creator match title', 'objects in pic AVG', 'length of title AVG',
-                         'length of text AVG', 'H1_Emotion', 'H2_ClearMassage', 'H3_Trust']
+                         'length of text AVG', 'H1_Emotion', 'H2_ClearMassage', 'H3_Trust'
+                         'numOfImg', 'numOfRewards', 'hasVideo', 'text_Length', 'numOfFbFriends', 'experience']
         df[column_order1].to_csv('./Data/ANALYSIS_CategoryResult.csv')

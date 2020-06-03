@@ -123,6 +123,14 @@ class Aux():
         for file in responseFiles:
             shutil.move(self.DIR_R+file, self.DIR_RS)
 
+    def stringifyText(self, text):
+
+        stringifyText = str(text.text)
+        num_Array = [int(s) for s in stringifyText.split() if s.isdigit()]
+        number = num_Array[0]
+
+        return number
+
 
 
 
