@@ -100,7 +100,9 @@ class Algorithm():
             # PIC ANALYTICS
 
             remote_image_url = row['algorithm']['photo']
+            remote_image_url_ed = row['algorithm']['photo_ed']
             description_results = computervision_client.describe_image(remote_image_url)
+
             if len(description_results.captions) > 0:
 
                 tags = description_results.tags
@@ -155,6 +157,8 @@ class Algorithm():
                 remote_image_features = ["color"]
                 detect_color_results_remote = computervision_client.analyze_image(remote_image_url,
                                                                                   remote_image_features)
+                detect_color_results_remote_ed = computervision_client.analyze_image(remote_image_url_ed,
+                                                                                     remote_image_features)
                 picColor = detect_color_results_remote
                 if not picColor.color.is_bw_img:
                     row['results']['hasColor'] = True
@@ -162,7 +166,7 @@ class Algorithm():
                     row['colors']['background'] = background
                     foreground = picColor.color.dominant_color_foreground
                     row['colors']['foreground'] = foreground
-                    dominantColors = picColor.color.dominant_colors
+                    dominantColors = detect_color_results_remote_ed.color.dominant_colors
                     row['colors']['dominantColors'] = dominantColors
                     accentColor = picColor.color.accent_color
                     row['colors']['accentColor'] = accentColor

@@ -10,14 +10,16 @@ numOfFilesInRS = Aux.getNumOfFilesInResponseStack()
 
 print('You got {0} datasets in your file'.format(DataFilter.countDatasets()))
 print('The number of datasets in your ResponseStack is: {0}'.format(numOfFilesInRS))
-dataRequired = input("Do you want new Data? y/n")
+print("Do you want new Data? y/n")
+dataRequired = input()
 
 if dataRequired == 'y':
 
     try:
-        numOfDs = input("How many datasets do you want?")
+        print("How many datasets do you want?")
+        numOfDs = input()
 
-        print('getting data...')
+        print('getting data from crawler...')
 
         # extract relevant data
 
@@ -41,12 +43,15 @@ if dataRequired == 'y':
 
         # get new Data from Microsoft and save response local
 
+        print('getting data from Microsoft...')
+
         Algorithm.getNewDataFromMS(cleanedData_Control)
 
         numOfFilesInR = Aux.getNumOfFilesInStack()
 
         print('The process was successful, you got {0} new datasets'.format(numOfFilesInR))
-        storeData = input('Do you want to store the new data in your stack? y/n')
+        print('Do you want to store the new data in your stack? y/n')
+        storeData = input()
 
         if storeData == 'y':
             Aux.storeResponseInStack()
@@ -69,9 +74,31 @@ Analysis.buildCatsWithTargetVars(responseStack)
 
 Analysis.descriptiveStats(responseStack)
 
-# make Regression
+while True:
 
-Analysis.makeRegression(responseStack)
+    print('What should be your TARGET_VAR for regression?')
+    print('Success = s')
+    print('Pledged money = p')
+    print('Number of backers = b')
+    TARGET_VAR = input()
+
+    # Regression analysis
+
+    if TARGET_VAR in ('s', 'p', 'b'):
+        answer = True
+        Analysis.makeRegression(responseStack, TARGET_VAR)
+        break
+
+    else:
+        print('your input was not correct')
+        print()
+
+print('Your analysis was successful')
+
+
+
+
+
 
 
 

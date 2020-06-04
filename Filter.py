@@ -12,7 +12,6 @@ class Filter():
     Aux = Aux()
     Crawler = Crawler()
 
-
     def countDatasets(self):
 
         df = pd.DataFrame(self.data)
@@ -24,9 +23,7 @@ class Filter():
 
         global singleProject
         rightData = []
-
         counter = 0
-
         for pos, con in self.data.iterrows():
             if counter < int(numOfDs):
                 try:
@@ -56,6 +53,7 @@ class Filter():
                         },
                         'algorithm': {
                             'photo': photo['1024x576'],
+                            'photo_ed': photo['ed'],
                             'title': con['slug'],
                             'text': con['blurb'],
                             'state': con['state'],
@@ -69,50 +67,50 @@ class Filter():
                             'hue': 0
                         },
                         'results': {
-                            'hasContent': 'no',  # computerVision  |
-                            'content': [],  # computerVision  |
-                            'imageCategory': [],  # computerVision  |
-                            'hasHuman': 0,  # computerVision | Emo x
-                            'hasFace': False,  # computerVision | Emo  -------> zweite Variante
-                            'hasColor': False,  # computerVision | Emo
-                            'isBright': True,  # computerVision | Emo
-                            'hasManyDomColors': False,  # computerVision |
-                            'hasWarmHueAccent': False,  # computerVision | Emo
-                            'TagsInPic': [],  # computerVision |
-                            'NumOfObjectsInPic': 0,  # computerVision |
+                            'hasContent': 'no',  # computerVision
+                            'content': [],  # computerVision
+                            'imageCategory': [],  # computerVision
+                            'hasHuman': 0,  # computerVision
+                            'hasFace': False,  # computerVision
+                            'hasColor': False,  # computerVision
+                            'isBright': True,  # computerVision
+                            'hasManyDomColors': False,  # computerVision
+                            'hasWarmHueAccent': False,  # computerVision
+                            'TagsInPic': [],  # computerVision
+                            'NumOfObjectsInPic': 0,  # computerVision
 
-                            'CLASS_fewObjects': False,   # INFO
-                            'CLASS_normalObjects': False,  # INFO
+                            'CLASS_fewObjects': False,
+                            'CLASS_normalObjects': False,
                             'CLASS_manyObjects': False,
 
-                            'lengthOfTitle': 0,  # textAnalytics |
-                            'sentimentTitle': '',  # textAnalytics |
-                            'sentiScoresTitle': [],  # textAnalytics |
-                            'keyPhrasesTitle': [], # textAnalytics |
-                            'lengthOfText': 0,  # textAnalytics |
-                            'sentimentText': '',  # textAnalytics |
-                            'sentiScoresText': [],  # textAnalytics |
-                            'keyPhrasesText': [],  # textAnalytics |
+                            'lengthOfTitle': 0,  # textAnalytics
+                            'sentimentTitle': '',  # textAnalytics
+                            'sentiScoresTitle': [],  # textAnalytics
+                            'keyPhrasesTitle': [], # textAnalytics
+                            'lengthOfText': 0,  # textAnalytics
+                            'sentimentText': '',  # textAnalytics
+                            'sentiScoresText': [],  # textAnalytics
+                            'keyPhrasesText': [],  # textAnalytics
 
-                            'CLASS_shortTitle': False,   # INFO
-                            'CLASS_normalTitle': False,  # INFO
+                            'CLASS_shortTitle': False,
+                            'CLASS_normalTitle': False,
                             'CLASS_longTitle': False,
 
                             'CLASS_negativeTitle': False,
-                            'CLASS_neutralTitle': False,  # Emo # INFO
-                            'CLASS_positiveTitle': False,  # Emo # INFO
+                            'CLASS_neutralTitle': False,
+                            'CLASS_positiveTitle': False,
 
-                            'CLASS_shortText': False,  # INFO
-                            'CLASS_normalText': False,   # INFO
+                            'CLASS_shortText': False,
+                            'CLASS_normalText': False,
                             'CLASS_longText': False,
 
                             'CLASS_negativeText': False,
-                            'CLASS_neutralText': False,  # INFO
-                            'CLASS_positiveText': False,  # Emo
+                            'CLASS_neutralText': False,
+                            'CLASS_positiveText': False,
 
-                            'TextMatchPic': False,  # textAnalytics | TRUST -------> zweite Variante
-                            'CreatorMatchTitle': False,  # textAnalytics | TRUST
-                            'TitleMatchPicOCR': False,  # textAnalytics | TRUST
+                            'TextMatchPic': False,  # textAnalytics
+                            'CreatorMatchTitle': False,  # textAnalytics
+                            'TitleMatchPicOCR': False,  # textAnalytics
                             'OCRTags': False,
                             'OCRMatches': False,
 
@@ -122,12 +120,12 @@ class Filter():
                         }
                     }
                     rightData.append(singleProject)
-                except:
+                except Exception as E:
+                    print('Jumped over Dataset' + str(E))
+                    counter = counter - 1
                     continue
 
                 counter = counter + 1
-
-
         return rightData
 
     def filterCriteria(self, data):

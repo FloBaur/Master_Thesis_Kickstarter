@@ -35,13 +35,7 @@ class Crawler():
 
             time.sleep(1)
 
-            elem = browser.find_element_by_tag_name("body")
-            no_of_pagedowns = 30
-
-            while no_of_pagedowns:
-                elem.send_keys(Keys.PAGE_DOWN)
-                time.sleep(0.2)
-                no_of_pagedowns -= 1
+            browser.execute_script("window.scrollTo(0, document.body.scrollHeight);")
 
             # number of pictures
 

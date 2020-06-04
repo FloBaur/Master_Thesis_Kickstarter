@@ -19,7 +19,9 @@ class Analysis():
                 'successful': row['algorithm']['state'],
                 'category': row['filter']['category'],
                 'CON_goal': row['filter']['goal'],
-                'CON_duration': row['filter']['duration']
+                'CON_duration': row['filter']['duration'],
+                'pledged': row['filter']['pledged'],
+                'backers': row['filter']['backers']
             }
 
             TCE_Dict = {**targetVars, **controlVars, **extraVars}
@@ -44,22 +46,15 @@ class Analysis():
 
         return r_2, p_value, isSignificant, slope
 
-    def makeRegression(self, data):
-
-        array = self.getTargetVariables(data)
-
-        rawDf = pd.DataFrame(array)
-        df = rawDf.replace({'unsure': 0, 'positive': 1, 'negative': 0, 'neutral': 0.5,
-                            'successful': 1, 'failed': 0, 'yes': 1, 'no': 0, True: 1, False: 0, 'mixed': 0.5})
-        y = np.array(df['successful'])
+    def regress(self, df, y):
         regResults = {}
 
         CATS = ['hasHuman', 'hasFace', 'hasColor', 'isBright', 'hasManyDomColors', 'hasWarmHueAccent',
                 'TextMatchPic', 'CreatorMatchTitle', 'TitleMatchPicOCR',
-                'CLASS_manyObjects', 'CLASS_normalObjects', 'CLASS_fewObjects',
+                'CLASS_manyObjects', 'CLASS_normalObjects', 'CLASS_fewObjects', 'NumOfObjectsInPic',
                 'CLASS_positiveTitle', 'CLASS_neutralTitle', 'CLASS_negativeTitle',
-                'CLASS_longTitle', 'CLASS_normalTitle', 'CLASS_shortTitle',
-                'CLASS_longText', 'CLASS_normalText', 'CLASS_shortText',
+                'CLASS_longTitle', 'CLASS_normalTitle', 'CLASS_shortTitle', 'lengthOfTitle',
+                'CLASS_longText', 'CLASS_normalText', 'CLASS_shortText', 'lengthOfText',
                 'CLASS_positiveText', 'CLASS_neutralText', 'CLASS_negativeText',
                 'H1_Emotion', 'H2_ClearMassage', 'H3_Trust',
                 'CON_numOfImg', 'CON_numOfRewards', 'CON_hasVideo', 'CON_text_Length', 'CON_numOfFbFriends',
@@ -88,7 +83,28 @@ class Analysis():
                 }})
 
         dfResult = pd.DataFrame(regResults)
-        dfResult.round(2).T.to_csv('./Data/Results/ANALYSIS_RegressionResult.csv')
+
+        return dfResult
+
+    def makeRegression(self, data, TARGET_VAR):
+
+        array = self.getTargetVariables(data)
+
+        rawDf = pd.DataFrame(array)
+        df = rawDf.replace({'unsure': 0, 'positive': 1, 'negative': 0, 'neutral': 0.5,
+                            'successful': 1, 'failed': 0, 'yes': 1, 'no': 0, True: 1, False: 0, 'mixed': 0.5})
+        if TARGET_VAR == 's':
+            y = np.array(df['successful'])
+            dfResult = self.regress(df, y)
+            dfResult.T.round(2).to_csv('./Data/Results/ANALYSIS_SUCCESS_RegressionResult.csv')
+        if TARGET_VAR == 'p':
+            y = np.array(df['pledged'])
+            dfResult = self.regress(df, y)
+            dfResult.T.round(2).to_csv('./Data/Results/ANALYSIS_PLEDGED_RegressionResult.csv')
+        if TARGET_VAR == 'b':
+            y = np.array(df['backers'])
+            dfResult = self.regress(df, y)
+            dfResult.T.round(2).to_csv('./Data/Results/ANALYSIS_BACKERS_RegressionResult.csv')
 
     def descriptiveStats(self, data):
 
