@@ -119,7 +119,6 @@ class Crawler():
                         if len(classAbo) > 0:
                             numInText = self.Aux.stringifyText(classAbo[1])
                         else:
-                            stop = True
                             numInText = 0
                         numOfFbFriends = numInText
         except Exception as E:

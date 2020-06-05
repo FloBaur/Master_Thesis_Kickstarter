@@ -110,18 +110,25 @@ class Aux():
 
         return numOfFiles
 
-    def getNumOfFilesInStack(self):
+
+    def getNumOfFilesInResponse(self):
+
         numOfFiles = len(os.listdir(self.DIR_R))
         return numOfFiles
 
     def storeResponseInStack(self):
 
         self.deleteDataFromFolder(self.DIR_RS)
-
         responseFiles = os.listdir(self.DIR_R)
 
         for file in responseFiles:
             shutil.move(self.DIR_R+file, self.DIR_RS)
+
+    def storeDataInResponse(self, data):
+
+        for row in data:
+            with open('./Data/Response/%d.pkl' % row['key'], 'wb') as output:
+                pickle.dump(row, output, pickle.HIGHEST_PROTOCOL)
 
     def stringifyText(self, text):
         try:

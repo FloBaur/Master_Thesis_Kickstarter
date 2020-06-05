@@ -19,6 +19,18 @@ class Filter():
 
         return numOfRows
 
+    def filterCriteria(self, row):
+
+        isValid = False
+
+        if row['filter']['country'] == 'US' and row['filter']['currency'] == 'USD' and \
+                100 <= row['filter']['goal'] <= 1000000 and row['algorithm']['state'] != 'canceled' and \
+                row['algorithm']['state'] != 'live' and row['algorithm']['state'] != 'suspended' and \
+                row['filter']['duration'] <= 60:
+            isValid = True
+
+        return isValid
+
     def cleanColumns(self, numOfDs):
 
         global singleProject
@@ -119,7 +131,13 @@ class Filter():
                             'H3_Trust': False
                         }
                     }
-                    rightData.append(singleProject)
+
+                    isValid = self.filterCriteria(singleProject)
+                    if isValid:
+                        rightData.append(singleProject)
+                    else:
+                        counter = counter - 1
+
                 except Exception as E:
                     print('Jumped over Dataset' + str(E))
                     counter = counter - 1
@@ -127,22 +145,6 @@ class Filter():
 
                 counter = counter + 1
         return rightData
-
-    def filterCriteria(self, data):
-
-        cleanedArray = []
-
-        for row in data:
-            if row['filter']['country'] == 'US' and row['filter']['currency'] == 'USD' and \
-                    100 <= row['filter']['goal'] <= 1000000 and row['algorithm']['state'] != 'canceled' and \
-                    row['algorithm']['state'] != 'live' and row['algorithm']['state'] != 'suspended' and \
-                    row['filter']['duration'] <= 60:
-                cleanedArray.append(row)
-
-        for row in cleanedArray:
-            row['key'] = cleanedArray.index(row)
-
-        return cleanedArray
 
     def overViewCleanedData(self, data):
 

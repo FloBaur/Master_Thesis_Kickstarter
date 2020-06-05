@@ -15,50 +15,43 @@ dataRequired = input()
 
 if dataRequired == 'y':
 
-    try:
-        print("How many datasets do you want?")
-        numOfDs = input()
+    print("How many datasets do you want?")
+    numOfDs = input()
 
-        print('getting data from crawler...')
+    print('getting data from crawler...')
 
-        # extract relevant data
+    # extract relevant data
 
-        data = DataFilter.cleanColumns(numOfDs)
+    data = DataFilter.cleanColumns(numOfDs)
 
-        # Data filtering with diverse criteria
+    # get control variables by crawler
 
-        cleanedData = DataFilter.filterCriteria(data)
+    cleanedData_Control = DataFilter.getControllVars(data)
 
-        # get control variables by crawler
+    # write Data in CSV and print results grouped by category
 
-        cleanedData_Control = DataFilter.getControllVars(cleanedData)
+    DataFilter.overViewCleanedData(cleanedData_Control)
 
-        # write Data in CSV and print results grouped by category
+    # pass data to MS DL algorithm for analyzing the content of project pictures
 
-        DataFilter.overViewCleanedData(cleanedData_Control)
+    Algorithm = Algorithm()
 
-        # pass data to MS DL algorithm for analyzing the content of project pictures
+    # get new Data from Microsoft and save response local
 
-        Algorithm = Algorithm()
+    print('getting data from Microsoft...')
 
-        # get new Data from Microsoft and save response local
+    data_algorithm = Algorithm.getNewDataFromMS(cleanedData_Control)
 
-        print('getting data from Microsoft...')
+    Aux.storeDataInResponse(data_algorithm)
 
-        Algorithm.getNewDataFromMS(cleanedData_Control)
+    print('The process was successful, you got {0} new datasets'.format(Aux.getNumOfFilesInResponse()))
+    print('Do you want to store the new data in your stack? y/n')
+    storeData = input()
 
-        numOfFilesInR = Aux.getNumOfFilesInStack()
-
-        print('The process was successful, you got {0} new datasets'.format(numOfFilesInR))
-        print('Do you want to store the new data in your stack? y/n')
-        storeData = input()
-
-        if storeData == 'y':
-            Aux.storeResponseInStack()
-        else:
-            print('okay, nothing has been stored. Just watch you new Data')
-    except NameError:
-        print("An Error occurred")
+    if storeData == 'y':
+        Aux.storeResponseInStack()
+    else:
+        print('okay, nothing has been stored. Just watch you new Data')
 
 print('alright, lets analyze the data from the stack')
 
