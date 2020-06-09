@@ -7,7 +7,7 @@ from Crawler import Crawler
 
 class Filter():
     def __init__(self):
-        self.data = pd.read_csv('./Data/DataSource/Kickstarter.csv')
+        self.data = pd.read_csv('./Data/DataSource/Kickstarter001_2.csv')
 
     Aux = Aux()
     Crawler = Crawler()
