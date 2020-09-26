@@ -15,10 +15,13 @@ dataRequired = input()
 
 if dataRequired == 'y':
 
+    test = "GitHub"
+
     print("How many datasets do you want?")
     numOfDs = input()
 
     #select the right driver for Selenium
+
     print("Are you on Linux or Mac? Lin/Mac")
     os = input()
 
