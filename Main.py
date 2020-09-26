@@ -18,6 +18,10 @@ if dataRequired == 'y':
     print("How many datasets do you want?")
     numOfDs = input()
 
+    #select the right driver for Selenium
+    print("Are you on Linux or Mac? Lin/Mac")
+    os = input()
+
     print('getting data from crawler...')
 
     # extract relevant data
@@ -26,7 +30,7 @@ if dataRequired == 'y':
 
     # get control variables by crawler
 
-    cleanedData_Control = DataFilter.getControllVars(data)
+    cleanedData_Control = DataFilter.getControllVars(data, os)
 
     # write Data in CSV and print results grouped by category
 

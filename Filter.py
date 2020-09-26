@@ -204,7 +204,7 @@ class Filter():
         df[column_order1].to_csv('./Data/Results/FILTER_singleRow.csv')
         df2[column_order2].to_csv('./Data/Results/FILTER_categoryAnalysis.csv')
 
-    def getControllVars(self, data):
+    def getControllVars(self, data, os):
 
         data_Controls = []
 
@@ -213,7 +213,7 @@ class Filter():
             webUrl = row['filter']['WebUrl']
             rewUrl = row['filter']['RewUrl']
             try:
-                controls = self.Crawler.crawlData(webUrl, rewUrl)
+                controls = self.Crawler.crawlData(webUrl, rewUrl, os)
 
                 controls = {
                     'controls': {

@@ -16,7 +16,7 @@ class Crawler():
 
     Aux = Aux()
 
-    def crawlData(self, WebUrl, rewUrl):
+    def crawlData(self, WebUrl, rewUrl, os):
 
         # soup get rewards
         try:
@@ -24,13 +24,20 @@ class Crawler():
             request_Rew = requests.get(rewUrl)
             doc = BeautifulSoup(request_Rew.text, 'html.parser')
 
+            driverPath = './ChromeDriver/chromedriver'
+
+            if os == "Mac":
+                driverPath = './ChromeDriver/chromedriver_mac64/chromedriver'
+
             numOfRewards = 0
             for card in doc.select('.hover-group'):
                 numOfRewards = numOfRewards + 1
 
             # selenium scroll page
 
-            browser = webdriver.Chrome('./ChromeDriver/chromedriver_mac64/chromedriver')
+            stop = True
+
+            browser = webdriver.Chrome('./ChromeDriver/chromedriver')
             browser.get(WebUrl)
 
             time.sleep(1)
