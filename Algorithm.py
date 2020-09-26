@@ -286,7 +286,7 @@ class Algorithm():
 
                 TextMatchOCR = self.Aux.textMatch(phrases, OCRTags)
                 row['results']['OCRMatches'] = TextMatchOCR[0]
-                row['results']['TitleMatchPicOCR'] = TextMatchOCR[1]
+                row['results']['TextMatchPicOCR'] = TextMatchOCR[1]
 
                 # check HYPOTHESIS
 
@@ -302,7 +302,7 @@ class Algorithm():
 
                     row['results']['H2_ClearMassage'] = True
 
-                if row['results']['CreatorMatchTitle'] and row['results']['TitleMatchPicOCR']:
+                if row['results']['CreatorMatchTitle'] and row['results']['TextMatchPicOCR']:
 
                     row['results']['H3_Trust'] = True
 

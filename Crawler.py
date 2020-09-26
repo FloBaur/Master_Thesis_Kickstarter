@@ -30,7 +30,7 @@ class Crawler():
 
             # selenium scroll page
 
-            browser = webdriver.Chrome('./ChromeDriver/chromedriver')
+            browser = webdriver.Chrome('./ChromeDriver/chromedriver_mac64/chromedriver')
             browser.get(WebUrl)
 
             time.sleep(1)
@@ -99,8 +99,8 @@ class Crawler():
 
                     expText = browser.find_elements_by_xpath("//div[contains(text(), 'created')]")
                     if len(expText) > 0:
-                        numInText = self.Aux.stringifyText(expText)
-                        experience = numInText
+                            numInText = self.Aux.stringifyText(expText)
+                            experience = numInText
 
                 creator_button = browser.find_elements_by_xpath("//div[@id='experimental-creator-bio']/button")
                 if len(creator_button) > 0:

@@ -98,9 +98,12 @@ class Aux():
         responseStack = []
 
         for file in sorted(os.listdir(self.DIR_RS)):
+            try:
 
-            with open('{0}{1}'.format(self.DIR_RS, file), 'rb') as input:
-                responseStack.append(pickle.load(input))
+                with open('{0}{1}'.format(self.DIR_RS, file), 'rb') as input:
+                    responseStack.append(pickle.load(input))
+            except Exception as E:
+                print('Project cannot be loaded from response stack' + str(E))
 
         return responseStack
 

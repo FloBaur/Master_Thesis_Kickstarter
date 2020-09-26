@@ -44,6 +44,8 @@ if dataRequired == 'y':
 
     Aux.storeDataInResponse(data_algorithm)
 
+
+
     print('The process was successful, you got {0} new datasets'.format(Aux.getNumOfFilesInResponse()))
     print('Do you want to store the new data in your stack? y/n')
     storeData = input()
@@ -51,7 +53,7 @@ if dataRequired == 'y':
     if storeData == 'y':
         Aux.storeResponseInStack()
     else:
-        print('okay, nothing has been stored. Just watch you new Data')
+        print('okay, nothing has been stored. Just watch your new Data')
 
 print('alright, lets analyze the data from the stack')
 
@@ -60,6 +62,8 @@ responseStack_Unsorted = Aux.getDataFromResponseStack()
 # group data by categories
 
 responseStack = sorted(responseStack_Unsorted, key=lambda k: k['key'])
+
+DataFilter.overViewCleanedData(responseStack)
 
 Analysis.buildCatsWithTargetVars(responseStack)
 

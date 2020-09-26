@@ -1,3 +1,2601 @@
 ,category,duration,success,goal,pledged,backers,%pledged
-0,Music,59,successful,6000,6423.0,86,107.05
-1,Music,30,failed,8000,0.0,0,0.0
+0,Food,60,failed,75000,266.0,6,0.35
+1,Journalism,40,failed,30500,1898.0,21,6.22
+2,Music,32,failed,20000,2741.0,28,13.71
+3,Film & Video,25,failed,100000,25877.0,118,25.88
+4,Journalism,34,failed,9000,0.0,0,0.0
+5,Fashion,30,failed,10000,0.0,0,0.0
+6,Film & Video,30,failed,6000,260.0,2,4.33
+7,Technology,20,failed,1000,165.0,3,16.5
+8,Photography,30,failed,2000,255.0,8,12.75
+9,Publishing,56,failed,2500,0.0,0,0.0
+10,Publishing,30,successful,4750,5022.0,140,105.73
+11,Photography,14,failed,1200,185.0,3,15.42
+12,Technology,45,failed,300000,0.0,0,0.0
+13,Games,7,successful,6000,22546.5,1269,375.78
+14,Design,30,successful,5000,25913.0,184,518.26
+15,Journalism,31,successful,1056,1056.0,19,100.0
+16,Film & Video,30,failed,10000,35.0,2,0.35
+17,Music,30,failed,10000,5975.0,89,59.75
+18,Food,40,successful,7500,7671.0,35,102.28
+19,Comics,32,successful,1000,1046.0,28,104.6
+20,Theater,27,successful,1500,2925.0,17,195.0
+21,Film & Video,30,failed,20000,261.0,8,1.31
+22,Music,14,successful,5000,12793.0,207,255.86
+23,Art,30,successful,1800,1857.0,39,103.17
+24,Art,36,failed,4300,570.0,14,13.26
+25,Food,31,failed,10000,26.0,2,0.26
+26,Photography,14,failed,985,26.0,2,2.64
+27,Film & Video,50,successful,6500,6554.0,50,100.83
+28,Games,35,successful,7000,31968.0,500,456.69
+29,Journalism,60,failed,15000,0.0,0,0.0
+30,Art,14,successful,500,500.0,9,100.0
+31,Photography,5,successful,149,663.0,13,444.97
+32,Technology,45,failed,500,4.0,1,0.8
+33,Film & Video,59,failed,30000,2421.0,15,8.07
+34,Art,28,successful,2500,2970.0,68,118.8
+35,Music,30,successful,9000,9369.88,224,104.11
+36,Publishing,30,failed,1500,555.0,16,37.0
+37,Technology,44,failed,300000,0.0,0,0.0
+38,Art,28,successful,14000,16487.0,100,117.76
+39,Design,33,successful,3000,9769.0,159,325.63
+40,Dance,30,failed,2500,1.0,1,0.04
+41,Film & Video,60,failed,500,76.0,5,15.2
+42,Music,25,successful,3500,3550.0,22,101.43
+43,Technology,30,successful,200,200.0,13,100.0
+44,Comics,30,failed,13000,839.0,31,6.45
+45,Publishing,30,successful,500,1126.0,43,225.2
+46,Art,29,successful,10000,10014.0,66,100.14
+47,Music,14,successful,2000,2040.0,21,102.0
+48,Art,46,successful,1000,1501.0,25,150.1
+49,Photography,30,failed,900,50.0,1,5.56
+50,Art,32,failed,10001,418.0,15,4.18
+51,Comics,29,successful,500,1761.0,59,352.2
+52,Music,28,successful,5000,5003.0,65,100.06
+53,Technology,30,successful,950,1015.0,15,106.84
+54,Design,30,successful,75000,182166.0,187,242.89
+55,Dance,15,failed,6000,100.0,4,1.67
+56,Art,15,successful,5000,7900.0,51,158.0
+57,Film & Video,30,successful,1000,2298.0,19,229.8
+58,Art,30,successful,4000,4005.0,13,100.12
+59,Art,14,successful,400,407.5,32,101.88
+60,Publishing,60,successful,500,1979.0,34,395.8
+61,Comics,35,failed,25000,42.0,4,0.17
+62,Music,30,failed,2000,105.0,5,5.25
+63,Film & Video,30,failed,25000,0.0,0,0.0
+64,Technology,28,successful,10500,10710.0,100,102.0
+65,Music,30,failed,10000,650.0,17,6.5
+66,Comics,31,successful,17500,18953.0,250,108.3
+67,Crafts,30,successful,500,8262.0,218,1652.4
+68,Art,9,successful,3300,3350.0,34,101.52
+69,Publishing,40,failed,9500,0.0,0,0.0
+70,Publishing,60,failed,6000,507.0,13,8.45
+71,Film & Video,30,successful,1200,1415.0,76,117.92
+72,Film & Video,30,successful,10000,14703.0,124,147.03
+73,Games,24,successful,25000,155983.0,2575,623.93
+74,Design,40,successful,1000,4777.0,87,477.7
+75,Comics,17,successful,500,1357.0,51,271.4
+76,Food,60,failed,50000,27.0,3,0.05
+77,Technology,30,failed,175000,0.0,0,0.0
+78,Food,30,failed,5000,60.0,3,1.2
+79,Art,30,failed,1000,396.0,9,39.6
+80,Publishing,30,successful,5000,5685.11,230,113.7
+81,Comics,29,successful,8000,12449.0,310,155.61
+82,Design,10,failed,250,208.0,18,83.2
+83,Film & Video,31,successful,3000,3425.0,105,114.17
+84,Comics,30,successful,150000,665725.94,5553,443.82
+85,Music,30,successful,6000,6820.0,121,113.67
+86,Comics,30,successful,995,1476.0,20,148.34
+87,Film & Video,30,failed,1000,0.0,0,0.0
+88,Games,30,successful,300,9095.0,500,3031.67
+89,Publishing,19,successful,4000,4225.0,72,105.62
+90,Music,29,successful,2500,2705.0,33,108.2
+91,Food,45,successful,10000,11825.81,172,118.26
+92,Games,34,failed,150000,11847.0,108,7.9
+93,Technology,60,successful,50000,1677550.0,4018,3355.1
+94,Publishing,30,successful,5800,13728.83,335,236.7
+95,Art,24,failed,500,0.0,0,0.0
+96,Comics,30,successful,10000,23878.0,669,238.78
+97,Technology,30,failed,1000,388.0,16,38.8
+98,Music,52,failed,15000,1126.0,10,7.51
+99,Publishing,29,successful,4000,4281.0,60,107.02
+100,Publishing,30,failed,1000,67.0,4,6.7
+101,Publishing,30,successful,15000,18246.0,241,121.64
+102,Games,30,successful,4000,14426.0,102,360.65
+103,Games,31,successful,6000,16949.0,673,282.48
+104,Publishing,32,successful,5000,5305.0,31,106.1
+105,Games,45,failed,35000,1767.0,21,5.05
+106,Publishing,30,failed,14500,1375.0,13,9.48
+107,Technology,30,failed,3000,10.0,1,0.33
+108,Games,60,failed,1500,45.0,3,3.0
+109,Art,40,failed,5500,10.0,1,0.18
+110,Art,30,failed,4999,85.0,4,1.7
+111,Games,32,successful,12000,13143.0,605,109.53
+112,Technology,45,failed,90000,38.0,4,0.04
+113,Design,15,failed,563,11.0,1,1.95
+114,Design,30,successful,10000,10199.0,80,101.99
+115,Art,10,failed,2000,261.0,11,13.05
+116,Film & Video,60,successful,12500,13126.0,76,105.01
+117,Technology,40,successful,7000,11763.0,69,168.04
+118,Food,45,successful,2000,2205.0,47,110.25
+119,Publishing,30,failed,15000,0.0,0,0.0
+120,Design,60,successful,500,530.0,6,106.0
+121,Comics,30,successful,4500,5791.0,85,128.69
+122,Music,21,successful,1500,2328.0,46,155.2
+123,Technology,45,successful,50000,381496.0,990,762.99
+124,Publishing,29,successful,40000,287342.47,4242,718.36
+125,Music,30,failed,5000,1.0,1,0.02
+126,Publishing,30,failed,2800,1.0,1,0.04
+127,Music,21,successful,5000,5225.0,81,104.5
+128,Film & Video,60,successful,23000,31586.0,171,137.33
+129,Publishing,30,successful,1000,1713.0,44,171.3
+130,Design,30,successful,4500,9350.0,223,207.78
+131,Art,30,successful,4000,4010.0,25,100.25
+132,Food,60,failed,10000,1132.0,30,11.32
+133,Art,30,successful,2105,2159.0,34,102.57
+134,Design,30,successful,600,4355.0,151,725.83
+135,Crafts,45,failed,6000,26.0,2,0.43
+136,Comics,30,successful,8000,8641.0,137,108.01
+137,Film & Video,28,successful,30000,30488.0,236,101.63
+138,Art,19,successful,1500,1501.0,35,100.07
+139,Comics,30,failed,3000,959.0,38,31.97
+140,Theater,30,successful,50000,50051.0,85,100.1
+141,Art,30,successful,1200,1390.0,25,115.83
+142,Technology,60,failed,150000,0.0,0,0.0
+143,Games,30,successful,500,15630.0,264,3126.0
+144,Design,50,successful,6000,255208.9,1317,4253.48
+145,Journalism,14,failed,5000,0.0,0,0.0
+146,Comics,30,failed,5000,46.0,6,0.92
+147,Film & Video,60,successful,25000,26878.54,354,107.51
+148,Photography,32,successful,2500,2927.5,27,117.1
+149,Fashion,28,failed,10000,780.0,10,7.8
+150,Music,30,failed,5500,270.0,12,4.91
+151,Film & Video,7,successful,3000,5058.0,69,168.6
+152,Technology,60,failed,5000,30.0,2,0.6
+153,Technology,44,successful,50000,2803249.0,2662,5606.5
+154,Comics,30,successful,1600,6735.0,141,420.94
+155,Art,33,successful,2222,2292.0,64,103.15
+156,Photography,30,successful,35000,61138.0,513,174.68
+157,Design,30,failed,5000,6.0,1,0.12
+158,Games,29,successful,33000,181631.0,2385,550.4
+159,Publishing,59,successful,3000,3130.0,35,104.33
+160,Crafts,20,failed,3500,420.0,14,12.0
+161,Film & Video,30,failed,7500,125.0,3,1.67
+162,Games,45,failed,50000,4631.0,57,9.26
+163,Games,14,successful,1500,5463.0,65,364.2
+164,Design,30,successful,30000,33279.0,165,110.93
+165,Journalism,30,successful,10000,11069.0,255,110.69
+166,Food,30,successful,10000,11508.0,150,115.08
+167,Film & Video,7,successful,12000,13098.0,82,109.15
+168,Art,30,failed,10000,2.0,2,0.02
+169,Design,44,successful,10000,466878.6,2197,4668.79
+170,Design,42,successful,1000,6761.0,247,676.1
+171,Art,30,successful,1000,1031.0,27,103.1
+172,Technology,30,failed,23500,91.0,4,0.39
+173,Games,30,failed,25000,4666.0,44,18.66
+174,Publishing,30,failed,15000,11.0,2,0.07
+175,Comics,30,successful,4800,8339.0,328,173.73
+176,Food,45,failed,50000,15.0,1,0.03
+177,Film & Video,30,failed,35000,112.0,6,0.32
+178,Photography,37,successful,10000,15040.0,318,150.4
+179,Art,52,successful,100,215.0,11,215.0
+180,Music,21,successful,1500,1555.0,30,103.67
+181,Games,28,successful,250,1057.0,219,422.8
+182,Film & Video,59,successful,20000,29472.11,321,147.36
+183,Photography,60,failed,2500,30.0,2,1.2
+184,Design,22,successful,10000,5405412.39,17974,54054.12
+185,Comics,30,successful,5500,12079.0,563,219.62
+186,Food,47,failed,4000,2192.0,20,54.8
+187,Film & Video,31,successful,500,500.0,11,100.0
+188,Theater,29,failed,25000,71.0,3,0.28
+189,Art,15,successful,350,395.19,21,112.91
+190,Games,30,failed,50000,0.0,0,0.0
+191,Comics,27,successful,4500,5925.0,165,131.67
+192,Film & Video,12,failed,3500,200.0,3,5.71
+193,Art,30,successful,1600,1615.0,24,100.94
+194,Design,22,successful,30000,194336.0,2367,647.79
+195,Fashion,30,failed,2000,120.0,4,6.0
+196,Publishing,30,successful,7500,12240.0,307,163.2
+197,Games,55,failed,26000,0.0,0,0.0
+198,Film & Video,39,successful,12000,14257.5,133,118.81
+199,Technology,43,failed,100000,896.0,19,0.9
+200,Art,53,successful,3000,3056.69,72,101.89
+201,Games,24,successful,22000,55686.8,961,253.12
+202,Crafts,30,successful,1000,6618.0,72,661.8
+203,Art,30,failed,800,132.0,4,16.5
+204,Art,30,failed,4000,0.0,0,0.0
+205,Music,37,successful,20000,21000.24,325,105.0
+206,Film & Video,37,failed,10000,281.0,4,2.81
+207,Crafts,30,successful,150,1521.0,53,1014.0
+208,Film & Video,30,failed,6000,80.0,3,1.33
+209,Comics,34,successful,6500,33299.0,571,512.29
+210,Music,29,successful,2500,3195.0,73,127.8
+211,Food,60,failed,10000,251.0,6,2.51
+212,Technology,45,successful,125000,1048262.0,8340,838.61
+213,Art,35,successful,900,1028.53,76,114.28
+214,Journalism,30,failed,2300,5.0,1,0.22
+215,Dance,33,successful,9000,9120.0,116,101.33
+216,Food,42,successful,30000,32325.61,333,107.75
+217,Technology,51,failed,50000,151.0,4,0.3
+218,Food,60,failed,500,10.0,2,2.0
+219,Journalism,33,failed,125000,63725.0,389,50.98
+220,Music,10,successful,2000,2097.0,29,104.85
+221,Comics,51,successful,26000,27248.77,397,104.8
+222,Technology,30,failed,3350,60.0,2,1.79
+223,Art,30,failed,12000,602.0,3,5.02
+224,Art,30,failed,500,0.0,0,0.0
+225,Journalism,30,successful,10000,10271.0,62,102.71
+226,Comics,30,successful,100,100.0,2,100.0
+227,Film & Video,30,successful,10000,10220.0,118,102.2
+228,Food,20,successful,14000,15410.0,72,110.07
+229,Design,45,successful,50000,184369.77,273,368.74
+230,Publishing,30,successful,2000,2300.0,45,115.0
+231,Dance,30,successful,5678,7853.0,95,138.31
+232,Film & Video,33,successful,6000,6065.0,89,101.08
+233,Art,31,successful,3300,3805.0,50,115.3
+234,Publishing,30,failed,5000,3.0,3,0.06
+235,Film & Video,45,successful,30000,32332.0,185,107.77
+236,Film & Video,30,successful,1950,2450.0,16,125.64
+237,Technology,35,successful,100000,109549.0,413,109.55
+238,Games,30,failed,200000,22.0,4,0.01
+239,Comics,31,successful,30000,41686.0,1200,138.95
+240,Fashion,39,successful,20000,21039.0,172,105.19
+241,Photography,60,failed,5555,725.0,4,13.05
+242,Film & Video,29,successful,5000,6104.0,143,122.08
+243,Comics,29,failed,2342,176.0,5,7.51
+244,Technology,35,successful,20000,45864.45,249,229.32
+245,Comics,31,successful,4000,4065.0,60,101.63
+246,Film & Video,19,successful,3371,3436.0,43,101.93
+247,Technology,40,failed,19000,3.0,3,0.02
+248,Art,30,successful,4000,5345.0,157,133.62
+249,Comics,14,successful,6000,6000.0,165,100.0
+250,Music,30,failed,5500,2160.0,37,39.27
+251,Film & Video,35,successful,4000,4001.0,88,100.03
+252,Technology,60,failed,11000,1999.0,1,18.17
+253,Games,60,successful,1500,4561.0,73,304.07
+254,Art,30,successful,500,500.0,10,100.0
+255,Crafts,30,failed,1000,26.0,5,2.6
+256,Food,60,failed,8500,1.0,1,0.01
+257,Music,31,successful,1500,1710.31,54,114.02
+258,Food,40,failed,5650,705.0,7,12.48
+259,Design,59,successful,5000,12285.0,300,245.7
+260,Art,42,failed,2750,1041.0,5,37.85
+261,Publishing,21,successful,2280,2791.0,63,122.41
+262,Music,30,successful,8000,8945.0,50,111.81
+263,Art,15,failed,150,129.0,5,86.0
+264,Art,60,failed,30000,16.0,3,0.05
+265,Music,34,successful,800,1000.0,19,125.0
+266,Publishing,30,failed,5000,0.0,0,0.0
+267,Film & Video,37,successful,3500,3780.0,54,108.0
+268,Photography,35,failed,30000,7222.0,24,24.07
+269,Art,30,successful,300,480.0,17,160.0
+270,Art,49,successful,3000,3065.0,49,102.17
+271,Games,28,successful,420,5260.37,184,1252.47
+272,Music,35,successful,3000,4038.0,57,134.6
+273,Technology,45,successful,10000,10215.0,43,102.15
+274,Journalism,30,failed,800,0.0,0,0.0
+275,Photography,3,failed,500,10.0,1,2.0
+276,Publishing,30,failed,6800,126.0,2,1.85
+277,Crafts,45,successful,100,171.0,6,171.0
+278,Design,30,failed,550,63.0,2,11.45
+279,Publishing,25,failed,5000,0.0,0,0.0
+280,Food,30,failed,2000,1.0,1,0.05
+281,Publishing,30,successful,2500,2508.0,32,100.32
+282,Music,40,successful,5000,5418.0,92,108.36
+283,Comics,31,successful,30000,35020.0,732,116.73
+284,Design,30,successful,10000,14281.0,115,142.81
+285,Music,30,successful,2500,2806.0,54,112.24
+286,Film & Video,32,successful,3000,3091.0,43,103.03
+287,Technology,30,successful,6000,12557.0,91,209.28
+288,Music,59,failed,1500,1.0,1,0.07
+289,Art,30,successful,300,3240.0,113,1080.0
+290,Dance,30,successful,2000,2370.0,30,118.5
+291,Art,11,successful,1500,1550.0,40,103.33
+292,Film & Video,7,successful,1000,1000.0,1,100.0
+293,Technology,30,successful,5000,8457.0,77,169.14
+294,Publishing,30,successful,12000,23996.0,331,199.97
+295,Art,28,failed,2000,600.0,8,30.0
+296,Film & Video,45,successful,10000,10400.54,132,104.01
+297,Food,30,failed,10000,1294.0,24,12.94
+298,Art,45,successful,105,385.0,8,366.67
+299,Publishing,30,failed,9000,2.0,2,0.02
+300,Design,30,successful,3000,7866.0,213,262.2
+301,Games,15,successful,40000,65498.0,804,163.75
+302,Technology,30,failed,100000,147.0,5,0.15
+303,Games,20,successful,3000,9075.69,64,302.52
+304,Art,30,failed,5000,1660.0,37,33.2
+305,Theater,25,successful,5750,5817.0,48,101.17
+306,Publishing,30,successful,2000,2220.0,53,111.0
+307,Music,30,successful,2500,3890.0,71,155.6
+308,Technology,40,successful,5000,15638.0,212,312.76
+309,Design,13,successful,10000,10027.0,25,100.27
+310,Music,27,successful,1300,1370.0,33,105.38
+311,Publishing,44,successful,10000,29405.77,253,294.06
+312,Art,30,successful,4000,4069.0,48,101.72
+313,Film & Video,14,failed,12000,2006.0,4,16.72
+314,Publishing,45,failed,50000,6.0,2,0.01
+315,Journalism,30,failed,600,310.0,12,51.67
+316,Games,24,successful,4500,5617.0,88,124.82
+317,Publishing,30,successful,750,771.0,14,102.8
+318,Photography,17,successful,600,720.0,11,120.0
+319,Comics,30,successful,2000,2541.0,36,127.05
+320,Crafts,10,failed,250,0.0,0,0.0
+321,Games,30,successful,25000,41308.11,1073,165.23
+322,Fashion,30,failed,7000,1726.0,14,24.66
+323,Design,30,failed,100000,3.0,3,0.0
+324,Design,44,successful,800,1131.0,13,141.38
+325,Art,30,failed,150000,260.0,2,0.17
+326,Comics,30,successful,3000,3186.66,81,106.22
+327,Film & Video,15,failed,800,461.0,10,57.63
+328,Photography,34,successful,8500,12302.0,96,144.73
+329,Art,30,failed,20000,30.0,4,0.15
+330,Dance,31,successful,4580,4580.0,72,100.0
+331,Food,30,failed,5000,301.0,3,6.02
+332,Technology,30,failed,5000,0.0,0,0.0
+333,Art,30,failed,2700,20.0,1,0.74
+334,Publishing,60,failed,40000,10.0,1,0.03
+335,Music,54,successful,750,751.0,8,100.13
+336,Games,14,successful,500,2981.5,93,596.3
+337,Film & Video,31,failed,8000,27.0,3,0.34
+338,Music,30,successful,10000,10891.01,129,108.91
+339,Journalism,32,failed,50000,10281.15,187,20.56
+340,Music,34,successful,15000,22115.0,87,147.43
+341,Film & Video,17,successful,7777,8282.18,99,106.5
+342,Music,30,successful,1500,1863.0,19,124.2
+343,Film & Video,30,failed,40000,480.0,6,1.2
+344,Design,30,successful,10000,10500.0,98,105.0
+345,Theater,30,successful,300,431.0,10,143.67
+346,Games,30,successful,11200,12579.19,185,112.31
+347,Publishing,35,successful,1000,1088.0,33,108.8
+348,Games,30,failed,8000,30.0,1,0.38
+349,Design,30,successful,30000,222866.0,537,742.89
+350,Music,58,successful,4500,4500.0,10,100.0
+351,Publishing,30,successful,3500,5529.0,66,157.97
+352,Food,30,failed,100,3.0,1,3.0
+353,Technology,45,successful,30000,884254.0,8456,2947.51
+354,Design,30,successful,15000,15610.0,146,104.07
+355,Fashion,17,failed,1800,0.0,0,0.0
+356,Food,20,successful,18000,27147.0,282,150.82
+357,Design,27,failed,4000,280.0,6,7.0
+358,Film & Video,30,failed,8000,10.0,1,0.12
+359,Art,30,successful,450,3560.0,112,791.11
+360,Art,3,failed,400,1.0,1,0.25
+361,Publishing,40,successful,1400,1558.0,40,111.29
+362,Crafts,30,successful,500,994.5,39,198.9
+363,Food,30,failed,5000,514.0,9,10.28
+364,Art,31,failed,5000,1627.0,30,32.54
+365,Design,5,successful,100,171.0,12,171.0
+366,Games,30,successful,5000,6312.11,386,126.24
+367,Music,30,failed,9500,451.0,7,4.75
+368,Food,21,failed,17500,5581.0,66,31.89
+369,Publishing,21,successful,1200,1225.0,29,102.08
+370,Comics,36,successful,30000,34043.0,791,113.48
+371,Art,30,successful,2000,2613.0,55,130.65
+372,Technology,30,successful,20000,1115031.05,11360,5575.16
+373,Film & Video,40,successful,10000,12310.07,204,123.1
+374,Comics,30,failed,3000,366.0,26,12.2
+375,Music,44,failed,3000,23.0,2,0.77
+376,Crafts,33,failed,5000,25.0,1,0.5
+377,Technology,45,successful,25000,58414.0,244,233.66
+378,Comics,29,failed,500,2.0,2,0.4
+379,Art,30,failed,5000,0.0,0,0.0
+380,Music,30,successful,4000,4792.0,104,119.8
+381,Art,25,successful,10000,10800.0,86,108.0
+382,Food,37,successful,35000,41128.0,499,117.51
+383,Art,30,failed,1000,0.0,0,0.0
+384,Photography,29,successful,6000,17035.0,281,283.92
+385,Art,22,failed,5000,21.0,2,0.42
+386,Food,33,failed,50000,9550.0,27,19.1
+387,Music,30,successful,5000,5741.0,58,114.82
+388,Games,30,failed,50000,350.0,11,0.7
+389,Publishing,30,successful,3000,3318.0,85,110.6
+390,Journalism,60,failed,15000,41.0,2,0.27
+391,Art,15,successful,200,609.0,54,304.5
+392,Design,30,failed,3500,0.0,0,0.0
+393,Games,18,failed,7500,128.0,3,1.71
+394,Design,30,successful,5000,18181.0,443,363.62
+395,Comics,20,successful,250,818.0,41,327.2
+396,Games,30,successful,27000,301008.54,4888,1114.85
+397,Technology,38,successful,50000,268142.0,973,536.28
+398,Journalism,30,failed,15000,1.0,1,0.01
+399,Art,20,failed,2000,20.0,1,1.0
+400,Art,30,failed,12500,350.0,5,2.8
+401,Publishing,30,successful,8250,16032.0,157,194.33
+402,Crafts,30,successful,500,1623.0,46,324.6
+403,Games,21,failed,7500,0.0,0,0.0
+404,Publishing,35,successful,15000,16180.0,203,107.87
+405,Design,30,successful,5000,5460.0,91,109.2
+406,Art,30,successful,850,858.0,25,100.94
+407,Technology,50,successful,50000,716791.0,6171,1433.58
+408,Art,45,failed,500,5.0,1,1.0
+409,Music,30,successful,7500,8866.0,169,118.21
+410,Art,17,failed,3333,203.0,2,6.09
+411,Art,30,successful,15000,15299.0,119,101.99
+412,Comics,60,failed,2261,100.0,1,4.42
+413,Journalism,28,failed,11120,0.0,0,0.0
+414,Music,27,successful,1500,1545.0,35,103.0
+415,Comics,16,successful,8500,9350.0,181,110.0
+416,Film & Video,31,successful,5000,5100.0,52,102.0
+417,Games,28,successful,3000,3438.93,159,114.63
+418,Publishing,30,failed,7000,1.0,1,0.01
+419,Design,60,successful,10000,11474.0,137,114.74
+420,Film & Video,30,failed,2000,1044.0,19,52.2
+421,Technology,20,successful,2000,8090.0,117,404.5
+422,Publishing,30,successful,5000,5406.0,57,108.12
+423,Comics,15,failed,50000,0.0,0,0.0
+424,Photography,51,failed,4200,76.0,7,1.81
+425,Comics,42,failed,300,38.0,5,12.67
+426,Crafts,30,successful,10000,32939.0,471,329.39
+427,Art,25,successful,750,810.0,22,108.0
+428,Fashion,30,successful,39000,39081.11,125,100.21
+429,Music,35,failed,3500,1053.0,32,30.09
+430,Crafts,30,successful,500,620.0,18,124.0
+431,Crafts,37,successful,14500,18291.0,138,126.14
+432,Games,30,successful,2000,120630.75,2184,6031.54
+433,Publishing,45,failed,20000,11.0,2,0.06
+434,Film & Video,34,successful,1200,1211.0,21,100.92
+435,Photography,22,successful,6000,6025.0,67,100.42
+436,Games,31,successful,50000,274524.3,517,549.05
+437,Film & Video,15,failed,2000,70.0,6,3.5
+438,Publishing,13,failed,2000,100.0,1,5.0
+439,Design,35,successful,3188,4530.0,65,142.1
+440,Games,30,successful,1800,2030.0,34,112.78
+441,Technology,60,failed,29000,157.0,4,0.54
+442,Art,40,failed,3500,50.0,3,1.43
+443,Design,32,successful,30000,88665.0,469,295.55
+444,Art,30,failed,22000,2117.0,17,9.62
+445,Film & Video,19,successful,3400,3410.0,34,100.29
+446,Film & Video,30,failed,50000,1.0,1,0.0
+447,Publishing,30,successful,1000,1259.0,74,125.9
+448,Art,34,failed,1000,0.0,0,0.0
+449,Food,20,failed,10000,0.0,0,0.0
+450,Comics,30,failed,20000,2725.0,57,13.63
+451,Film & Video,34,failed,8000,720.0,10,9.0
+452,Art,30,failed,300,0.0,0,0.0
+453,Photography,29,failed,3500,76.0,1,2.17
+454,Music,30,successful,9000,10170.69,122,113.01
+455,Food,42,failed,100000,7103.0,13,7.1
+456,Music,30,successful,35000,48965.0,242,139.9
+457,Technology,35,successful,100000,1045190.01,3829,1045.19
+458,Publishing,60,failed,1000,0.0,0,0.0
+459,Theater,32,successful,2500,2700.0,16,108.0
+460,Art,30,successful,80000,96853.0,883,121.07
+461,Music,28,successful,20000,23202.0,151,116.01
+462,Food,30,failed,1000,202.0,6,20.2
+463,Design,60,successful,20000,78004.0,385,390.02
+464,Film & Video,30,failed,75000,15.0,1,0.02
+465,Dance,30,failed,5000,220.0,2,4.4
+466,Crafts,30,successful,500,525.0,13,105.0
+467,Technology,43,successful,15000,324453.0,2154,2163.02
+468,Design,31,successful,100000,557812.99,3512,557.81
+469,Music,30,successful,2000,2050.0,29,102.5
+470,Games,20,successful,1000,1001.0,15,100.1
+471,Film & Video,30,successful,6000,7598.0,88,126.63
+472,Design,30,successful,1500,1500.0,13,100.0
+473,Art,6,successful,2400,2890.0,29,120.42
+474,Food,29,failed,200000,0.0,0,0.0
+475,Music,45,successful,1300,1450.0,40,111.54
+476,Art,30,successful,500,1447.0,88,289.4
+477,Design,30,successful,550,653.0,26,118.73
+478,Music,33,successful,11111,14123.0,216,127.11
+479,Games,31,successful,750000,3271809.31,19576,436.24
+480,Technology,30,failed,3500,0.0,0,0.0
+481,Art,30,failed,45000,518.0,2,1.15
+482,Art,30,successful,900,930.0,10,103.33
+483,Publishing,38,failed,8000,25.0,1,0.31
+484,Photography,30,successful,25000,36438.0,532,145.75
+485,Film & Video,31,successful,5000,5100.0,52,102.0
+486,Music,19,failed,10000,0.0,0,0.0
+487,Technology,59,failed,100000,25.0,3,0.03
+488,Journalism,30,failed,1500,0.0,0,0.0
+489,Games,37,successful,2500,2610.0,40,104.4
+490,Technology,14,successful,5000,19651.0,81,393.02
+491,Film & Video,59,failed,35000,0.0,0,0.0
+492,Comics,30,successful,13000,67427.52,2375,518.67
+493,Food,58,failed,32200,5.0,1,0.02
+494,Comics,30,successful,2500,2717.0,66,108.68
+495,Food,60,successful,2000,7467.0,211,373.35
+496,Comics,29,failed,1000,72.0,8,7.2
+497,Art,51,failed,8000,0.0,0,0.0
+498,Music,30,successful,500,1300.0,42,260.0
+499,Publishing,30,successful,3000,3359.0,60,111.97
+500,Music,50,successful,7500,8100.0,45,108.0
+501,Technology,60,successful,100000,635769.67,1447,635.77
+502,Art,30,failed,2500,26.0,2,1.04
+503,Technology,30,failed,30000,4520.0,10,15.07
+504,Games,30,successful,20000,20390.0,155,101.95
+505,Music,51,successful,2000,2000.0,9,100.0
+506,Games,30,failed,15000,364.0,9,2.43
+507,Design,45,successful,10000,268332.68,2318,2683.33
+508,Comics,30,successful,700,928.0,38,132.57
+509,Games,18,successful,350,593.0,45,169.43
+510,Film & Video,59,failed,10000,6797.0,27,67.97
+511,Film & Video,31,successful,10000,10350.0,46,103.5
+512,Journalism,30,failed,4500,12.0,1,0.27
+513,Theater,30,successful,10000,11363.0,128,113.63
+514,Comics,31,successful,20000,31643.0,1514,158.22
+515,Music,60,successful,20000,20430.0,248,102.15
+516,Games,29,successful,15000,34426.0,1040,229.51
+517,Technology,30,failed,2200,118.0,7,5.36
+518,Film & Video,12,failed,33000,12.0,3,0.04
+519,Comics,31,successful,15000,16973.0,210,113.15
+520,Music,40,successful,4500,6841.0,93,152.02
+521,Art,30,failed,5000,416.0,6,8.32
+522,Comics,60,successful,12000,12625.0,201,105.21
+523,Film & Video,30,failed,500,150.0,3,30.0
+524,Food,29,successful,12325,21787.0,221,176.77
+525,Music,30,successful,5000,5156.0,90,103.12
+526,Journalism,30,successful,2076,2210.0,35,106.45
+527,Comics,30,successful,2800,3027.0,103,108.11
+528,Music,23,failed,15000,0.0,0,0.0
+529,Games,12,successful,500,6010.0,299,1202.0
+530,Crafts,30,failed,1000,40.0,3,4.0
+531,Art,60,failed,33000,524.0,30,1.59
+532,Publishing,35,successful,1000,1113.08,14,111.31
+533,Fashion,35,successful,10000,18155.0,133,181.55
+534,Food,30,successful,18000,18785.0,180,104.36
+535,Film & Video,30,failed,12000,0.0,0,0.0
+536,Food,30,failed,5000,50.0,1,1.0
+537,Design,35,successful,8000,70254.0,539,878.18
+538,Publishing,30,successful,6000,7334.0,366,122.23
+539,Comics,31,successful,7500,16725.0,311,223.0
+540,Film & Video,30,successful,35000,36750.0,283,105.0
+541,Photography,60,failed,1500,6.0,2,0.4
+542,Art,30,successful,1200,1471.0,31,122.58
+543,Dance,30,successful,4000,4500.0,38,112.5
+544,Food,30,failed,12000,25.0,1,0.21
+545,Fashion,30,failed,20000,330.0,5,1.65
+546,Music,29,successful,4000,4126.27,25,103.16
+547,Publishing,60,failed,5000,41.0,4,0.82
+548,Crafts,30,failed,16000,545.0,7,3.41
+549,Film & Video,29,successful,10000,10277.0,87,102.77
+550,Music,10,successful,3000,4374.0,84,145.8
+551,Art,22,successful,400,470.0,10,117.5
+552,Art,29,failed,10000,0.0,0,0.0
+553,Art,8,successful,5000,5260.0,75,105.2
+554,Photography,30,failed,7000,0.0,0,0.0
+555,Music,30,failed,375,20.0,1,5.33
+556,Games,15,successful,7500,14095.0,71,187.93
+557,Comics,30,failed,5000,0.0,0,0.0
+558,Crafts,20,successful,200,285.0,8,142.5
+559,Games,30,successful,1500,2056.0,50,137.07
+560,Technology,30,failed,1000,12.0,3,1.2
+561,Film & Video,40,failed,8500,186.0,5,2.19
+562,Photography,59,failed,39000,19850.0,831,50.9
+563,Music,30,successful,2500,3161.0,79,126.44
+564,Food,30,failed,80000,4.0,4,0.01
+565,Film & Video,11,successful,22000,23911.0,103,108.69
+566,Technology,60,successful,10000,42591.0,471,425.91
+567,Photography,29,failed,5000,3850.0,11,77.0
+568,Design,18,successful,800,2727.0,137,340.88
+569,Food,30,successful,5000,5467.0,174,109.34
+570,Publishing,30,successful,500,509.0,9,101.8
+571,Games,30,failed,7000,25.0,1,0.36
+572,Design,21,successful,800,1582.0,51,197.75
+573,Music,30,successful,2000,2076.0,17,103.8
+574,Food,30,failed,350000,0.0,0,0.0
+575,Crafts,30,successful,200,201.0,8,100.5
+576,Film & Video,29,successful,20000,23139.19,228,115.7
+577,Comics,30,successful,5000,7990.0,131,159.8
+578,Art,8,successful,100,155.0,20,155.0
+579,Photography,31,failed,5500,1822.0,23,33.13
+580,Technology,30,failed,3000,18.0,2,0.6
+581,Art,30,successful,10000,10344.0,76,103.44
+582,Fashion,30,failed,2750,1.0,1,0.04
+583,Comics,37,successful,8000,10657.0,247,133.21
+584,Art,28,failed,1100,115.0,3,10.45
+585,Art,30,failed,25000,2429.0,23,9.72
+586,Technology,30,successful,15000,21882.0,465,145.88
+587,Crafts,60,failed,4500,24.0,4,0.53
+588,Food,35,successful,15000,18781.5,483,125.21
+589,Music,28,successful,9000,10048.0,125,111.64
+590,Food,30,failed,40000,9627.0,77,24.07
+591,Journalism,30,failed,1000,0.0,0,0.0
+592,Music,30,successful,3500,3533.0,24,100.94
+593,Crafts,45,successful,3000,3193.0,8,106.43
+594,Music,30,successful,3000,3433.0,98,114.43
+595,Food,40,successful,20000,104146.51,2165,520.73
+596,Technology,60,successful,5000,7074.0,55,141.48
+597,Dance,30,successful,5000,5041.54,74,100.83
+598,Comics,31,successful,9500,9814.0,177,103.31
+599,Music,17,successful,5000,6415.0,60,128.3
+600,Comics,29,failed,150,5.0,1,3.33
+601,Publishing,30,successful,8000,8243.0,111,103.04
+602,Music,59,successful,2000,2373.0,42,118.65
+603,Publishing,37,successful,220,230.0,2,104.55
+604,Technology,30,failed,7000,36.0,2,0.51
+605,Art,45,successful,5000,5195.0,42,103.9
+606,Comics,30,successful,20000,25197.0,644,125.98
+607,Theater,14,successful,2000,2107.0,17,105.35
+608,Music,35,successful,5000,7859.0,172,157.18
+609,Film & Video,38,successful,5000,5170.0,71,103.4
+610,Food,30,failed,20000,3383.0,41,16.91
+611,Design,35,successful,20000,28093.0,209,140.47
+612,Publishing,30,failed,3000,0.0,0,0.0
+613,Crafts,30,successful,2300,3942.0,69,171.39
+614,Technology,30,successful,3978,4750.0,111,119.41
+615,Design,15,failed,250,10.0,2,4.0
+616,Art,51,failed,1850,761.0,17,41.14
+617,Music,51,successful,11000,11034.59,101,100.31
+618,Games,20,successful,500,688.0,9,137.6
+619,Design,50,failed,125000,50.0,2,0.04
+620,Design,60,failed,5000,27.0,3,0.54
+621,Design,45,successful,2500,3854.0,73,154.16
+622,Design,32,successful,2500,4686.0,94,187.44
+623,Publishing,35,successful,1700,1775.0,17,104.41
+624,Crafts,30,successful,100,363.0,21,363.0
+625,Music,14,successful,300,323.0,23,107.67
+626,Publishing,20,successful,500,681.0,22,136.2
+627,Music,30,successful,5000,5647.0,121,112.94
+628,Publishing,40,failed,500,1.0,1,0.2
+629,Technology,30,successful,100,100.0,3,100.0
+630,Music,13,successful,3600,4878.0,73,135.5
+631,Art,4,successful,500,7146.0,1108,1429.2
+632,Film & Video,52,failed,5900,102.0,6,1.73
+633,Publishing,30,failed,5400,1601.0,23,29.65
+634,Technology,30,failed,5000,75.0,3,1.5
+635,Music,30,successful,5000,5126.0,65,102.52
+636,Design,25,successful,2500,22958.0,569,918.32
+637,Publishing,30,successful,800,3672.0,146,459.0
+638,Photography,60,successful,8000,8011.0,42,100.14
+639,Film & Video,30,successful,12000,12766.0,176,106.38
+640,Music,22,successful,10000,13561.0,86,135.61
+641,Journalism,30,failed,60000,634.0,17,1.06
+642,Journalism,30,failed,1000,0.0,0,0.0
+643,Comics,35,failed,500,26.0,3,5.2
+644,Technology,30,successful,500,2615.0,13,523.0
+645,Design,30,failed,10000,3609.0,70,36.09
+646,Art,30,successful,600,600.0,15,100.0
+647,Art,30,successful,7500,8726.0,93,116.35
+648,Design,29,failed,3400,694.0,18,20.41
+649,Film & Video,26,successful,500,626.0,19,125.2
+650,Journalism,30,failed,600000,0.0,0,0.0
+651,Journalism,30,successful,4279,5877.0,106,137.35
+652,Games,39,successful,500,1430.0,44,286.0
+653,Music,27,successful,7800,8776.0,111,112.51
+654,Music,29,successful,4000,4126.27,25,103.16
+655,Art,13,failed,150,43.0,4,28.67
+656,Art,60,failed,3000,612.0,23,20.4
+657,Photography,30,failed,2000,56.0,3,2.8
+658,Music,30,successful,10000,10400.0,47,104.0
+659,Technology,59,failed,30000,177.0,6,0.59
+660,Comics,30,successful,6500,18124.57,564,278.84
+661,Art,30,successful,6500,6590.0,57,101.38
+662,Art,20,failed,650,0.0,0,0.0
+663,Film & Video,60,successful,1500,2511.0,25,167.4
+664,Technology,30,failed,15000,1.0,1,0.01
+665,Comics,30,successful,4000,4500.0,103,112.5
+666,Music,30,successful,1000,1498.0,27,149.8
+667,Games,32,successful,1000,13437.0,421,1343.7
+668,Technology,30,failed,60000,202.0,4,0.34
+669,Film & Video,60,successful,2000,2931.0,27,146.55
+670,Publishing,47,successful,300,387.0,11,129.0
+671,Music,30,successful,2000,2223.0,73,111.15
+672,Art,40,successful,30000,30382.05,123,101.27
+673,Technology,30,failed,105000,9627.0,34,9.17
+674,Music,30,failed,5000,5.0,1,0.1
+675,Art,55,failed,40000,0.0,0,0.0
+676,Food,29,successful,6000,6651.0,58,110.85
+677,Art,43,failed,1500,31.0,4,2.07
+678,Technology,53,successful,15000,165914.0,678,1106.09
+679,Film & Video,29,successful,2500,3061.0,52,122.44
+680,Comics,30,successful,900,2276.0,67,252.89
+681,Technology,30,failed,30000,225.0,2,0.75
+682,Games,30,successful,1000,1808.0,58,180.8
+683,Design,30,failed,2500,10.0,1,0.4
+684,Design,39,failed,5000,313.0,9,6.26
+685,Technology,60,failed,50000,702.0,9,1.4
+686,Games,30,failed,60000,0.0,0,0.0
+687,Games,25,successful,2000,2775.0,96,138.75
+688,Film & Video,14,successful,500,2820.0,12,564.0
+689,Film & Video,30,successful,3000,3542.45,57,118.08
+690,Design,44,successful,40000,1251047.0,1980,3127.62
+691,Music,48,successful,4000,5315.0,108,132.88
+692,Music,30,successful,450,705.0,24,156.67
+693,Technology,30,successful,1000,1293.0,82,129.3
+694,Design,19,failed,10000,685.0,6,6.85
+695,Journalism,55,failed,8200,0.0,0,0.0
+696,Photography,45,successful,500,3978.0,64,795.6
+697,Publishing,30,successful,50000,104228.0,1284,208.46
+698,Crafts,29,successful,800,1199.0,30,149.88
+699,Film & Video,30,successful,30000,41146.11,329,137.15
+700,Art,28,successful,600,2486.0,91,414.33
+701,Music,30,failed,4500,185.0,6,4.11
+702,Comics,30,successful,4000,4386.0,157,109.65
+703,Film & Video,51,successful,9000,9082.0,60,100.91
+704,Crafts,29,successful,300,990.0,2,330.0
+705,Design,28,successful,5000,9963.0,139,199.26
+706,Film & Video,30,successful,3500,3500.0,17,100.0
+707,Music,60,successful,2000,2035.0,37,101.75
+708,Games,45,failed,40000,200.0,3,0.5
+709,Technology,10,failed,38600,61.0,3,0.16
+710,Publishing,28,failed,2500,46.0,4,1.84
+711,Music,30,failed,10000,0.0,0,0.0
+712,Art,33,successful,3300,3700.0,64,112.12
+713,Technology,43,successful,2000,2521.0,15,126.05
+714,Music,35,failed,500,120.0,2,24.0
+715,Comics,30,successful,2000,8455.0,307,422.75
+716,Music,30,successful,6000,6655.0,79,110.92
+717,Food,25,successful,85000,89300.22,450,105.06
+718,Games,30,failed,10000,6.0,2,0.06
+719,Film & Video,31,successful,2500,4500.0,27,180.0
+720,Art,40,successful,4236,4404.11,97,103.97
+721,Art,30,successful,25000,25020.0,251,100.08
+722,Art,18,successful,1000,1829.02,123,182.9
+723,Film & Video,35,successful,500,526.0,8,105.2
+724,Technology,46,successful,500,3406.0,69,681.2
+725,Art,18,failed,1500,56.0,3,3.73
+726,Art,43,failed,10000,3291.0,50,32.91
+727,Film & Video,45,failed,5000,79.0,3,1.58
+728,Film & Video,60,failed,50000,1.0,1,0.0
+729,Film & Video,20,successful,2500,2530.0,24,101.2
+730,Comics,36,failed,20000,7292.0,150,36.46
+731,Film & Video,30,failed,50000,1126.0,7,2.25
+732,Film & Video,30,successful,500,505.0,11,101.0
+733,Film & Video,38,failed,35000,6059.0,70,17.31
+734,Design,30,failed,16700,0.0,0,0.0
+735,Design,45,successful,10000,52351.0,788,523.51
+736,Food,44,failed,25000,2502.0,5,10.01
+737,Comics,30,successful,75000,106176.0,1174,141.57
+738,Crafts,32,successful,16000,21240.0,216,132.75
+739,Design,40,failed,4800,610.0,14,12.71
+740,Publishing,30,successful,8000,8052.0,113,100.65
+741,Music,41,failed,2000,297.0,13,14.85
+742,Film & Video,59,successful,400,400.0,5,100.0
+743,Music,30,successful,5500,7260.0,106,132.0
+744,Food,33,failed,2500,553.0,10,22.12
+745,Design,43,successful,25000,116574.0,763,466.3
+746,Dance,30,successful,6000,6930.0,111,115.5
+747,Publishing,21,successful,1000,3440.0,63,344.0
+748,Art,31,successful,25000,34099.02,508,136.4
+749,Film & Video,29,successful,15000,17723.0,102,118.15
+750,Design,45,successful,10000,34024.0,623,340.24
+751,Art,30,successful,1845,5447.0,64,295.23
+752,Crafts,5,failed,100,0.0,0,0.0
+753,Music,30,successful,3000,3608.0,71,120.27
+754,Film & Video,36,failed,10000,230.0,3,2.3
+755,Design,33,successful,5000,32617.0,432,652.34
+756,Music,30,failed,50000,25.0,1,0.05
+757,Art,15,successful,250,405.0,22,162.0
+758,Film & Video,30,successful,8500,8575.0,28,100.88
+759,Film & Video,29,successful,4000,5060.0,38,126.5
+760,Art,60,failed,10000,201.0,5,2.01
+761,Technology,50,failed,3500,195.0,4,5.57
+762,Publishing,45,successful,10000,11212.0,30,112.12
+763,Crafts,30,successful,250,296.0,10,118.4
+764,Design,42,failed,10000,118.0,5,1.18
+765,Art,31,failed,500,280.0,3,56.0
+766,Art,19,successful,2000,2830.0,37,141.5
+767,Food,21,failed,55000,1.0,1,0.0
+768,Food,30,successful,40000,44925.0,639,112.31
+769,Publishing,22,successful,7500,9109.0,195,121.45
+770,Photography,45,failed,3000,78.0,4,2.6
+771,Music,53,successful,1700,2336.08,42,137.42
+772,Comics,31,successful,7000,10805.0,263,154.36
+773,Technology,10,successful,500,1593.0,74,318.6
+774,Crafts,25,successful,6000,7051.0,56,117.52
+775,Art,43,successful,400,400.0,8,100.0
+776,Comics,28,successful,1000,2193.0,53,219.3
+777,Publishing,33,successful,1000,1040.0,25,104.0
+778,Film & Video,30,successful,1050,1195.0,21,113.81
+779,Technology,60,successful,100000,189209.0,1009,189.21
+780,Publishing,24,successful,3000,6620.0,102,220.67
+781,Art,14,failed,9999,837.0,17,8.37
+782,Publishing,45,successful,7500,7986.0,83,106.48
+783,Music,30,successful,15000,15742.18,201,104.95
+784,Design,30,failed,3000,496.0,16,16.53
+785,Design,35,successful,12000,16938.0,177,141.15
+786,Publishing,30,successful,1000,1397.0,22,139.7
+787,Film & Video,26,successful,5300,6781.0,113,127.94
+788,Film & Video,32,successful,25000,25086.0,77,100.34
+789,Crafts,30,successful,100,718.0,27,718.0
+790,Art,38,failed,10000,37.0,4,0.37
+791,Design,30,failed,1349,271.0,5,20.09
+792,Games,33,successful,300,600.0,25,200.0
+793,Publishing,20,successful,22240,110865.0,2553,498.49
+794,Technology,30,successful,1000,9217.0,237,921.7
+795,Art,51,failed,1000,10.0,1,1.0
+796,Music,29,successful,1700,1852.0,57,108.94
+797,Art,30,successful,10000,12525.0,288,125.25
+798,Music,30,failed,10000,0.0,0,0.0
+799,Film & Video,30,successful,106,197.0,11,185.85
+800,Art,18,failed,600,424.0,9,70.67
+801,Crafts,30,successful,550,551.0,13,100.18
+802,Food,21,successful,15000,15900.0,60,106.0
+803,Design,60,failed,10000,2.0,2,0.02
+804,Music,39,failed,5000,100.0,2,2.0
+805,Art,37,failed,47700,410.0,5,0.86
+806,Dance,19,successful,3500,3500.0,25,100.0
+807,Art,30,successful,28000,33014.0,129,117.91
+808,Music,13,successful,300,700.0,6,233.33
+809,Film & Video,29,successful,20000,20217.0,99,101.09
+810,Comics,30,successful,10000,13802.0,437,138.02
+811,Music,60,successful,5000,6095.0,101,121.9
+812,Comics,23,successful,4000,6358.0,98,158.95
+813,Music,36,successful,5000,5125.0,112,102.5
+814,Design,30,successful,1200,1435.0,3,119.58
+815,Publishing,60,failed,50000,15.0,1,0.03
+816,Art,30,successful,1500,1900.0,9,126.67
+817,Games,32,successful,10000,10320.0,121,103.2
+818,Film & Video,30,successful,8000,9400.0,84,117.5
+819,Design,60,failed,1000,166.0,6,16.6
+820,Design,30,successful,16000,19293.0,191,120.58
+821,Music,29,successful,5000,15454.0,143,309.08
+822,Film & Video,30,successful,1500,2751.0,46,183.4
+823,Design,49,failed,500,80.0,5,16.0
+824,Design,30,failed,2000,75.0,3,3.75
+825,Publishing,30,failed,10000,101.0,3,1.01
+826,Art,60,successful,1000,1011.0,27,101.1
+827,Photography,30,failed,10500,1199.0,14,11.42
+828,Film & Video,30,failed,75000,100.0,1,0.13
+829,Technology,60,successful,1025,1140.0,24,111.22
+830,Fashion,19,failed,50000,25.0,1,0.05
+831,Publishing,30,failed,2000,157.0,7,7.85
+832,Photography,27,successful,1000,5246.0,30,524.6
+833,Publishing,30,successful,2500,4983.0,126,199.32
+834,Film & Video,30,successful,8000,8350.0,91,104.38
+835,Design,30,successful,19000,19851.0,88,104.48
+836,Music,20,failed,3500,81.0,5,2.31
+837,Comics,28,successful,1945,3550.0,103,182.52
+838,Music,44,successful,3500,3528.25,29,100.81
+839,Technology,30,successful,500,785.0,17,157.0
+840,Design,30,successful,31000,34360.0,285,110.84
+841,Music,60,failed,10000,0.0,0,0.0
+842,Comics,29,successful,2500,3030.0,12,121.2
+843,Music,21,failed,6000,0.0,0,0.0
+844,Music,30,successful,20000,20308.0,158,101.54
+845,Art,29,successful,5000,19258.16,594,385.16
+846,Design,37,successful,3000,3746.0,107,124.87
+847,Food,45,failed,30000,2548.0,18,8.49
+848,Film & Video,30,successful,26495,35090.99,266,132.44
+849,Film & Video,60,failed,500,0.0,0,0.0
+850,Publishing,30,successful,1000,1493.0,26,149.3
+851,Publishing,30,failed,2000,40.0,2,2.0
+852,Games,34,successful,20000,41372.0,214,206.86
+853,Film & Video,60,successful,2400,3988.0,84,166.17
+854,Film & Video,21,successful,2200,2253.0,13,102.41
+855,Design,33,successful,3333,7924.0,99,237.74
+856,Music,30,successful,7500,7877.0,162,105.03
+857,Art,60,successful,20000,22524.0,129,112.62
+858,Technology,30,failed,30000,25.0,1,0.08
+859,Film & Video,30,successful,5000,5046.0,132,100.92
+860,Comics,30,successful,20000,41722.0,1570,208.61
+861,Music,30,successful,500,542.0,16,108.4
+862,Film & Video,37,successful,2000,2805.33,52,140.27
+863,Fashion,30,failed,300,5.0,1,1.67
+864,Film & Video,30,successful,1500,1570.0,27,104.67
+865,Design,60,successful,20200,20913.0,165,103.53
+866,Dance,15,successful,1500,1890.0,29,126.0
+867,Food,30,failed,25000,50.0,2,0.2
+868,Technology,29,successful,25000,141758.0,1463,567.03
+869,Crafts,39,successful,11000,12665.0,192,115.14
+870,Publishing,60,successful,500,507.0,17,101.4
+871,Art,30,successful,600,1111.0,33,185.17
+872,Games,30,successful,50000,61375.11,2176,122.75
+873,Publishing,30,successful,9000,9275.0,191,103.06
+874,Technology,30,successful,25000,573760.99,6972,2295.04
+875,Comics,30,successful,500,2390.0,85,478.0
+876,Art,60,successful,5000,5711.0,67,114.22
+877,Publishing,40,successful,225,860.0,22,382.22
+878,Technology,30,successful,12000,12307.7,76,102.56
+879,Publishing,30,successful,1000,3708.0,134,370.8
+880,Film & Video,30,successful,14000,19860.0,169,141.86
+881,Food,43,successful,2000,2056.0,4,102.8
+882,Art,40,failed,6800,162.0,8,2.38
+883,Technology,45,failed,50000,1712.0,17,3.42
+884,Photography,30,failed,1970,322.0,14,16.35
+885,Crafts,41,failed,4321,5.0,1,0.12
+886,Art,30,successful,500,525.0,17,105.0
+887,Technology,45,failed,3000,0.0,0,0.0
+888,Music,45,successful,2000,2001.0,52,100.05
+889,Journalism,41,failed,420,63.0,7,15.0
+890,Art,33,failed,3500,185.0,3,5.29
+891,Comics,37,successful,4000,4279.0,91,106.97
+892,Technology,45,successful,15000,26693.0,345,177.95
+893,Film & Video,31,successful,1500,2477.0,39,165.13
+894,Publishing,21,successful,1500,1761.0,51,117.4
+895,Film & Video,21,failed,65000,0.0,0,0.0
+896,Publishing,30,failed,300,40.0,2,13.33
+897,Film & Video,31,successful,8000,9264.0,81,115.8
+898,Crafts,21,successful,100,266.0,12,266.0
+899,Art,30,failed,2500,0.0,0,0.0
+900,Art,42,failed,10000,0.0,0,0.0
+901,Comics,30,successful,2000,5383.0,97,269.15
+902,Music,30,successful,7500,8520.0,52,113.6
+903,Comics,28,successful,14959,15850.0,429,105.96
+904,Crafts,60,failed,20000,345.0,8,1.73
+905,Film & Video,30,successful,50000,55150.0,423,110.3
+906,Music,29,failed,1900,14.0,2,0.74
+907,Design,30,failed,1850,428.0,14,23.14
+908,Journalism,53,failed,15000,0.0,0,0.0
+909,Fashion,30,failed,20000,1265.0,23,6.33
+910,Games,30,successful,5500,54460.0,394,990.18
+911,Film & Video,33,successful,5000,5879.0,65,117.58
+912,Crafts,31,successful,3640,3925.0,39,107.83
+913,Publishing,30,successful,1100,7155.01,135,650.46
+914,Art,40,successful,1500,2412.31,55,160.82
+915,Music,30,successful,6000,13134.14,158,218.9
+916,Film & Video,30,successful,120,150.0,8,125.0
+917,Technology,19,successful,10000,10106.0,179,101.06
+918,Publishing,45,failed,69000,176.0,4,0.26
+919,Design,28,successful,2825,3059.01,48,108.28
+920,Publishing,20,successful,250,290.0,8,116.0
+921,Music,30,successful,2000,2340.41,67,117.02
+922,Games,55,failed,5000,13.0,5,0.26
+923,Publishing,30,failed,3000,0.0,0,0.0
+924,Music,40,successful,2500,2800.01,34,112.0
+925,Games,40,successful,200,310.0,14,155.0
+926,Crafts,30,successful,500,616.0,19,123.2
+927,Film & Video,30,successful,8000,8965.0,116,112.06
+928,Publishing,59,failed,1000,1.0,1,0.1
+929,Art,30,failed,15000,0.0,0,0.0
+930,Food,30,failed,10000,218.0,6,2.18
+931,Music,30,failed,15000,6630.0,81,44.2
+932,Film & Video,18,successful,15000,15107.0,35,100.71
+933,Journalism,60,failed,5000,0.0,0,0.0
+934,Art,30,successful,8000,8322.0,92,104.02
+935,Games,30,successful,5000,5218.0,41,104.36
+936,Film & Video,15,successful,1000,1085.0,16,108.5
+937,Crafts,26,successful,200,496.0,9,248.0
+938,Journalism,5,failed,5590,50.0,1,0.89
+939,Music,40,failed,4000,635.0,17,15.88
+940,Photography,20,failed,3700,226.0,7,6.11
+941,Music,17,successful,1500,1525.0,11,101.67
+942,Film & Video,30,successful,300000,372592.93,1555,124.2
+943,Comics,30,successful,2400,2505.0,87,104.38
+944,Music,19,successful,400,771.69,26,192.92
+945,Film & Video,30,successful,22000,22507.0,216,102.3
+946,Film & Video,37,successful,70000,76048.46,621,108.64
+947,Film & Video,17,successful,500,712.0,20,142.4
+948,Comics,31,successful,1200,2306.0,71,192.17
+949,Theater,30,successful,2000,2015.0,33,100.75
+950,Crafts,14,failed,3000,377.0,9,12.57
+951,Film & Video,30,failed,10000,15.0,1,0.15
+952,Technology,24,failed,38500,24938.0,47,64.77
+953,Art,30,failed,6200,207.0,4,3.34
+954,Music,45,successful,20000,23125.0,233,115.62
+955,Photography,20,successful,100,3256.0,32,3256.0
+956,Design,29,failed,18400,5542.0,87,30.12
+957,Film & Video,60,failed,15000,350.0,5,2.33
+958,Publishing,15,failed,1500,380.0,4,25.33
+959,Music,30,failed,20000,0.0,0,0.0
+960,Film & Video,20,failed,2600,1.0,1,0.04
+961,Technology,30,failed,5000,0.0,0,0.0
+962,Music,60,failed,5000,600.0,6,12.0
+963,Art,47,successful,10000,10571.0,79,105.71
+964,Music,28,successful,2500,2713.0,72,108.52
+965,Comics,22,successful,15000,43625.22,1256,290.83
+966,Design,52,failed,60000,1470.0,14,2.45
+967,Film & Video,45,successful,6000,6335.0,41,105.58
+968,Design,48,successful,12000,13508.0,170,112.57
+969,Comics,45,successful,600,633.0,42,105.5
+970,Publishing,50,failed,2800,12.0,1,0.43
+971,Music,28,failed,5000,284.0,13,5.68
+972,Music,57,failed,3000,170.0,9,5.67
+973,Design,30,successful,999,3911.0,141,391.49
+974,Music,35,failed,10000,1857.0,51,18.57
+975,Photography,12,failed,450,15.0,2,3.33
+976,Music,28,successful,12500,13322.0,113,106.58
+977,Film & Video,33,failed,1000000,0.0,0,0.0
+978,Design,36,successful,10000,313709.99,3362,3137.1
+979,Music,15,successful,5400,6110.0,57,113.15
+980,Games,30,successful,7000,20036.0,244,286.23
+981,Film & Video,30,successful,600,976.0,14,162.67
+982,Technology,29,successful,5000,7120.0,190,142.4
+983,Publishing,34,failed,6000,1356.0,14,22.6
+984,Music,50,successful,12000,13050.0,78,108.75
+985,Film & Video,19,successful,10000,30558.0,638,305.58
+986,Music,44,failed,14800,3391.0,36,22.91
+987,Music,35,failed,20000,0.0,0,0.0
+988,Comics,29,successful,550,680.0,21,123.64
+989,Journalism,7,successful,500,690.0,41,138.0
+990,Comics,30,successful,1500,12253.0,159,816.87
+991,Games,30,failed,25000,3453.0,38,13.81
+992,Film & Video,30,successful,8500,9197.0,93,108.2
+993,Design,30,successful,360,3223.0,86,895.28
+994,Dance,20,successful,6000,6265.0,58,104.42
+995,Publishing,30,failed,6285,875.0,22,13.92
+996,Technology,60,failed,50000,0.0,0,0.0
+997,Crafts,12,successful,500,781.0,12,156.2
+998,Photography,27,failed,20000,0.0,0,0.0
+999,Crafts,12,failed,500,85.0,2,17.0
+1000,Food,39,successful,5000,5146.0,116,102.92
+1001,Film & Video,55,failed,100,0.0,0,0.0
+1002,Design,30,failed,10000,801.0,12,8.01
+1003,Comics,36,successful,2500,3079.0,94,123.16
+1004,Dance,30,successful,2500,2661.0,50,106.44
+1005,Comics,30,successful,9500,16486.0,323,173.54
+1006,Film & Video,45,successful,8500,9350.0,82,110.0
+1007,Music,40,successful,22000,22237.67,203,101.08
+1008,Journalism,14,failed,200,2.0,2,1.0
+1009,Art,37,successful,2750,2750.0,26,100.0
+1010,Food,30,successful,7000,11803.0,149,168.61
+1011,Technology,31,successful,15000,359371.0,4902,2395.81
+1012,Art,30,successful,1100,1100.0,11,100.0
+1013,Fashion,30,failed,5000,46.0,3,0.92
+1014,Art,20,failed,5000,0.0,0,0.0
+1015,Photography,60,failed,1500,0.0,0,0.0
+1016,Film & Video,60,successful,12000,12263.0,88,102.19
+1017,Music,28,successful,3500,4840.0,84,138.29
+1018,Journalism,30,failed,80000,0.0,0,0.0
+1019,Music,30,successful,5000,7509.0,125,150.18
+1020,Publishing,30,failed,2000,84.0,4,4.2
+1021,Design,25,failed,5000,554.0,21,11.08
+1022,Technology,30,successful,10000,28799.28,221,287.99
+1023,Design,30,successful,5000,5008.0,114,100.16
+1024,Photography,30,failed,6000,1.0,1,0.02
+1025,Photography,30,successful,300,330.0,12,110.0
+1026,Technology,40,successful,30000,653513.3,4645,2178.38
+1027,Film & Video,39,successful,2200,2225.0,32,101.14
+1028,Art,23,successful,400,1307.0,123,326.75
+1029,Music,30,successful,2000,3535.99,51,176.8
+1030,Art,58,failed,100000,0.0,0,0.0
+1031,Film & Video,30,successful,1250,1286.0,16,102.88
+1032,Film & Video,37,successful,100000,159015.87,1050,159.02
+1033,Art,21,failed,11000,1035.0,19,9.41
+1034,Music,30,successful,25000,28410.0,455,113.64
+1035,Film & Video,16,successful,4000,4075.0,39,101.88
+1036,Film & Video,20,successful,7000,7061.0,16,100.87
+1037,Publishing,59,successful,1000,3108.0,61,310.8
+1038,Publishing,35,successful,17500,17750.0,76,101.43
+1039,Art,29,successful,1500,2047.0,29,136.47
+1040,Comics,30,successful,3000,5065.0,197,168.83
+1041,Crafts,28,successful,2000,2000.0,14,100.0
+1042,Film & Video,30,successful,3500,3654.0,44,104.4
+1043,Publishing,31,successful,30000,46473.0,853,154.91
+1044,Art,30,failed,100000,100.0,1,0.1
+1045,Art,30,failed,15000,30.0,1,0.2
+1046,Music,30,successful,500,561.0,10,112.2
+1047,Music,30,successful,4500,4955.0,99,110.11
+1048,Design,45,successful,15000,231178.02,2082,1541.19
+1049,Music,30,failed,4000,0.0,0,0.0
+1050,Film & Video,20,successful,10000,10060.02,57,100.6
+1051,Technology,30,failed,1200,310.0,19,25.83
+1052,Music,20,failed,1500,400.0,7,26.67
+1053,Art,30,failed,2000,166.0,3,8.3
+1054,Art,16,successful,5000,5150.0,55,103.0
+1055,Publishing,30,successful,900,931.0,11,103.44
+1056,Games,30,failed,500,56.0,3,11.2
+1057,Music,52,successful,3500,3885.0,41,111.0
+1058,Publishing,30,successful,800,800.0,19,100.0
+1059,Music,32,successful,5000,5407.0,100,108.14
+1060,Photography,34,successful,7400,36849.0,475,497.96
+1061,Technology,37,failed,2500,47.0,9,1.88
+1062,Dance,33,successful,10000,11246.0,72,112.46
+1063,Comics,60,successful,2500,3300.0,181,132.0
+1064,Music,30,failed,25000,51.0,2,0.2
+1065,Photography,48,successful,15000,16515.0,197,110.1
+1066,Film & Video,19,successful,2200,2510.0,36,114.09
+1067,Design,30,failed,10000,1120.0,14,11.2
+1068,Design,31,successful,300,613.0,36,204.33
+1069,Art,30,failed,1000,210.0,3,21.0
+1070,Photography,26,successful,10000,10215.0,73,102.15
+1071,Technology,33,failed,250000,20400.0,38,8.16
+1072,Design,15,failed,2200,457.0,12,20.77
+1073,Design,31,successful,15000,15708.0,147,104.72
+1074,Art,60,failed,1100,0.0,0,0.0
+1075,Food,45,failed,10000,35.0,3,0.35
+1076,Design,53,failed,75000,381.0,11,0.51
+1077,Film & Video,60,failed,5000,112.0,5,2.24
+1078,Fashion,30,failed,30000,5480.0,93,18.27
+1079,Crafts,29,failed,500,50.0,2,10.0
+1080,Comics,42,successful,18000,26436.0,338,146.87
+1081,Technology,30,failed,279684,0.0,0,0.0
+1082,Design,23,failed,2500,1091.0,31,43.64
+1083,Comics,30,successful,4200,7275.0,249,173.21
+1084,Music,29,failed,20000,0.0,0,0.0
+1085,Games,30,successful,10000,38046.0,738,380.46
+1086,Music,30,successful,5000,7415.0,33,148.3
+1087,Film & Video,29,successful,6000,6194.57,65,103.24
+1088,Art,30,failed,4500,1260.0,15,28.0
+1089,Dance,29,failed,1000,200.0,1,20.0
+1090,Film & Video,14,successful,8000,22339.0,503,279.24
+1091,Games,30,successful,20000,34721.0,345,173.61
+1092,Film & Video,60,failed,10000,200.0,4,2.0
+1093,Design,23,successful,5191,5726.0,22,110.31
+1094,Music,31,successful,6500,7090.0,111,109.08
+1095,Food,30,successful,15000,19803.0,213,132.02
+1096,Technology,30,failed,50000,0.0,0,0.0
+1097,Art,35,failed,5500,61.0,3,1.11
+1098,Technology,30,failed,111100,78.0,11,0.07
+1099,Music,30,successful,6000,6088.66,91,101.48
+1100,Food,30,successful,50000,53578.0,226,107.16
+1101,Design,35,failed,100000,10987.0,43,10.99
+1102,Film & Video,29,successful,2800,2975.0,38,106.25
+1103,Publishing,29,successful,3000,5230.0,77,174.33
+1104,Film & Video,33,failed,500000,51.0,2,0.01
+1105,Publishing,28,successful,700,800.97,17,114.42
+1106,Crafts,35,successful,450,956.0,22,212.44
+1107,Design,60,failed,5000,2125.0,57,42.5
+1108,Art,30,successful,400,2522.0,80,630.5
+1109,Technology,40,successful,2500,4446.0,95,177.84
+1110,Publishing,30,failed,5000,3200.0,48,64.0
+1111,Food,30,failed,4000,33.0,2,0.83
+1112,Crafts,20,successful,800,1377.0,27,172.12
+1113,Comics,30,successful,500,855.0,34,171.0
+1114,Technology,29,successful,500,8478.0,299,1695.6
+1115,Art,45,failed,3000,20.0,1,0.67
+1116,Dance,30,successful,2075,2076.0,36,100.05
+1117,Technology,32,successful,50000,107783.01,1229,215.57
+1118,Journalism,30,failed,50000,0.0,0,0.0
+1119,Journalism,30,failed,3000,51.0,6,1.7
+1120,Publishing,60,failed,20000,874.0,8,4.37
+1121,Technology,37,successful,85000,88474.0,85,104.09
+1122,Music,27,failed,1000,285.0,3,28.5
+1123,Design,44,successful,4000,41860.0,629,1046.5
+1124,Film & Video,50,failed,25000,1.0,1,0.0
+1125,Film & Video,45,failed,5500,1196.0,22,21.75
+1126,Crafts,30,successful,1500,2827.0,26,188.47
+1127,Film & Video,13,successful,2000,2170.0,20,108.5
+1128,Design,30,successful,10000,58470.0,333,584.7
+1129,Design,21,successful,21000,29091.0,722,138.53
+1130,Food,45,failed,40000,3875.0,50,9.69
+1131,Music,41,successful,3240,3336.0,43,102.96
+1132,Film & Video,23,successful,2000,2230.69,21,111.53
+1133,Technology,30,successful,347,353.0,14,101.73
+1134,Music,30,successful,15000,17315.0,119,115.43
+1135,Games,14,successful,500,8080.0,237,1616.0
+1136,Film & Video,30,successful,3000,3547.0,52,118.23
+1137,Technology,30,failed,300000,1000.0,1,0.33
+1138,Design,30,successful,8000,15977.99,70,199.72
+1139,Film & Video,20,successful,50000,66511.49,650,133.02
+1140,Publishing,29,successful,14000,14976.0,127,106.97
+1141,Music,30,successful,3000,4176.0,43,139.2
+1142,Crafts,30,successful,1000,1937.0,34,193.7
+1143,Art,30,failed,2000,446.0,11,22.3
+1144,Music,15,successful,7000,7335.0,103,104.79
+1145,Art,30,failed,650000,5051.0,3,0.78
+1146,Crafts,22,successful,800,882.0,24,110.25
+1147,Film & Video,30,successful,2000,10000.0,107,500.0
+1148,Technology,15,successful,200,296.0,16,148.0
+1149,Music,30,successful,2000,2041.0,34,102.05
+1150,Comics,36,successful,8000,28971.0,760,362.14
+1151,Design,60,failed,3500,1599.0,74,45.69
+1152,Publishing,21,successful,5500,13671.0,385,248.56
+1153,Design,45,successful,10000,27719.0,815,277.19
+1154,Publishing,30,failed,2000,85.0,2,4.25
+1155,Music,60,failed,50000,1.0,1,0.0
+1156,Music,20,failed,3000,289.0,8,9.63
+1157,Film & Video,30,successful,100,601.0,23,601.0
+1158,Publishing,30,successful,9100,27177.0,468,298.65
+1159,Music,30,successful,1500,2503.0,58,166.87
+1160,Film & Video,30,successful,1000,1100.0,7,110.0
+1161,Technology,30,failed,2200,0.0,0,0.0
+1162,Film & Video,30,successful,4500,4827.0,37,107.27
+1163,Art,30,successful,2000,2575.0,101,128.75
+1164,Comics,35,successful,340,351.0,17,103.24
+1165,Crafts,30,failed,200,9.46,2,4.73
+1166,Food,30,failed,2000,20.0,2,1.0
+1167,Film & Video,30,failed,2500,0.0,0,0.0
+1168,Design,26,successful,5000,11199.0,163,223.98
+1169,Art,17,failed,2000,50.0,1,2.5
+1170,Film & Video,30,successful,50000,54132.71,806,108.27
+1171,Film & Video,29,failed,50000,80.0,2,0.16
+1172,Music,55,successful,3500,3595.0,34,102.71
+1173,Technology,60,successful,10000,10770.0,61,107.7
+1174,Publishing,30,failed,12000,0.0,0,0.0
+1175,Publishing,30,failed,15000,65.0,2,0.43
+1176,Music,60,successful,6000,6125.27,73,102.09
+1177,Games,20,failed,1250,25.0,1,2.0
+1178,Design,30,successful,30000,553785.0,4499,1845.95
+1179,Music,30,successful,7500,8299.0,209,110.65
+1180,Photography,30,failed,8500,7.0,2,0.08
+1181,Music,14,successful,2500,2530.01,56,101.2
+1182,Technology,42,successful,30000,114411.0,96,381.37
+1183,Art,30,successful,9000,55751.0,929,619.46
+1184,Music,29,successful,5000,6515.0,141,130.3
+1185,Film & Video,45,successful,11000,12815.11,121,116.5
+1186,Technology,32,failed,50000,21.0,2,0.04
+1187,Film & Video,30,successful,5000,5066.0,48,101.32
+1188,Journalism,58,failed,3000,0.0,0,0.0
+1189,Food,14,failed,7500,332.0,9,4.43
+1190,Publishing,30,successful,500,2111.0,40,422.2
+1191,Music,46,successful,30000,30687.0,175,102.29
+1192,Music,25,successful,2500,3405.0,52,136.2
+1193,Technology,39,failed,330000,1379.0,10,0.42
+1194,Dance,40,successful,30000,30483.0,153,101.61
+1195,Publishing,60,failed,10000,603.0,6,6.03
+1196,Music,30,failed,3500,12.0,3,0.34
+1197,Technology,30,successful,30000,84078.77,78,280.26
+1198,Film & Video,30,failed,20000,215.0,8,1.07
+1199,Games,60,failed,5000,1.0,1,0.02
+1200,Food,30,failed,10000,3078.78,46,30.79
+1201,Film & Video,25,successful,3000,3217.0,51,107.23
+1202,Film & Video,60,failed,50000,1.0,1,0.0
+1203,Design,30,successful,5000,5078.0,29,101.56
+1204,Comics,23,successful,21666,39246.0,1039,181.14
+1205,Games,18,successful,650,2612.0,29,401.85
+1206,Film & Video,30,successful,8000,8000.0,43,100.0
+1207,Music,42,failed,22500,10785.0,54,47.93
+1208,Journalism,30,failed,5000,0.0,0,0.0
+1209,Art,34,successful,9000,9184.0,133,102.04
+1210,Comics,31,successful,7000,23410.0,359,334.43
+1211,Film & Video,21,successful,2000,2710.0,13,135.5
+1212,Technology,29,failed,58950,655.0,8,1.11
+1213,Publishing,29,failed,15000,51.0,3,0.34
+1214,Music,32,successful,1000,1160.0,25,116.0
+1215,Music,30,successful,1000,1066.0,17,106.6
+1216,Technology,40,successful,20000,46150.0,556,230.75
+1217,Art,29,failed,100,0.0,0,0.0
+1218,Fashion,30,failed,1000,416.0,2,41.6
+1219,Photography,30,successful,1000,1503.0,51,150.3
+1220,Technology,60,failed,10000,132.0,10,1.32
+1221,Music,44,successful,4400,4515.0,49,102.61
+1222,Design,30,successful,10000,10898.0,187,108.98
+1223,Music,30,failed,10000,0.0,0,0.0
+1224,Music,30,successful,3900,7737.0,186,198.38
+1225,Film & Video,29,successful,10000,10016.0,50,100.16
+1226,Technology,57,successful,40000,112813.0,323,282.03
+1227,Comics,30,successful,3500,3550.5,60,101.44
+1228,Publishing,45,successful,35000,60185.0,274,171.96
+1229,Art,20,failed,53500,2226.0,13,4.16
+1230,Technology,60,failed,217000,85615.0,410,39.45
+1231,Music,30,successful,2100,2436.0,55,116.0
+1232,Art,26,failed,500,0.0,0,0.0
+1233,Dance,59,successful,7500,7600.0,35,101.33
+1234,Comics,31,failed,20000,129.0,5,0.65
+1235,Technology,60,failed,30000,527.0,2,1.76
+1236,Crafts,30,successful,250,296.0,10,118.4
+1237,Art,15,successful,200,256.0,9,128.0
+1238,Food,30,successful,15000,15360.84,252,102.41
+1239,Food,30,failed,10000,0.0,0,0.0
+1240,Art,32,failed,100000,5048.0,20,5.05
+1241,Technology,49,failed,9000,0.0,0,0.0
+1242,Publishing,30,failed,1500,2.0,2,0.13
+1243,Art,21,failed,1000,112.0,4,11.2
+1244,Games,14,successful,12000,17963.5,369,149.7
+1245,Technology,30,failed,6500,935.0,11,14.38
+1246,Crafts,15,successful,100,120.0,10,120.0
+1247,Art,30,successful,300,895.0,21,298.33
+1248,Music,40,successful,3000,3406.0,27,113.53
+1249,Art,20,failed,32000,0.0,0,0.0
+1250,Film & Video,24,successful,1500,2068.0,18,137.87
+1251,Food,31,failed,9900,1315.0,23,13.28
+1252,Design,59,successful,1000,1129.0,31,112.9
+1253,Music,30,successful,6500,7868.0,118,121.05
+1254,Photography,30,failed,10000,0.0,0,0.0
+1255,Film & Video,28,successful,300,320.0,9,106.67
+1256,Music,30,successful,2500,2741.0,17,109.64
+1257,Design,29,successful,3000,9192.0,305,306.4
+1258,Art,30,successful,3333,3423.32,81,102.71
+1259,Photography,23,failed,625,35.0,3,5.6
+1260,Film & Video,31,successful,10000,10106.0,94,101.06
+1261,Music,14,successful,2500,3021.01,67,120.84
+1262,Art,30,successful,200,200.0,22,100.0
+1263,Crafts,30,failed,2600,0.0,0,0.0
+1264,Publishing,30,successful,3000,4449.0,157,148.3
+1265,Food,60,failed,6000,1041.0,6,17.35
+1266,Technology,30,failed,35000,101.0,2,0.29
+1267,Journalism,30,failed,20000,1.0,1,0.01
+1268,Journalism,30,successful,7000,7001.0,50,100.01
+1269,Publishing,44,successful,3400,5412.0,62,159.18
+1270,Technology,28,successful,500,550.0,19,110.0
+1271,Film & Video,34,successful,85000,92830.2,794,109.21
+1272,Art,30,failed,5000,1.0,1,0.02
+1273,Food,30,failed,6000,176.0,5,2.93
+1274,Art,30,successful,30000,33428.0,165,111.43
+1275,Film & Video,21,successful,500,526.0,12,105.2
+1276,Technology,35,failed,100000,27966.0,74,27.97
+1277,Design,30,successful,3000,4201.0,55,140.03
+1278,Crafts,29,failed,300,42.0,2,14.0
+1279,Food,45,successful,15000,25404.0,126,169.36
+1280,Film & Video,48,successful,4000,4055.0,22,101.38
+1281,Technology,60,successful,100,121.0,5,121.0
+1282,Design,30,successful,10000,30671.0,607,306.71
+1283,Art,60,failed,10000,1.0,1,0.01
+1284,Art,28,successful,3000,3078.0,65,102.6
+1285,Technology,45,failed,125000,1771.0,12,1.42
+1286,Technology,29,successful,33331,33793.0,172,101.39
+1287,Art,33,successful,2000,2011.0,21,100.55
+1288,Art,51,failed,50000,0.0,0,0.0
+1289,Comics,29,successful,4000,4959.0,167,123.97
+1290,Music,30,failed,1000,22.0,3,2.2
+1291,Music,30,successful,900,1400.0,18,155.56
+1292,Photography,27,failed,5000,0.0,0,0.0
+1293,Photography,27,successful,1500,2034.0,37,135.6
+1294,Publishing,60,failed,20000,11.0,1,0.06
+1295,Music,20,failed,1350,0.0,0,0.0
+1296,Music,29,failed,3000,50.0,1,1.67
+1297,Design,30,successful,8000,61410.0,202,767.62
+1298,Crafts,30,failed,1000,117.0,7,11.7
+1299,Publishing,30,successful,3000,3397.0,98,113.23
+1300,Technology,30,failed,50000,4217.0,35,8.43
+1301,Technology,30,failed,500000,111.0,4,0.02
+1302,Photography,11,failed,500,105.0,2,21.0
+1303,Music,9,successful,1200,1246.0,27,103.83
+1304,Food,30,failed,300000,300.0,1,0.1
+1305,Technology,30,failed,30000,1666.0,26,5.55
+1306,Design,29,failed,36000,101.0,2,0.28
+1307,Comics,30,successful,5000,16851.69,691,337.03
+1308,Film & Video,30,failed,10000,55.0,2,0.55
+1309,Food,31,successful,50000,54335.0,341,108.67
+1310,Dance,29,successful,5500,6095.0,72,110.82
+1311,Film & Video,45,successful,20000,20542.0,109,102.71
+1312,Art,30,successful,2500,3765.0,48,150.6
+1313,Fashion,45,failed,600,40.0,2,6.67
+1314,Photography,30,successful,4000,5465.0,70,136.62
+1315,Design,14,failed,20000,2001.0,2,10.01
+1316,Film & Video,30,failed,3000,0.0,0,0.0
+1317,Publishing,41,successful,3575,4005.0,50,112.03
+1318,Film & Video,28,failed,1799,0.0,0,0.0
+1319,Art,4,successful,999,1057.07,40,105.81
+1320,Film & Video,57,failed,500000,0.0,0,0.0
+1321,Technology,14,successful,500,900.0,23,180.0
+1322,Fashion,30,failed,20000,2.0,2,0.01
+1323,Music,30,successful,7000,8686.0,82,124.09
+1324,Games,30,successful,7000,8698.0,118,124.26
+1325,Film & Video,30,successful,2000,3594.0,38,179.7
+1326,Art,27,failed,10000,409.0,13,4.09
+1327,Design,30,successful,12000,31365.0,207,261.38
+1328,Design,30,successful,6200,6507.0,62,104.95
+1329,Art,21,successful,5000,5125.0,29,102.5
+1330,Film & Video,28,failed,33000,7743.0,111,23.46
+1331,Technology,30,failed,5000,29.0,1,0.58
+1332,Design,40,successful,2500,7687.0,141,307.48
+1333,Design,30,successful,750,1009.0,34,134.53
+1334,Publishing,30,failed,3050,1.0,1,0.03
+1335,Games,15,failed,750,0.0,0,0.0
+1336,Technology,30,successful,100000,131337.0,383,131.34
+1337,Comics,27,successful,666,2930.0,98,439.94
+1338,Film & Video,30,failed,200000,0.0,0,0.0
+1339,Games,30,successful,600,898.0,19,149.67
+1340,Film & Video,32,failed,400000,10772.0,82,2.69
+1341,Technology,20,successful,3000,8037.0,43,267.9
+1342,Publishing,40,successful,1500,1925.01,36,128.33
+1343,Design,32,successful,50000,171574.0,1059,343.15
+1344,Film & Video,15,successful,500,1846.0,62,369.2
+1345,Art,58,successful,1000,1000.0,10,100.0
+1346,Music,30,failed,3000,914.0,16,30.47
+1347,Design,45,successful,10000,30699.0,130,306.99
+1348,Music,59,successful,7000,16100.01,213,230.0
+1349,Film & Video,30,failed,1000,1.0,1,0.1
+1350,Film & Video,33,failed,25000,1545.0,11,6.18
+1351,Fashion,50,failed,50000,152.0,9,0.3
+1352,Comics,31,successful,5000,8223.11,332,164.46
+1353,Music,60,failed,20000,0.0,0,0.0
+1354,Dance,30,failed,10000,1.0,1,0.01
+1355,Art,30,successful,450,610.0,17,135.56
+1356,Film & Video,60,successful,25000,59500.66,581,238.0
+1357,Design,30,successful,10000,320278.0,1946,3202.78
+1358,Music,30,failed,5000,448.0,16,8.96
+1359,Film & Video,30,successful,550,550.0,3,100.0
+1360,Music,28,successful,6000,8269.0,108,137.82
+1361,Film & Video,26,successful,4750,4750.0,39,100.0
+1362,Publishing,30,failed,490000,10.0,1,0.0
+1363,Music,29,successful,16000,18450.0,261,115.31
+1364,Comics,20,successful,5000,13542.0,225,270.84
+1365,Food,21,successful,13000,13316.0,217,102.43
+1366,Food,30,failed,5333,1444.0,72,27.08
+1367,Publishing,26,successful,1500,1515.0,9,101.0
+1368,Music,30,successful,27500,28060.0,178,102.04
+1369,Comics,30,successful,10000,10168.05,130,101.68
+1370,Film & Video,60,failed,15000,15.0,3,0.1
+1371,Film & Video,22,successful,8000,10641.0,181,133.01
+1372,Design,30,successful,2880,4581.0,106,159.06
+1373,Music,40,successful,5000,5061.5,60,101.23
+1374,Comics,30,successful,12000,25817.66,408,215.15
+1375,Photography,30,failed,1000,0.0,0,0.0
+1376,Design,30,failed,7500,651.0,15,8.68
+1377,Art,25,successful,8025,42712.0,537,532.24
+1378,Crafts,30,failed,4200,201.0,3,4.79
+1379,Comics,31,successful,2000,3125.0,52,156.25
+1380,Art,30,successful,12500,12651.0,66,101.21
+1381,Film & Video,27,failed,30000,0.0,0,0.0
+1382,Art,30,failed,100,0.0,0,0.0
+1383,Music,53,successful,5000,6496.0,73,129.92
+1384,Publishing,7,successful,500,504.99,11,101.0
+1385,Games,10,successful,1000,2791.0,56,279.1
+1386,Crafts,30,successful,1500,5007.0,187,333.8
+1387,Design,31,successful,100000,2286193.5,6474,2286.19
+1388,Music,27,successful,5000,5260.0,86,105.2
+1389,Comics,29,failed,5000,3357.0,68,67.14
+1390,Journalism,29,successful,2500,2780.0,54,111.2
+1391,Music,30,successful,4000,4050.0,11,101.25
+1392,Technology,30,failed,14000,2523.0,29,18.02
+1393,Art,32,successful,5000,5210.0,77,104.2
+1394,Film & Video,60,failed,3500,2.0,2,0.06
+1395,Publishing,31,successful,1500,2440.0,29,162.67
+1396,Film & Video,22,successful,46520,47099.0,250,101.24
+1397,Design,30,successful,6500,10352.0,52,159.26
+1398,Music,30,successful,2500,2710.0,58,108.4
+1399,Crafts,30,successful,10000,10884.0,98,108.84
+1400,Games,21,successful,6000,12965.42,132,216.09
+1401,Technology,30,failed,10000,101.0,4,1.01
+1402,Design,38,successful,7350,82929.0,1929,1128.29
+1403,Art,30,successful,2000,3240.0,53,162.0
+1404,Photography,45,failed,25000,7781.0,27,31.12
+1405,Technology,30,failed,100000,20.0,1,0.02
+1406,Technology,60,failed,90000,0.0,0,0.0
+1407,Comics,33,successful,1000,17214.0,351,1721.4
+1408,Fashion,45,successful,10000,22760.0,445,227.6
+1409,Publishing,30,failed,2500,1.0,1,0.04
+1410,Technology,45,failed,100000,30092.0,195,30.09
+1411,Film & Video,35,failed,8000,250.0,4,3.12
+1412,Design,15,successful,200,377.0,10,188.5
+1413,Music,30,failed,6000,0.0,0,0.0
+1414,Art,18,successful,1200,1295.0,9,107.92
+1415,Food,29,failed,50000,712.0,22,1.42
+1416,Music,30,failed,3000,670.0,8,22.33
+1417,Art,22,failed,500,103.0,5,20.6
+1418,Art,30,failed,2800,700.0,10,25.0
+1419,Film & Video,35,successful,125000,153169.68,1051,122.54
+1420,Technology,35,successful,10000,74430.99,973,744.31
+1421,Technology,30,failed,1000,330.0,14,33.0
+1422,Art,30,successful,500,738.0,28,147.6
+1423,Film & Video,60,successful,10000,11655.77,95,116.56
+1424,Publishing,48,failed,800,61.0,3,7.62
+1425,Film & Video,30,failed,100,1.0,1,1.0
+1426,Film & Video,21,successful,12500,13506.0,138,108.05
+1427,Art,31,successful,250,2539.0,86,1015.6
+1428,Art,30,successful,2000,2279.0,35,113.95
+1429,Photography,23,failed,5000,0.0,0,0.0
+1430,Film & Video,14,successful,3500,4289.0,61,122.54
+1431,Crafts,60,successful,2500,4245.0,30,169.8
+1432,Design,29,successful,7500,9794.0,210,130.59
+1433,Film & Video,60,failed,10000,50.0,1,0.5
+1434,Publishing,43,successful,10000,15614.0,164,156.14
+1435,Food,30,failed,6000,765.0,5,12.75
+1436,Film & Video,30,successful,12500,13412.0,36,107.3
+1437,Journalism,30,failed,35000,25.0,1,0.07
+1438,Photography,30,successful,12000,59214.66,912,493.46
+1439,Food,60,failed,60000,1245.0,7,2.08
+1440,Photography,39,successful,2650,2652.0,31,100.08
+1441,Technology,60,successful,50000,256125.76,826,512.25
+1442,Publishing,30,failed,500,5.0,1,1.0
+1443,Art,51,failed,3500,520.0,24,14.86
+1444,Food,29,successful,700,1530.0,28,218.57
+1445,Games,30,successful,4200,42479.5,2066,1011.42
+1446,Film & Video,60,failed,4000,51.0,2,1.27
+1447,Art,29,failed,2500,192.0,13,7.68
+1448,Music,30,successful,6000,8787.22,133,146.45
+1449,Art,33,successful,300,685.0,28,228.33
+1450,Design,30,failed,2500,56.0,3,2.24
+1451,Film & Video,30,successful,5000,5721.0,68,114.42
+1452,Publishing,30,failed,18000,25.0,1,0.14
+1453,Art,59,successful,3500,3520.5,46,100.59
+1454,Food,30,successful,20000,23091.0,198,115.45
+1455,Technology,39,successful,22000,27596.0,868,125.44
+1456,Film & Video,30,successful,30000,30028.47,74,100.09
+1457,Publishing,43,successful,10000,10124.0,100,101.24
+1458,Film & Video,21,failed,61060,130.0,4,0.21
+1459,Publishing,30,successful,1000,1000.0,12,100.0
+1460,Design,60,failed,20000,217.0,7,1.08
+1461,Music,30,failed,6000,1045.0,18,17.42
+1462,Publishing,30,successful,1000,1384.0,46,138.4
+1463,Design,15,successful,5000,9590.0,168,191.8
+1464,Film & Video,13,successful,3000,3099.67,65,103.32
+1465,Art,30,successful,200,220.0,8,110.0
+1466,Technology,60,failed,125000,2694.0,18,2.16
+1467,Art,14,successful,250,4438.0,64,1775.2
+1468,Music,30,successful,1000,1100.23,29,110.02
+1469,Games,28,successful,25000,28363.99,396,113.46
+1470,Comics,30,successful,200,387.0,18,193.5
+1471,Film & Video,29,successful,300,300.0,7,100.0
+1472,Art,29,failed,2000,101.0,2,5.05
+1473,Art,32,failed,20000,105.0,6,0.53
+1474,Games,29,successful,8500,42323.11,566,497.92
+1475,Art,29,successful,400,710.0,13,177.5
+1476,Design,35,failed,5000,1060.0,20,21.2
+1477,Art,15,failed,5635,1701.0,46,30.19
+1478,Film & Video,30,successful,2500,3123.0,33,124.92
+1479,Music,31,successful,6666,11036.06,314,165.56
+1480,Games,30,failed,30000,6.0,2,0.02
+1481,Art,4,successful,100,347.0,66,347.0
+1482,Art,30,successful,100,176.0,3,176.0
+1483,Publishing,34,successful,4000,4000.0,25,100.0
+1484,Film & Video,30,successful,50000,50817.0,183,101.63
+1485,Film & Video,30,failed,76000,10125.0,11,13.32
+1486,Design,29,successful,3800,32072.0,676,844.0
+1487,Publishing,30,successful,15000,15570.0,165,103.8
+1488,Art,40,successful,2000,2000.0,5,100.0
+1489,Games,30,successful,30000,513088.5,6503,1710.3
+1490,Design,30,failed,5000,990.0,39,19.8
+1491,Comics,30,successful,2500,2895.0,104,115.8
+1492,Art,60,failed,3000,199.0,7,6.63
+1493,Games,30,successful,97640,115276.42,3984,118.06
+1494,Technology,30,successful,10000,41025.0,321,410.25
+1495,Design,37,failed,10000,0.0,0,0.0
+1496,Design,40,successful,15000,80072.0,409,533.81
+1497,Food,30,failed,20000,2.0,2,0.01
+1498,Publishing,14,successful,200,341.0,37,170.5
+1499,Games,30,failed,15000,330.0,9,2.2
+1500,Music,20,successful,1200,1225.0,21,102.08
+1501,Journalism,54,failed,4200,370.0,33,8.81
+1502,Technology,59,failed,16500,1141.0,34,6.92
+1503,Food,30,failed,300000,41.0,3,0.01
+1504,Art,38,failed,10000,15.0,1,0.15
+1505,Games,20,successful,400,492.0,12,123.0
+1506,Design,60,successful,2500,14503.0,80,580.12
+1507,Music,56,successful,5500,5695.71,65,103.56
+1508,Art,30,successful,7350,7450.0,122,101.36
+1509,Film & Video,30,failed,12500,1275.0,8,10.2
+1510,Technology,30,failed,60000,2057.0,13,3.43
+1511,Design,35,successful,1000,3069.0,164,306.9
+1512,Publishing,30,successful,6500,7252.0,116,111.57
+1513,Publishing,30,successful,5900,5925.36,101,100.43
+1514,Technology,44,successful,20000,652533.0,4867,3262.66
+1515,Film & Video,30,successful,1000,1533.0,38,153.3
+1516,Design,30,successful,8000,8713.0,32,108.91
+1517,Film & Video,59,failed,100000,12.0,3,0.01
+1518,Art,30,successful,3000,3050.01,26,101.67
+1519,Art,30,successful,2500,3406.0,39,136.24
+1520,Film & Video,30,failed,30000,220.0,7,0.73
+1521,Art,30,failed,150,61.0,4,40.67
+1522,Film & Video,30,successful,6000,7040.5,109,117.34
+1523,Publishing,30,successful,30000,45309.0,631,151.03
+1524,Food,30,failed,4500,208.0,3,4.62
+1525,Film & Video,30,failed,10000,1.0,1,0.01
+1526,Design,26,successful,1000,1089.0,12,108.9
+1527,Music,17,successful,5000,5000.0,50,100.0
+1528,Publishing,60,failed,10000,115.0,2,1.15
+1529,Art,30,successful,6000,6580.0,77,109.67
+1530,Film & Video,33,successful,500,505.0,6,101.0
+1531,Publishing,30,successful,2500,4210.0,47,168.4
+1532,Theater,30,failed,8000,311.0,13,3.89
+1533,Art,30,successful,1700,1850.0,50,108.82
+1534,Film & Video,30,failed,8000,1234.0,5,15.43
+1535,Film & Video,30,successful,16000,16055.0,70,100.34
+1536,Art,30,failed,1000,25.0,1,2.5
+1537,Publishing,32,successful,2500,2753.0,51,110.12
+1538,Film & Video,25,successful,8750,10446.0,97,119.38
+1539,Photography,7,failed,250,1.0,1,0.4
+1540,Music,22,failed,6000,0.0,0,0.0
+1541,Design,30,successful,2000,16324.0,201,816.2
+1542,Publishing,30,successful,5000,5625.0,54,112.5
+1543,Food,30,failed,15000,41.0,3,0.27
+1544,Publishing,15,successful,10000,17555.71,401,175.56
+1545,Music,30,successful,8000,8220.0,90,102.75
+1546,Design,31,successful,25000,28760.07,368,115.04
+1547,Film & Video,33,failed,150,1.0,1,0.67
+1548,Food,19,successful,5000,5110.0,55,102.2
+1549,Games,45,failed,25000,12.0,4,0.05
+1550,Technology,30,failed,50000,42.0,5,0.08
+1551,Art,30,failed,5000,680.0,8,13.6
+1552,Art,16,failed,1500,0.0,0,0.0
+1553,Crafts,30,failed,400,95.0,4,23.75
+1554,Film & Video,60,failed,6000,570.0,8,9.5
+1555,Design,33,failed,15000,4164.0,128,27.76
+1556,Publishing,30,successful,700,981.0,14,140.14
+1557,Publishing,30,successful,7000,7525.0,101,107.5
+1558,Publishing,30,successful,1000,1580.0,37,158.0
+1559,Games,28,failed,3000,1458.0,60,48.6
+1560,Art,14,successful,100,616.0,22,616.0
+1561,Design,45,successful,20000,825240.0,5671,4126.2
+1562,Art,15,successful,2100,2500.0,56,119.05
+1563,Comics,45,successful,1500,2115.0,80,141.0
+1564,Games,30,successful,3000,4155.0,199,138.5
+1565,Crafts,30,successful,3800,4146.0,42,109.11
+1566,Comics,35,failed,1500,905.0,16,60.33
+1567,Music,30,successful,5555,5919.0,87,106.55
+1568,Food,30,failed,25000,2210.0,10,8.84
+1569,Theater,30,failed,950,55.0,4,5.79
+1570,Crafts,24,successful,100,570.0,31,570.0
+1571,Art,30,successful,250,440.0,37,176.0
+1572,Film & Video,30,failed,10000,2575.0,27,25.75
+1573,Food,45,failed,45000,100.0,2,0.22
+1574,Games,30,failed,1500,663.0,25,44.2
+1575,Film & Video,60,failed,500000,11.0,1,0.0
+1576,Journalism,30,failed,6000,0.0,0,0.0
+1577,Food,58,failed,50000,188.0,7,0.38
+1578,Photography,30,failed,125000,1.0,1,0.0
+1579,Food,35,failed,7200,551.77,11,7.66
+1580,Film & Video,14,failed,2600,0.0,0,0.0
+1581,Publishing,30,successful,3500,3725.0,85,106.43
+1582,Music,37,successful,16000,17641.29,610,110.26
+1583,Art,25,successful,2000,2116.0,45,105.8
+1584,Technology,20,failed,5000,29.0,6,0.58
+1585,Film & Video,25,successful,10000,14705.0,50,147.05
+1586,Art,7,failed,200,136.0,3,68.0
+1587,Film & Video,36,successful,370,421.0,10,113.78
+1588,Games,30,successful,1000,8021.0,157,802.1
+1589,Games,28,failed,100000,436.0,10,0.44
+1590,Film & Video,28,successful,1500,1591.0,16,106.07
+1591,Art,3,failed,1000,15.0,3,1.5
+1592,Food,30,successful,200,354.0,14,177.0
+1593,Games,31,successful,50000,55564.0,1046,111.13
+1594,Photography,23,successful,1000,3617.0,96,361.7
+1595,Film & Video,30,successful,500,552.0,17,110.4
+1596,Comics,30,successful,8000,9579.0,432,119.74
+1597,Music,31,successful,1500,1720.0,26,114.67
+1598,Art,30,successful,1500,2000.0,33,133.33
+1599,Games,20,successful,10000,11052.0,173,110.52
+1600,Technology,30,failed,65000,2521.0,50,3.88
+1601,Design,45,successful,3500,10189.0,186,291.11
+1602,Technology,33,successful,10000,10177.0,188,101.77
+1603,Photography,60,failed,27000,3326.0,49,12.32
+1604,Games,45,successful,50000,79626.0,798,159.25
+1605,Technology,45,successful,4000,6963.0,122,174.07
+1606,Design,22,successful,8000,26091.0,88,326.14
+1607,Publishing,30,successful,4000,4109.0,44,102.72
+1608,Games,36,successful,50000,1790946.5,26406,3581.89
+1609,Comics,30,successful,500,3671.16,244,734.23
+1610,Music,30,successful,10000,10185.0,62,101.85
+1611,Art,22,successful,450,11067.0,240,2459.33
+1612,Film & Video,41,successful,50000,50000.0,73,100.0
+1613,Film & Video,14,successful,500,1512.0,34,302.4
+1614,Technology,50,successful,100000,114696.0,278,114.7
+1615,Technology,35,failed,25000,1327.0,14,5.31
+1616,Publishing,54,failed,500,87.0,5,17.4
+1617,Technology,30,failed,35000,11.0,2,0.03
+1618,Publishing,21,successful,150,191.0,7,127.33
+1619,Technology,30,failed,42000,6676.0,77,15.9
+1620,Games,60,failed,120000,1837.0,32,1.53
+1621,Art,23,successful,2500,2559.0,44,102.36
+1622,Publishing,30,successful,6200,6569.0,118,105.95
+1623,Publishing,33,failed,1200,265.0,6,22.08
+1624,Games,30,failed,1500,208.0,9,13.87
+1625,Technology,29,failed,5000,3189.0,100,63.78
+1626,Publishing,34,successful,1000,1165.0,20,116.5
+1627,Art,45,successful,780,1383.0,19,177.31
+1628,Crafts,30,successful,500,2331.0,72,466.2
+1629,Food,30,successful,1500,2631.0,65,175.4
+1630,Games,30,failed,20000,55.0,3,0.27
+1631,Publishing,29,failed,2500,310.0,5,12.4
+1632,Music,29,successful,9500,9500.0,37,100.0
+1633,Food,59,failed,70000,0.0,0,0.0
+1634,Food,30,failed,100,0.0,0,0.0
+1635,Music,30,successful,2500,2507.0,22,100.28
+1636,Comics,39,successful,3700,6434.6,169,173.91
+1637,Film & Video,30,successful,2500,2502.0,11,100.08
+1638,Photography,30,failed,10000,1660.0,20,16.6
+1639,Games,60,failed,5000,63.0,5,1.26
+1640,Music,27,successful,500,1320.0,23,264.0
+1641,Publishing,60,successful,1000,1103.0,26,110.3
+1642,Food,32,successful,800,1027.0,38,128.38
+1643,Film & Video,29,successful,20000,20041.0,156,100.21
+1644,Art,59,successful,2000,2098.0,38,104.9
+1645,Music,29,successful,9500,10399.66,74,109.47
+1646,Publishing,30,failed,150000,0.0,0,0.0
+1647,Publishing,30,successful,12000,12493.0,204,104.11
+1648,Publishing,30,successful,1000,2363.0,69,236.3
+1649,Publishing,30,failed,1500,511.0,22,34.07
+1650,Music,23,successful,3000,3230.0,54,107.67
+1651,Art,30,failed,2500,1.0,1,0.04
+1652,Art,29,successful,50000,63491.1,1149,126.98
+1653,Games,31,successful,1000,1235.0,41,123.5
+1654,Music,30,successful,300,302.0,13,100.67
+1655,Music,30,successful,15540,17960.0,240,115.57
+1656,Publishing,44,successful,4999,7789.0,187,155.81
+1657,Music,33,successful,8000,8564.0,74,107.05
+1658,Technology,30,successful,12000,12444.0,75,103.7
+1659,Games,15,failed,2500,5.0,1,0.2
+1660,Music,30,successful,7500,7778.0,58,103.71
+1661,Publishing,29,failed,7000,0.0,0,0.0
+1662,Music,31,successful,1000,3108.0,76,310.8
+1663,Publishing,30,failed,975,180.0,5,18.46
+1664,Comics,30,successful,20000,67515.41,1305,337.58
+1665,Crafts,30,successful,150,167.0,4,111.33
+1666,Design,30,successful,5000,6623.0,163,132.46
+1667,Film & Video,25,successful,1500,2066.0,43,137.73
+1668,Music,45,failed,4720,234.0,5,4.96
+1669,Art,27,successful,2300,2900.0,44,126.09
+1670,Film & Video,60,successful,600,915.0,17,152.5
+1671,Journalism,45,failed,30000,2.0,2,0.01
+1672,Art,29,failed,25000,30.0,1,0.12
+1673,Music,16,successful,500,1038.0,40,207.6
+1674,Film & Video,30,successful,15000,15265.0,177,101.77
+1675,Technology,30,failed,125,5.0,1,4.0
+1676,Publishing,30,failed,10000,948.0,18,9.48
+1677,Art,30,failed,15000,71.0,3,0.47
+1678,Music,30,failed,3500,955.0,26,27.29
+1679,Film & Video,60,successful,7500,7745.0,75,103.27
+1680,Film & Video,44,failed,2500,0.0,0,0.0
+1681,Art,45,successful,1500,1575.0,29,105.0
+1682,Theater,60,failed,15000,100.0,1,0.67
+1683,Publishing,29,successful,750,1002.0,20,133.6
+1684,Games,14,successful,1000,5118.0,104,511.8
+1685,Games,30,successful,25000,60604.0,676,242.42
+1686,Comics,30,successful,13000,13873.0,389,106.72
+1687,Technology,60,failed,35000,6.0,2,0.02
+1688,Publishing,21,successful,11000,11020.0,58,100.18
+1689,Film & Video,30,failed,7500,2346.0,35,31.28
+1690,Technology,30,successful,8000,40013.0,133,500.16
+1691,Comics,25,successful,6500,6930.0,204,106.62
+1692,Music,27,successful,25000,31989.0,533,127.96
+1693,Technology,30,failed,3000,223.0,11,7.43
+1694,Comics,29,successful,100,455.0,15,455.0
+1695,Film & Video,30,failed,5000,130.0,3,2.6
+1696,Art,30,successful,200,597.0,15,298.5
+1697,Music,28,successful,600,1238.0,19,206.33
+1698,Publishing,34,successful,4000,4000.0,25,100.0
+1699,Art,30,successful,9000,9458.0,66,105.09
+1700,Music,30,successful,18000,19070.0,105,105.94
+1701,Technology,40,failed,150000,126.0,3,0.08
+1702,Music,31,successful,5000,10000.69,110,200.01
+1703,Food,45,failed,80000,8586.0,118,10.73
+1704,Games,30,successful,3450,40051.0,687,1160.9
+1705,Crafts,30,successful,1000,5447.0,107,544.7
+1706,Journalism,45,failed,3000,7.0,3,0.23
+1707,Film & Video,52,successful,320000,405916.78,4311,126.85
+1708,Music,30,failed,1375,250.0,5,18.18
+1709,Photography,30,failed,600,54.0,3,9.0
+1710,Technology,30,failed,1000,75.0,5,7.5
+1711,Comics,30,successful,3815,5037.0,147,132.03
+1712,Theater,24,successful,2000,2155.0,19,107.75
+1713,Comics,14,successful,2500,6298.0,90,251.92
+1714,Games,29,successful,15000,16252.0,569,108.35
+1715,Film & Video,30,successful,10000,10252.0,64,102.52
+1716,Music,30,successful,4500,4802.0,58,106.71
+1717,Publishing,46,successful,1050,1375.0,29,130.95
+1718,Fashion,24,successful,3000,8768.0,189,292.27
+1719,Art,30,failed,10000,20.0,2,0.2
+1720,Film & Video,30,failed,6500,27.0,2,0.42
+1721,Theater,7,successful,2250,2350.0,59,104.44
+1722,Art,30,successful,7300,7579.44,162,103.83
+1723,Technology,33,successful,10550,12980.0,128,123.03
+1724,Publishing,23,failed,3000,1431.0,19,47.7
+1725,Technology,45,failed,41500,2565.0,28,6.18
+1726,Publishing,60,failed,5000,0.0,0,0.0
+1727,Art,40,successful,3000,3506.0,36,116.87
+1728,Food,30,failed,5000,0.0,0,0.0
+1729,Art,30,successful,200,2035.0,2,1017.5
+1730,Music,20,successful,7650,9332.0,69,121.99
+1731,Publishing,40,successful,4250,4478.0,166,105.36
+1732,Technology,60,successful,488,671.0,29,137.5
+1733,Comics,30,successful,5000,5222.0,142,104.44
+1734,Film & Video,30,failed,15000,192.0,5,1.28
+1735,Music,30,failed,10000,7782.0,42,77.82
+1736,Music,30,successful,2000,2000.0,23,100.0
+1737,Technology,30,failed,13500,1212.0,16,8.98
+1738,Art,60,successful,2500,2587.19,55,103.49
+1739,Theater,33,successful,1000,1300.0,17,130.0
+1740,Crafts,30,successful,1050,2405.0,24,229.05
+1741,Crafts,30,failed,2000,0.0,0,0.0
+1742,Film & Video,30,successful,3200,3230.0,38,100.94
+1743,Music,30,successful,10000,15172.0,167,151.72
+1744,Film & Video,34,failed,1250,130.0,2,10.4
+1745,Technology,30,failed,120000,5052.0,17,4.21
+1746,Food,30,failed,17500,3414.0,55,19.51
+1747,Music,30,successful,3800,3800.0,49,100.0
+1748,Technology,45,successful,10000,18967.96,506,189.68
+1749,Games,32,successful,20000,766085.19,12012,3830.43
+1750,Technology,28,failed,5000,58.0,5,1.16
+1751,Fashion,29,successful,10000,25311.27,166,253.11
+1752,Film & Video,18,failed,12500,155.0,5,1.24
+1753,Publishing,60,failed,25000,0.0,0,0.0
+1754,Film & Video,40,failed,31000,1535.0,12,4.95
+1755,Fashion,40,failed,15000,101.0,3,0.67
+1756,Music,30,successful,19000,22700.0,352,119.47
+1757,Film & Video,30,failed,550,0.0,0,0.0
+1758,Music,34,successful,1500,1517.0,19,101.13
+1759,Film & Video,46,successful,7000,8300.0,77,118.57
+1760,Music,30,successful,2650,3068.0,37,115.77
+1761,Music,60,failed,10000,0.0,0,0.0
+1762,Art,20,successful,6000,6338.39,277,105.64
+1763,Music,24,successful,1000,1350.66,30,135.07
+1764,Film & Video,45,failed,69600,2098.0,46,3.01
+1765,Technology,35,successful,349750,435433.55,340,124.5
+1766,Crafts,30,failed,1000,33.0,4,3.3
+1767,Theater,30,failed,60000,135.0,4,0.22
+1768,Music,29,successful,1200,1475.0,40,122.92
+1769,Games,30,failed,7500,50.0,2,0.67
+1770,Music,45,failed,3000,0.0,0,0.0
+1771,Music,31,failed,5000,0.0,0,0.0
+1772,Food,30,failed,5000,400.0,8,8.0
+1773,Publishing,30,successful,2000,2856.0,58,142.8
+1774,Games,22,failed,30000,956.0,18,3.19
+1775,Technology,30,successful,10000,74445.78,572,744.46
+1776,Art,29,successful,4500,5056.0,101,112.36
+1777,Technology,30,failed,250000,2.0,2,0.0
+1778,Music,30,successful,3000,3341.0,56,111.37
+1779,Food,30,successful,35000,120031.0,1683,342.95
+1780,Film & Video,19,successful,700,708.0,14,101.14
+1781,Film & Video,15,failed,10000,0.0,0,0.0
+1782,Food,60,failed,40000,4.0,4,0.01
+1783,Music,59,failed,600,105.0,5,17.5
+1784,Food,30,successful,6000,7732.0,88,128.87
+1785,Film & Video,27,successful,200,243.0,10,121.5
+1786,Publishing,51,successful,500,716.0,9,143.2
+1787,Publishing,30,successful,6000,6016.0,42,100.27
+1788,Food,30,successful,15000,18961.0,204,126.41
+1789,Art,35,failed,10000,310.0,8,3.1
+1790,Design,30,failed,9999,116.0,6,1.16
+1791,Food,60,failed,13800,352.0,12,2.55
+1792,Music,31,successful,7000,7090.0,85,101.29
+1793,Publishing,44,successful,15000,30281.22,511,201.87
+1794,Art,40,successful,13000,13032.0,56,100.25
+1795,Games,30,failed,15000,35.0,2,0.23
+1796,Music,33,successful,25000,27956.99,363,111.83
+1797,Art,24,successful,800,2195.0,63,274.38
+1798,Music,30,successful,5000,5281.0,48,105.62
+1799,Art,37,successful,6500,26417.0,487,406.42
+1800,Technology,30,failed,36300,76.0,3,0.21
+1801,Crafts,40,failed,70000,740.0,10,1.06
+1802,Publishing,30,successful,3300,6224.11,76,188.61
+1803,Games,36,failed,27000,2.0,2,0.01
+1804,Art,22,successful,4250,5470.0,43,128.71
+1805,Music,59,failed,3500,81.0,3,2.31
+1806,Games,30,failed,100000,1.0,1,0.0
+1807,Technology,33,failed,85000,101.0,4,0.12
+1808,Theater,20,failed,25000,25.0,1,0.1
+1809,Film & Video,30,failed,30000,1830.0,21,6.1
+1810,Technology,30,successful,900,19508.13,678,2167.57
+1811,Dance,40,successful,7000,7016.0,36,100.23
+1812,Art,30,successful,500,621.0,12,124.2
+1813,Technology,32,successful,30000,64806.0,437,216.02
+1814,Games,14,successful,10000,103169.0,2001,1031.69
+1815,Film & Video,30,failed,36000,6536.0,11,18.16
+1816,Film & Video,30,failed,8400,3.0,3,0.04
+1817,Food,45,failed,30000,165.0,4,0.55
+1818,Film & Video,30,failed,20000,13160.0,173,65.8
+1819,Food,52,failed,5000,156.0,6,3.12
+1820,Film & Video,29,failed,65000,120.0,3,0.18
+1821,Journalism,35,failed,10000,15.0,1,0.15
+1822,Music,60,failed,2500,26.0,2,1.04
+1823,Fashion,45,successful,30000,370063.01,5935,1233.54
+1824,Design,25,failed,35000,8.0,3,0.02
+1825,Technology,33,successful,50000,2804475.23,25412,5608.95
+1826,Publishing,30,failed,250000,50.0,1,0.02
+1827,Technology,30,successful,10000,10061.0,57,100.61
+1828,Food,51,failed,7000,100.0,2,1.43
+1829,Games,30,failed,22000,37.0,8,0.17
+1830,Music,30,failed,15000,525.0,11,3.5
+1831,Music,43,failed,500,40.0,3,8.0
+1832,Publishing,30,successful,1000,1123.0,43,112.3
+1833,Food,30,failed,15000,25.0,1,0.17
+1834,Art,14,successful,1000,1000.0,11,100.0
+1835,Music,52,successful,3000,3005.0,25,100.17
+1836,Design,30,successful,3000,3450.0,64,115.0
+1837,Theater,34,successful,7500,7551.11,128,100.68
+1838,Publishing,30,successful,150000,177472.0,2750,118.31
+1839,Design,30,failed,25000,438.0,4,1.75
+1840,Film & Video,45,successful,2000,2207.62,9,110.38
+1841,Design,9,successful,200,308.0,11,154.0
+1842,Music,29,successful,3000,3460.43,66,115.35
+1843,Music,30,successful,70000,77323.0,920,110.46
+1844,Technology,30,successful,5000,7766.0,98,155.32
+1845,Film & Video,29,successful,150000,153742.07,862,102.49
+1846,Music,31,successful,1500,1551.0,19,103.4
+1847,Publishing,33,successful,11487,13370.0,158,116.39
+1848,Food,30,failed,15000,886.0,19,5.91
+1849,Games,30,failed,95000,2824.0,42,2.97
+1850,Music,23,successful,7500,7505.0,54,100.07
+1851,Design,32,successful,100,2020.0,101,2020.0
+1852,Art,8,failed,5000,690.0,13,13.8
+1853,Comics,35,successful,1800,1824.0,114,101.33
+1854,Games,30,successful,3000,8512.0,164,283.73
+1855,Film & Video,29,successful,21600,22901.66,300,106.03
+1856,Music,29,successful,10000,10080.0,183,100.8
+1857,Music,45,failed,8000,1792.0,51,22.4
+1858,Fashion,27,successful,525,1652.0,68,314.67
+1859,Art,14,successful,600,957.02,16,159.5
+1860,Technology,30,failed,10000,5836.0,45,58.36
+1861,Journalism,30,failed,250,0.0,0,0.0
+1862,Art,30,successful,1000,1001.0,22,100.1
+1863,Theater,30,successful,10000,10530.0,121,105.3
+1864,Art,35,successful,5000,5350.0,31,107.0
+1865,Film & Video,60,successful,48000,65614.59,725,136.7
+1866,Photography,30,failed,7000,726.0,11,10.37
+1867,Film & Video,7,failed,2000,25.0,2,1.25
+1868,Music,24,successful,350,625.0,27,178.57
+1869,Art,30,successful,13500,14639.0,85,108.44
+1870,Technology,30,successful,1000,9282.0,33,928.2
+1871,Music,38,successful,1000,1245.0,32,124.5
+1872,Music,33,successful,7000,7225.0,108,103.21
+1873,Food,60,successful,1500,1500.0,10,100.0
+1874,Food,60,failed,40000,5032.0,157,12.58
+1875,Technology,30,failed,275000,0.0,0,0.0
+1876,Photography,30,failed,2000,280.0,7,14.0
+1877,Food,29,failed,3000,902.0,26,30.07
+1878,Music,30,successful,4000,4198.0,34,104.95
+1879,Food,60,failed,7500,69.0,3,0.92
+1880,Film & Video,42,successful,10000,10319.0,49,103.19
+1881,Publishing,22,successful,1000,1867.0,73,186.7
+1882,Music,29,successful,15000,15405.0,248,102.7
+1883,Food,29,failed,100000,30.0,1,0.03
+1884,Art,30,successful,1000,1045.0,28,104.5
+1885,Design,60,failed,2000,0.0,0,0.0
+1886,Publishing,20,failed,8000,38.0,19,0.47
+1887,Art,32,failed,3260,625.0,3,19.17
+1888,Theater,30,successful,2100,2100.0,8,100.0
+1889,Technology,30,successful,20000,88564.0,390,442.82
+1890,Film & Video,40,successful,25000,25188.0,99,100.75
+1891,Publishing,30,successful,600,660.0,17,110.0
+1892,Music,32,failed,20000,15.0,1,0.07
+1893,Food,30,failed,80000,1.0,1,0.0
+1894,Technology,30,successful,5000,30363.0,241,607.26
+1895,Games,40,successful,50000,182581.0,1379,365.16
+1896,Music,14,successful,5500,5716.0,51,103.93
+1897,Music,30,successful,5000,5415.81,112,108.32
+1898,Publishing,30,successful,1000,1048.0,22,104.8
+1899,Music,30,failed,1500,396.0,15,26.4
+1900,Film & Video,31,successful,10000,11285.0,98,112.85
+1901,Music,31,successful,3000,10000.62,248,333.35
+1902,Film & Video,30,failed,500,35.0,1,7.0
+1903,Food,10,successful,1000,1430.0,35,143.0
+1904,Art,60,successful,10000,10386.0,70,103.86
+1905,Technology,30,successful,15000,68201.88,1300,454.68
+1906,Music,30,failed,3000,1.0,1,0.03
+1907,Film & Video,30,successful,5000,6001.0,55,120.02
+1908,Publishing,60,failed,5000,134.0,9,2.68
+1909,Film & Video,30,failed,10000,0.0,0,0.0
+1910,Film & Video,30,successful,5000,5555.0,84,111.1
+1911,Design,29,successful,5000,7176.0,56,143.52
+1912,Music,32,successful,2500,2780.0,39,111.2
+1913,Music,14,successful,7000,7061.0,58,100.87
+1914,Design,41,failed,15000,111.65,8,0.74
+1915,Film & Video,30,successful,6000,8366.0,234,139.43
+1916,Crafts,60,failed,4000,0.0,0,0.0
+1917,Design,36,successful,40000,57056.0,110,142.64
+1918,Theater,30,failed,34000,2.0,2,0.01
+1919,Film & Video,30,failed,12000,0.0,0,0.0
+1920,Food,30,failed,6000,251.0,9,4.18
+1921,Art,30,failed,50000,0.0,0,0.0
+1922,Music,30,successful,7500,7750.0,87,103.33
+1923,Food,30,successful,7500,9858.0,99,131.44
+1924,Art,30,failed,9000,3116.0,21,34.62
+1925,Music,28,successful,1500,1525.0,33,101.67
+1926,Food,30,failed,8000,62.0,1,0.78
+1927,Theater,30,failed,8000,835.0,4,10.44
+1928,Games,25,successful,1250,1430.0,22,114.4
+1929,Film & Video,40,successful,40000,62893.0,863,157.23
+1930,Music,30,failed,3250,200.0,7,6.15
+1931,Comics,30,successful,5000,7782.0,129,155.64
+1932,Theater,29,failed,2224,350.0,12,15.74
+1933,Food,32,successful,7000,9020.0,98,128.86
+1934,Film & Video,31,failed,10000,215.0,11,2.15
+1935,Film & Video,30,successful,10000,13117.0,92,131.17
+1936,Photography,10,failed,1500,0.0,0,0.0
+1937,Film & Video,30,successful,5000,6288.0,105,125.76
+1938,Music,13,successful,2500,4215.0,63,168.6
+1939,Food,51,failed,15000,389.0,4,2.59
+1940,Technology,31,failed,28380,2553.0,53,9.0
+1941,Music,30,successful,3500,4236.0,92,121.03
+1942,Music,30,failed,3000,1541.0,44,51.37
+1943,Publishing,29,failed,7600,27.0,2,0.36
+1944,Film & Video,35,failed,8000,5.0,1,0.06
+1945,Film & Video,28,successful,100,123.0,9,123.0
+1946,Music,34,successful,10000,10872.0,149,108.72
+1947,Comics,30,successful,24000,104225.0,620,434.27
+1948,Games,30,successful,500,591.0,37,118.2
+1949,Film & Video,35,successful,12900,13022.0,166,100.95
+1950,Art,27,successful,4444,7149.0,162,160.87
+1951,Music,32,failed,5000,645.0,12,12.9
+1952,Film & Video,30,successful,50000,141500.04,2014,283.0
+1953,Music,30,successful,9000,9210.0,129,102.33
+1954,Music,36,failed,1500,10.0,1,0.67
+1955,Food,60,failed,7500,100.0,3,1.33
+1956,Film & Video,30,failed,25000,6.0,2,0.02
+1957,Music,30,failed,1250,855.0,7,68.4
+1958,Technology,30,successful,50000,161537.0,274,323.07
+1959,Music,49,successful,2500,2506.0,54,100.24
+1960,Art,30,failed,1000,1.0,1,0.1
+1961,Technology,32,successful,500,706.0,16,141.2
+1962,Film & Video,28,successful,7000,7070.0,61,101.0
+1963,Food,30,failed,17000,0.0,0,0.0
+1964,Music,30,failed,7000,500.0,5,7.14
+1965,Technology,33,successful,50000,120824.64,248,241.65
+1966,Theater,30,failed,60000,0.0,0,0.0
+1967,Journalism,30,failed,12500,5.0,1,0.04
+1968,Art,60,successful,1500,1900.0,46,126.67
+1969,Technology,42,failed,730000,309.0,13,0.04
+1970,Film & Video,30,failed,3500,40.0,2,1.14
+1971,Fashion,30,successful,5000,5334.0,101,106.68
+1972,Film & Video,45,successful,400000,428853.2,1670,107.21
+1973,Music,35,successful,4250,7560.0,167,177.88
+1974,Art,60,failed,25000,101.0,2,0.4
+1975,Food,25,failed,5000,5.0,1,0.1
+1976,Art,27,successful,45000,64325.0,287,142.94
+1977,Journalism,30,failed,13000,0.0,0,0.0
+1978,Technology,30,failed,70000,38772.0,34,55.39
+1979,Publishing,16,successful,500,7633.0,363,1526.6
+1980,Food,28,failed,18000,183.0,6,1.02
+1981,Comics,56,successful,7000,11262.0,434,160.89
+1982,Art,29,successful,3500,5353.0,66,152.94
+1983,Technology,31,successful,10000,50006.0,721,500.06
+1984,Technology,30,failed,30000,0.0,0,0.0
+1985,Design,30,successful,15000,29084.0,192,193.89
+1986,Theater,26,successful,978,1216.0,27,124.34
+1987,Theater,24,successful,1000,1010.0,5,101.0
+1988,Photography,39,failed,2000,0.0,0,0.0
+1989,Design,36,successful,650,25295.0,592,3891.54
+1990,Music,29,successful,5000,5479.0,85,109.58
+1991,Food,30,successful,10000,10303.0,142,103.03
+1992,Food,31,successful,10000,10472.0,239,104.72
+1993,Publishing,30,successful,3500,3846.0,62,109.89
+1994,Comics,60,failed,5000,1864.0,49,37.28
+1995,Art,30,successful,75000,80628.01,434,107.5
+1996,Games,30,successful,5000,25073.0,803,501.46
+1997,Art,59,failed,8500,1511.0,36,17.78
+1998,Publishing,30,successful,5000,5000.0,61,100.0
+1999,Technology,30,successful,10000,350387.99,2604,3503.88
+2000,Art,30,successful,600,752.0,21,125.33
+2001,Technology,41,successful,8000,17914.0,304,223.93
+2002,Theater,30,successful,3100,3395.0,74,109.52
+2003,Theater,30,successful,5500,6045.0,17,109.91
+2004,Film & Video,30,failed,75000,1.0,1,0.0
+2005,Design,60,successful,1000,7045.0,110,704.5
+2006,Film & Video,60,successful,5000,5470.13,103,109.4
+2007,Publishing,29,successful,2000,2018.0,44,100.9
+2008,Art,31,successful,2000,2264.0,80,113.2
+2009,Journalism,59,failed,50000,2.0,2,0.0
+2010,Music,30,failed,3500,935.0,26,26.71
+2011,Music,58,successful,2000,2081.59,40,104.08
+2012,Technology,45,successful,30000,30031.0,63,100.1
+2013,Art,30,successful,2500,2556.0,31,102.24
+2014,Art,60,successful,1000,1492.0,42,149.2
+2015,Publishing,45,failed,7000,0.0,0,0.0
+2016,Film & Video,30,failed,2500,108.0,6,4.32
+2017,Publishing,17,successful,12500,12730.0,100,101.84
+2018,Art,9,successful,160,280.0,15,175.0
+2019,Food,29,successful,8000,8210.0,30,102.63
+2020,Journalism,11,successful,100,211.0,14,211.0
+2021,Journalism,21,failed,10000,0.0,0,0.0
+2022,Music,30,successful,16000,17295.0,263,108.09
+2023,Publishing,30,failed,175,20.0,1,11.43
+2024,Film & Video,40,successful,5000,5650.0,133,113.0
+2025,Art,6,successful,300,356.0,19,118.67
+2026,Art,45,successful,945,989.0,25,104.66
+2027,Fashion,7,successful,100,190.0,17,190.0
+2028,Art,31,failed,32000,4309.0,18,13.47
+2029,Comics,30,successful,4200,6056.0,173,144.19
+2030,Art,29,successful,2000,2000.0,18,100.0
+2031,Theater,15,successful,1000,1001.0,29,100.1
+2032,Games,14,successful,500,8080.0,237,1616.0
+2033,Publishing,30,successful,8000,8385.01,142,104.81
+2034,Technology,28,successful,6000,6514.86,118,108.58
+2035,Publishing,30,failed,750,1.0,1,0.13
+2036,Games,60,failed,10000,51.0,3,0.51
+2037,Publishing,30,failed,5000,1681.0,29,33.62
+2038,Art,19,successful,600,727.0,24,121.17
+2039,Publishing,32,failed,10000,3380.0,39,33.8
+2040,Games,30,failed,4000,1.0,1,0.03
+2041,Comics,31,successful,45000,82247.0,1663,182.77
+2042,Technology,30,successful,1000,1165.0,42,116.5
+2043,Art,30,successful,5000,8011.0,109,160.22
+2044,Art,30,failed,250,34.33,2,13.73
+2045,Design,30,successful,16900,475915.5,6050,2816.07
+2046,Music,33,successful,2500,3483.0,57,139.32
+2047,Music,45,failed,750,20.0,1,2.67
+2048,Games,22,successful,15000,32223.73,897,214.82
+2049,Art,30,successful,11000,11001.0,53,100.01
+2050,Music,29,successful,1500,1997.0,41,133.13
+2051,Music,30,successful,6000,6179.0,108,102.98
+2052,Technology,40,successful,10000,70886.0,112,708.86
+2053,Design,39,successful,15000,431158.0,2797,2874.39
+2054,Art,40,successful,1500,2145.0,26,143.0
+2055,Games,59,failed,500,19.0,2,3.8
+2056,Art,30,failed,400,0.0,0,0.0
+2057,Design,32,successful,3000,16259.0,614,541.97
+2058,Music,30,failed,40000,7701.0,51,19.25
+2059,Theater,28,successful,2000,2020.0,21,101.0
+2060,Food,30,failed,21500,545.0,15,2.53
+2061,Design,21,successful,2000,15608.0,830,780.4
+2062,Games,49,successful,2000,2057.0,150,102.85
+2063,Music,30,successful,25000,52837.0,732,211.35
+2064,Film & Video,35,successful,8500,11112.0,126,130.73
+2065,Publishing,30,successful,5500,6326.0,103,115.02
+2066,Music,25,successful,10000,20610.0,195,206.1
+2067,Theater,20,failed,8500,295.0,7,3.47
+2068,Art,30,successful,500,598.0,18,119.6
+2069,Art,60,failed,10000,0.0,0,0.0
+2070,Music,30,successful,4300,5106.0,28,118.74
+2071,Food,45,failed,6000,96.0,5,1.6
+2072,Technology,29,successful,20000,63243.0,475,316.21
+2073,Fashion,30,failed,1000,25.0,1,2.5
+2074,Art,60,failed,3500,50.0,1,1.43
+2075,Food,30,failed,12000,1088.0,7,9.07
+2076,Art,25,successful,3000,3978.0,50,132.6
+2077,Comics,30,successful,5000,5070.0,272,101.4
+2078,Music,49,successful,450,466.0,3,103.56
+2079,Music,30,successful,20000,20920.0,89,104.6
+2080,Technology,45,successful,50000,55808.77,50,111.62
+2081,Publishing,30,successful,1000,1610.0,25,161.0
+2082,Music,45,failed,11000,55.0,2,0.5
+2083,Music,25,successful,1000,2910.0,40,291.0
+2084,Technology,29,failed,25000,690.0,9,2.76
+2085,Art,30,failed,150,72.0,7,48.0
+2086,Art,42,successful,2500,4022.0,55,160.88
+2087,Journalism,4,failed,2500,0.0,0,0.0
+2088,Games,31,successful,2200,5742.0,214,261.0
+2089,Art,30,successful,600,1216.0,94,202.67
+2090,Design,57,successful,20000,83447.0,774,417.23
+2091,Comics,60,successful,5000,5640.0,141,112.8
+2092,Journalism,29,failed,2000,73.0,2,3.65
+2093,Publishing,29,successful,5000,5436.0,26,108.72
+2094,Technology,45,failed,18000,10.0,1,0.06
+2095,Fashion,30,successful,400,2344.0,97,586.0
+2096,Theater,29,successful,4750,4750.0,42,100.0
+2097,Comics,30,successful,9999,23266.26,800,232.69
+2098,Art,29,failed,2000,629.0,22,31.45
+2099,Music,60,successful,9000,9711.0,105,107.9
+2100,Film & Video,30,failed,100000,25.0,2,0.03
+2101,Design,29,successful,60000,93891.0,484,156.49
+2102,Art,40,failed,2800,252.0,9,9.0
+2103,Music,34,successful,14000,14630.62,303,104.5
+2104,Film & Video,29,successful,4400,6621.11,69,150.48
+2105,Publishing,25,failed,2000,0.0,0,0.0
+2106,Film & Video,24,failed,10000,5.0,1,0.05
+2107,Publishing,21,successful,3000,3990.0,63,133.0
+2108,Food,30,failed,12000,196.0,6,1.63
+2109,Art,60,failed,5000,30.0,1,0.6
+2110,Publishing,30,successful,4000,5974.0,140,149.35
+2111,Fashion,35,successful,10000,11504.0,52,115.04
+2112,Art,29,successful,3000,3007.0,14,100.23
+2113,Design,44,successful,4444,9729.0,284,218.92
+2114,Film & Video,18,successful,1000,1000.0,12,100.0
+2115,Technology,39,failed,5000,226.0,6,4.52
+2116,Games,30,successful,350,512.0,53,146.29
+2117,Publishing,15,successful,3000,3840.0,116,128.0
+2118,Art,10,successful,250,1061.0,12,424.4
+2119,Fashion,27,successful,350,13381.25,376,3823.21
+2120,Publishing,10,successful,500,6492.92,730,1298.58
+2121,Art,42,failed,2000,5.0,1,0.25
+2122,Film & Video,30,successful,9000,9000.0,54,100.0
+2123,Art,27,successful,350,1792.0,64,512.0
+2124,Music,30,successful,5000,8461.0,85,169.22
+2125,Design,60,successful,5000,229407.5,3964,4588.15
+2126,Music,34,successful,7250,7481.0,84,103.19
+2127,Comics,30,successful,3500,4239.0,174,121.11
+2128,Food,30,failed,5000,100.0,1,2.0
+2129,Publishing,10,failed,999,0.0,0,0.0
+2130,Music,31,successful,5000,5730.08,68,114.6
+2131,Theater,30,successful,15000,16555.0,198,110.37
+2132,Food,28,failed,1500,283.0,15,18.87
+2133,Design,40,successful,30000,211526.0,892,705.09
+2134,Music,30,successful,15000,18556.0,227,123.71
+2135,Food,30,failed,16000,840.0,22,5.25
+2136,Art,25,failed,5000,1826.0,16,36.52
+2137,Design,30,successful,10000,54707.0,1226,547.07
+2138,Music,30,successful,5000,5061.0,44,101.22
+2139,Fashion,25,successful,500,28494.0,578,5698.8
+2140,Film & Video,30,failed,9000,6.0,2,0.07
+2141,Design,15,successful,8000,58498.66,707,731.23
+2142,Film & Video,38,successful,15735,22489.49,590,142.93
+2143,Food,30,successful,5000,23070.0,422,461.4
+2144,Design,14,successful,1000,1079.0,49,107.9
+2145,Comics,25,failed,40000,1158.0,25,2.9
+2146,Film & Video,35,failed,8362,3216.0,34,38.46
+2147,Theater,31,successful,3000,3292.0,54,109.73
+2148,Film & Video,32,successful,14260,14635.01,260,102.63
+2149,Publishing,35,failed,300,3.0,3,1.0
+2150,Film & Video,44,failed,15000,4421.0,26,29.47
+2151,Technology,22,successful,1000,7193.18,333,719.32
+2152,Games,29,failed,30000,1518.0,29,5.06
+2153,Design,19,successful,100,199.0,10,199.0
+2154,Art,30,successful,3500,3686.0,78,105.31
+2155,Publishing,26,successful,1000,1057.0,38,105.7
+2156,Food,30,successful,20000,21563.0,105,107.81
+2157,Journalism,30,failed,1000,20.0,2,2.0
+2158,Music,30,failed,3000,0.0,0,0.0
+2159,Publishing,14,successful,300,392.0,22,130.67
+2160,Games,30,failed,19700,300.0,7,1.52
+2161,Comics,30,successful,2000,3105.0,131,155.25
+2162,Technology,30,successful,50000,60710.0,697,121.42
+2163,Theater,60,successful,1000,1100.0,24,110.0
+2164,Games,30,failed,25000,0.0,0,0.0
+2165,Design,35,successful,25000,47283.01,351,189.13
+2166,Art,30,failed,500,11.0,2,2.2
+2167,Food,30,failed,80000,2.0,2,0.0
+2168,Film & Video,30,successful,8000,8465.22,96,105.82
+2169,Art,28,failed,15000,50.0,2,0.33
+2170,Theater,30,successful,1000,1275.0,27,127.5
+2171,Comics,30,successful,3000,4683.0,151,156.1
+2172,Technology,16,successful,10000,33541.01,307,335.41
+2173,Design,34,successful,25000,90067.0,355,360.27
+2174,Theater,49,successful,250,393.0,9,157.2
+2175,Comics,30,successful,1000,1542.0,31,154.2
+2176,Games,8,successful,200,419.0,81,209.5
+2177,Design,20,successful,500,12421.0,305,2484.2
+2178,Publishing,28,successful,5000,6356.0,104,127.12
+2179,Theater,56,successful,3200,3620.0,47,113.13
+2180,Comics,60,successful,550,1583.0,61,287.82
+2181,Publishing,51,failed,10000,550.0,3,5.5
+2182,Art,30,failed,8500,50.0,1,0.59
+2183,Publishing,30,successful,8000,10493.0,144,131.16
+2184,Film & Video,30,failed,600,0.0,0,0.0
+2185,Publishing,38,failed,8000,1.0,1,0.01
+2186,Art,30,failed,135000,466.0,12,0.35
+2187,Art,32,successful,120,127.0,7,105.83
+2188,Art,30,failed,10000,3.0,1,0.03
+2189,Publishing,30,failed,3000,51.0,2,1.7
+2190,Design,45,successful,5000,5376.0,65,107.52
+2191,Publishing,23,successful,5500,5500.0,27,100.0
+2192,Art,30,successful,5800,6071.0,70,104.67
+2193,Art,24,failed,500,197.0,5,39.4
+2194,Music,14,successful,800,1000.0,16,125.0
+2195,Journalism,30,failed,50000,21.0,2,0.04
+2196,Games,30,successful,10000,63915.0,2661,639.15
+2197,Publishing,32,failed,5500,0.0,0,0.0
+2198,Technology,60,failed,10000,2.0,2,0.02
+2199,Food,39,successful,20000,25519.0,160,127.59
+2200,Technology,45,successful,15000,16936.0,204,112.91
+2201,Design,34,successful,7000,20683.0,485,295.47
+2202,Art,30,successful,1100,1311.0,19,119.18
+2203,Fashion,28,successful,1100,1740.0,64,158.18
+2204,Food,60,failed,350000,61.0,7,0.02
+2205,Design,30,successful,5000,5039.0,22,100.78
+2206,Art,25,successful,1300,2548.33,77,196.03
+2207,Music,30,successful,1700,1825.0,47,107.35
+2208,Technology,40,successful,10000,10538.0,85,105.38
+2209,Art,30,failed,5000,60.0,5,1.2
+2210,Publishing,30,successful,2000,2156.0,65,107.8
+2211,Music,51,successful,10001,12140.69,177,121.39
+2212,Food,30,successful,500,740.0,20,148.0
+2213,Comics,30,successful,48500,77358.27,2010,159.5
+2214,Art,60,successful,900,900.0,15,100.0
+2215,Music,31,successful,2100,2458.0,54,117.05
+2216,Film & Video,36,successful,100,119.0,7,119.0
+2217,Publishing,30,successful,2500,2500.0,40,100.0
+2218,Music,29,successful,5000,6466.01,108,129.32
+2219,Technology,30,successful,10000,226870.0,7886,2268.7
+2220,Photography,30,failed,15000,711.0,7,4.74
+2221,Design,29,successful,5000,5184.0,67,103.68
+2222,Film & Video,30,successful,15000,15457.0,130,103.05
+2223,Technology,40,successful,5000,6786.0,100,135.72
+2224,Film & Video,15,failed,5000,0.0,0,0.0
+2225,Technology,42,successful,815,835.0,20,102.45
+2226,Film & Video,16,failed,5850,15.0,1,0.26
+2227,Food,30,failed,40000,556.0,24,1.39
+2228,Publishing,30,failed,700,205.0,10,29.29
+2229,Comics,30,successful,5000,5000.0,59,100.0
+2230,Art,27,failed,22000,1891.0,47,8.6
+2231,Publishing,31,failed,1700,6.0,2,0.35
+2232,Art,29,successful,300,306.0,11,102.0
+2233,Comics,60,successful,800,1424.0,35,178.0
+2234,Music,60,successful,2000,2140.0,50,107.0
+2235,Fashion,29,successful,500,885.0,55,177.0
+2236,Food,21,failed,5500,31.0,3,0.56
+2237,Film & Video,30,failed,2000,30.0,4,1.5
+2238,Design,31,successful,300,4720.0,159,1573.33
+2239,Publishing,30,successful,2150,8145.0,291,378.84
+2240,Art,30,failed,7000,0.0,0,0.0
+2241,Design,30,successful,4500,126867.32,5110,2819.27
+2242,Film & Video,30,successful,12000,15693.0,171,130.78
+2243,Technology,32,successful,500,7027.0,183,1405.4
+2244,Film & Video,60,successful,550,600.0,8,109.09
+2245,Design,11,successful,3000,3342.0,25,111.4
+2246,Technology,59,failed,25000,2.0,2,0.01
+2247,Food,30,successful,5000,5580.0,44,111.6
+2248,Photography,30,failed,1000,51.0,2,5.1
+2249,Design,30,successful,42000,43956.0,143,104.66
+2250,Art,21,successful,300,2297.0,28,765.67
+2251,Fashion,29,successful,10000,10786.0,56,107.86
+2252,Art,58,successful,5000,5158.0,39,103.16
+2253,Journalism,30,failed,4500,0.0,0,0.0
+2254,Film & Video,30,failed,500,35.0,2,7.0
+2255,Music,22,successful,5000,5401.0,65,108.02
+2256,Film & Video,27,failed,10000,126.0,5,1.26
+2257,Art,52,failed,10000,0.0,0,0.0
+2258,Film & Video,14,successful,5000,7677.0,129,153.54
+2259,Food,25,successful,30000,30701.0,409,102.34
+2260,Music,31,successful,20500,21599.0,221,105.36
+2261,Art,14,failed,500,320.0,14,64.0
+2262,Theater,27,successful,16000,16450.33,256,102.81
+2263,Theater,12,successful,300,300.0,4,100.0
+2264,Film & Video,12,successful,2000,2000.0,15,100.0
+2265,Publishing,30,failed,20000,1896.0,10,9.48
+2266,Art,46,failed,5200,166.0,4,3.19
+2267,Music,30,successful,125,184.0,13,147.2
+2268,Technology,30,successful,10000,22314.0,587,223.14
+2269,Design,45,successful,10000,11770.0,261,117.7
+2270,Music,30,failed,1500,475.0,11,31.67
+2271,Music,30,successful,2500,2680.0,54,107.2
+2272,Journalism,33,failed,35000,1057.0,13,3.02
+2273,Comics,31,successful,58000,58758.0,1294,101.31
+2274,Art,30,successful,3600,3900.0,46,108.33
+2275,Food,14,successful,8000,9474.0,119,118.42
+2276,Technology,38,successful,50000,237775.98,1918,475.55
+2277,Art,30,failed,75000,236.0,5,0.31
+2278,Film & Video,60,failed,6000,2.0,2,0.03
+2279,Fashion,30,successful,2600,6959.0,136,267.65
+2280,Art,30,successful,600,700.0,23,116.67
+2281,Publishing,45,successful,3500,4555.25,77,130.15
+2282,Theater,30,successful,4200,4686.0,52,111.57
+2283,Fashion,30,successful,400,6709.0,227,1677.25
+2284,Games,20,successful,600,1037.0,28,172.83
+2285,Design,23,successful,10000,275908.0,1014,2759.08
+2286,Music,30,successful,1800,3569.0,61,198.28
+2287,Fashion,26,successful,200,817.0,33,408.5
+2288,Technology,20,failed,14950,1229.0,23,8.22
+2289,Publishing,30,failed,15000,144.0,10,0.96
+2290,Music,60,successful,3000,3036.0,21,101.2
+2291,Theater,36,successful,13500,14305.0,142,105.96
+2292,Art,20,successful,4500,6062.0,111,134.71
+2293,Publishing,26,successful,4500,5581.0,141,124.02
+2294,Technology,30,successful,15000,21647.02,243,144.31
+2295,Food,30,failed,5000,200.0,4,4.0
+2296,Games,20,successful,500,4959.0,328,991.8
+2297,Art,30,failed,10000,20.0,1,0.2
+2298,Publishing,40,successful,2750,15189.0,326,552.33
+2299,Food,30,failed,75000,1.0,1,0.0
+2300,Games,32,successful,40000,84050.0,573,210.12
+2301,Photography,25,successful,150,450.0,8,300.0
+2302,Publishing,16,successful,12000,16966.0,218,141.38
+2303,Food,21,successful,13000,14166.0,240,108.97
+2304,Theater,45,failed,5000,49.0,4,0.98
+2305,Design,10,successful,3000,3061.0,17,102.03
+2306,Art,30,failed,2200,0.0,0,0.0
+2307,Publishing,30,successful,4000,8221.0,313,205.53
+2308,Art,29,successful,3000,29365.78,296,978.86
+2309,Comics,21,successful,1500,7213.0,122,480.87
+2310,Music,31,successful,8000,9228.0,149,115.35
+2311,Food,31,successful,8000,10320.0,80,129.0
+2312,Games,25,successful,5000,5659.0,159,113.18
+2313,Design,34,successful,900,11247.0,235,1249.67
+2314,Art,49,failed,17000,25.0,1,0.15
+2315,Theater,22,successful,6000,6570.0,124,109.5
+2316,Photography,45,successful,660,670.0,6,101.52
+2317,Design,16,successful,1500,3052.0,34,203.47
+2318,Technology,30,failed,50000,0.0,0,0.0
+2319,Music,44,successful,2000,2132.0,44,106.6
+2320,Art,29,successful,1000,1240.0,32,124.0
+2321,Comics,30,successful,4000,8455.0,142,211.38
+2322,Film & Video,40,failed,50000,125.0,2,0.25
+2323,Fashion,30,successful,18150,18400.0,163,101.38
+2324,Games,30,failed,5000,1.0,1,0.02
+2325,Design,45,successful,20000,27704.0,343,138.52
+2326,Music,25,failed,50000,0.0,0,0.0
+2327,Technology,28,failed,2000,594.0,20,29.7
+2328,Film & Video,60,failed,2500,971.0,17,38.84
+2329,Design,34,successful,15000,18879.0,309,125.86
+2330,Music,28,successful,3000,3050.01,67,101.67
+2331,Theater,36,failed,10000,125.0,3,1.25
+2332,Film & Video,25,failed,55000,14581.0,30,26.51
+2333,Design,30,successful,20000,38072.0,220,190.36
+2334,Music,30,successful,10000,10110.0,62,101.1
+2335,Fashion,25,successful,200,235.0,18,117.5
+2336,Music,30,successful,3330,3846.0,113,115.5
+2337,Publishing,30,failed,50000,0.0,0,0.0
+2338,Technology,30,failed,45000,5.0,1,0.01
+2339,Theater,34,successful,15000,16776.0,200,111.84
+2340,Art,30,successful,200,221.0,5,110.5
+2341,Design,30,successful,2000,66401.13,621,3320.06
+2342,Art,30,successful,700,918.77,28,131.25
+2343,Technology,60,successful,9000,35858.0,62,398.42
+2344,Photography,40,failed,120,22.0,4,18.33
+2345,Publishing,30,successful,5000,7098.0,138,141.96
+2346,Design,30,successful,200,203.0,12,101.5
+2347,Food,29,successful,25000,26725.0,286,106.9
+2348,Art,39,failed,11500,2351.0,15,20.44
+2349,Art,30,successful,100000,111111.77,567,111.11
+2350,Food,59,failed,100000,2.0,2,0.0
+2351,Technology,30,successful,25000,28760.0,737,115.04
+2352,Food,17,successful,12000,13846.0,153,115.38
+2353,Art,14,successful,100,280.0,6,280.0
+2354,Food,7,successful,600,2275.0,76,379.17
+2355,Food,29,successful,20000,25460.75,149,127.3
+2356,Technology,15,successful,9500,22882.0,148,240.86
+2357,Fashion,29,failed,5000,190.0,4,3.8
+2358,Food,30,failed,23000,5.0,1,0.02
+2359,Music,30,successful,4500,5000.0,96,111.11
+2360,Film & Video,45,successful,6000,9215.0,168,153.58
+2361,Publishing,30,successful,2500,2535.0,35,101.4
+2362,Art,30,failed,40000,8752.0,112,21.88
+2363,Technology,50,failed,30000,494.15,8,1.65
+2364,Film & Video,60,failed,10000,0.0,0,0.0
+2365,Art,60,failed,25000,100.0,1,0.4
+2366,Comics,30,successful,8000,10165.0,107,127.06
+2367,Publishing,38,successful,1575,1735.88,42,110.21
+2368,Comics,30,failed,1200,31.0,3,2.58
+2369,Art,38,successful,22000,24008.0,272,109.13
+2370,Technology,30,failed,15000,31.0,3,0.21
+2371,Publishing,30,successful,275,311.0,10,113.09
+2372,Music,60,successful,2000,2555.0,18,127.75
+2373,Photography,30,failed,100,10.0,1,10.0
+2374,Art,30,failed,5000,800.0,10,16.0
+2375,Art,30,successful,10000,12572.88,150,125.73
+2376,Technology,36,successful,3000,17743.0,551,591.43
+2377,Design,31,successful,5000,120602.0,2057,2412.04
+2378,Art,30,failed,30000,2465.0,21,8.22
+2379,Technology,40,successful,500,13911.0,96,2782.2
+2380,Film & Video,36,successful,2800,3212.0,75,114.71
+2381,Photography,30,failed,4000,27.0,5,0.68
+2382,Music,28,successful,5500,5593.0,78,101.69
+2383,Music,29,successful,8888,10807.99,246,121.6
+2384,Comics,60,failed,1000,170.0,4,17.0
+2385,Design,26,successful,20000,28819.0,132,144.09
+2386,Film & Video,30,successful,21000,21750.0,109,103.57
+2387,Technology,45,failed,5000,1.0,1,0.02
+2388,Design,30,successful,10000,10165.0,97,101.65
+2389,Publishing,30,successful,1000,1335.0,31,133.5
+2390,Fashion,20,successful,400,515.0,24,128.75
+2391,Food,60,failed,2000,110.0,2,5.5
+2392,Journalism,29,failed,25000,4.0,2,0.02
+2393,Food,37,failed,20000,230.0,4,1.15
+2394,Games,15,failed,300,0.0,0,0.0
+2395,Journalism,29,failed,500,0.0,0,0.0
+2396,Comics,57,successful,320,945.0,38,295.31
+2397,Comics,30,successful,10000,105616.0,1282,1056.16
+2398,Art,30,failed,4999,0.0,0,0.0
+2399,Art,30,successful,4500,4806.0,92,106.8
+2400,Technology,35,successful,5000,5105.0,56,102.1
+2401,Publishing,40,failed,1000,246.0,7,24.6
+2402,Art,7,successful,5000,5427.0,40,108.54
+2403,Comics,30,successful,3000,3400.0,88,113.33
+2404,Technology,59,failed,50000,13.0,3,0.03
+2405,Fashion,30,successful,900,913.0,28,101.44
+2406,Crafts,30,failed,1200,0.0,0,0.0
+2407,Journalism,29,failed,75000,0.0,0,0.0
+2408,Music,30,successful,7000,7520.0,158,107.43
+2409,Publishing,31,successful,30000,34008.5,606,113.36
+2410,Photography,30,failed,20000,2.0,2,0.01
+2411,Design,35,successful,35000,171928.0,268,491.22
+2412,Music,17,successful,1200,1266.0,21,105.5
+2413,Food,60,failed,53775,27.0,1,0.05
+2414,Film & Video,25,failed,6500,35.0,1,0.54
+2415,Art,29,successful,500,590.0,31,118.0
+2416,Music,17,successful,1000,1123.0,16,112.3
+2417,Food,60,failed,17000,0.0,0,0.0
+2418,Art,38,successful,850,925.34,24,108.86
+2419,Design,23,successful,1000,24239.0,187,2423.9
+2420,Theater,25,successful,1300,1835.0,27,141.15
+2421,Publishing,30,failed,10000,150.0,2,1.5
+2422,Technology,22,successful,3500,72398.0,1218,2068.51
+2423,Design,35,successful,2000,2016.0,29,100.8
+2424,Music,25,successful,1500,1782.0,44,118.8
+2425,Food,29,successful,7536,7540.0,29,100.05
+2426,Film & Video,35,successful,50000,52594.5,438,105.19
+2427,Design,42,successful,25000,115035.0,1178,460.14
+2428,Food,30,failed,10000,11.0,2,0.11
+2429,Art,21,successful,26630,27701.03,330,104.02
+2430,Games,14,successful,500,6672.0,100,1334.4
+2431,Art,30,failed,10000,2867.0,104,28.67
+2432,Music,45,successful,8000,8296.0,90,103.7
+2433,Publishing,25,failed,3000,250.0,7,8.33
+2434,Film & Video,60,failed,20000,216.0,8,1.08
+2435,Art,30,failed,8000,0.0,0,0.0
+2436,Technology,27,successful,1000,4296.0,93,429.6
+2437,Fashion,29,successful,600,660.0,23,110.0
+2438,Art,32,successful,4500,4800.11,55,106.67
+2439,Theater,34,successful,3600,3955.0,61,109.86
+2440,Music,30,successful,2200,2506.0,36,113.91
+2441,Technology,31,successful,20000,20580.0,323,102.9
+2442,Film & Video,30,failed,8000,2221.0,43,27.76
+2443,Food,30,failed,10000,2.0,2,0.02
+2444,Theater,30,failed,600,0.0,0,0.0
+2445,Journalism,30,failed,1000,0.0,0,0.0
+2446,Comics,13,failed,570,64.0,7,11.23
+2447,Music,60,failed,1750,125.0,5,7.14
+2448,Film & Video,20,successful,8000,8240.0,52,103.0
+2449,Publishing,32,successful,15000,18225.0,316,121.5
+2450,Theater,19,successful,1000,1445.0,25,144.5
+2451,Comics,30,successful,3000,3789.0,127,126.3
+2452,Music,60,successful,7000,7750.0,119,110.71
+2453,Food,32,successful,20000,20417.0,29,102.09
+2454,Art,30,successful,1500,1675.0,17,111.67
+2455,Technology,30,failed,12500,2971.0,113,23.77
+2456,Fashion,40,successful,10000,20883.8,132,208.84
+2457,Publishing,31,successful,5500,5670.0,84,103.09
+2458,Music,21,successful,800,800.0,16,100.0
+2459,Art,24,successful,20000,23082.0,163,115.41
+2460,Art,60,failed,1979,1509.0,38,76.25
+2461,Music,34,failed,4000,1000.0,17,25.0
+2462,Technology,20,successful,6000,136000.0,1325,2266.67
+2463,Music,33,successful,2800,2810.0,27,100.36
+2464,Film & Video,7,successful,300,851.0,15,283.67
+2465,Fashion,20,successful,1300,20432.0,487,1571.69
+2466,Music,35,successful,1000,1045.0,21,104.5
+2467,Food,13,successful,7000,7461.0,105,106.59
+2468,Art,30,failed,1500,100.0,1,6.67
+2469,Theater,15,failed,20000,15.0,1,0.07
+2470,Food,30,failed,5000,0.0,0,0.0
+2471,Food,30,failed,45000,100.0,1,0.22
+2472,Art,24,successful,10000,46700.0,214,467.0
+2473,Fashion,60,failed,20500,0.0,0,0.0
+2474,Music,46,successful,6000,6025.12,63,100.42
+2475,Art,27,successful,12000,12442.12,86,103.68
+2476,Food,55,failed,12000,30.0,6,0.25
+2477,Technology,30,failed,11200,127.0,7,1.13
+2478,Publishing,33,successful,2200,2402.0,39,109.18
+2479,Food,60,failed,75000,1.0,1,0.0
+2480,Art,60,failed,100000,11.0,2,0.01
+2481,Art,8,successful,500,707.0,26,141.4
+2482,Music,29,successful,6000,6653.0,133,110.88
+2483,Music,29,successful,1750,1880.0,32,107.43
+2484,Film & Video,30,failed,100000,0.0,0,0.0
+2485,Publishing,25,successful,3000,3660.0,57,122.0
+2486,Film & Video,30,successful,33000,34253.0,196,103.8
+2487,Art,30,successful,8800,9876.0,144,112.23
+2488,Film & Video,30,successful,24500,25532.0,161,104.21
+2489,Technology,30,successful,935,4525.0,103,483.96
+2490,Food,30,failed,5500,6.0,2,0.11
+2491,Publishing,45,failed,1000,115.0,10,11.5
+2492,Film & Video,30,failed,50000,2375.0,42,4.75
+2493,Comics,33,successful,1200,1271.0,34,105.92
+2494,Music,30,successful,5000,5072.0,69,101.44
+2495,Music,30,successful,5000,5091.99,49,101.84
+2496,Publishing,28,successful,4500,5128.0,55,113.96
+2497,Fashion,20,successful,950,2200.0,90,231.58
+2498,Food,45,failed,15000,113.0,7,0.75
+2499,Theater,19,successful,12000,13109.0,65,109.24
+2500,Music,30,failed,70000,1.0,1,0.0
+2501,Art,27,successful,350,501.0,24,143.14
+2502,Art,45,failed,10000,350.0,4,3.5
+2503,Music,28,failed,200,92.0,5,46.0
+2504,Theater,30,successful,2000,2318.0,26,115.9
+2505,Food,30,failed,6500,0.0,0,0.0
+2506,Publishing,60,successful,2500,4405.0,120,176.2
+2507,Publishing,35,successful,2000,2612.0,61,130.6
+2508,Film & Video,60,successful,15000,15549.0,160,103.66
+2509,Technology,35,successful,15500,15544.0,50,100.28
+2510,Publishing,30,successful,1000,1895.0,41,189.5
+2511,Publishing,45,failed,15000,5.0,1,0.03
+2512,Art,30,successful,3000,7653.0,110,255.1
+2513,Technology,60,failed,20000,4886.0,105,24.43
+2514,Art,30,successful,7500,7949.0,56,105.99
+2515,Publishing,29,successful,10000,10452.0,148,104.52
+2516,Technology,30,successful,25000,26366.0,89,105.46
+2517,Food,59,failed,37422,350.0,5,0.94
+2518,Technology,45,successful,25000,25797.0,119,103.19
+2519,Music,35,failed,3000,367.0,8,12.23
+2520,Film & Video,30,successful,60000,62915.0,592,104.86
+2521,Comics,30,successful,1000,1088.0,36,108.8
+2522,Publishing,30,successful,5000,12079.0,271,241.58
+2523,Theater,58,successful,4000,4066.0,27,101.65
+2524,Technology,60,failed,88000,1875.0,18,2.13
+2525,Food,30,failed,100,20.0,2,20.0
+2526,Comics,30,successful,50000,56248.01,460,112.5
+2527,Food,22,successful,5000,5025.0,21,100.5
+2528,Art,27,successful,5500,5655.0,90,102.82
+2529,Publishing,43,failed,600,31.0,4,5.17
+2530,Food,29,failed,5000,22.0,2,0.44
+2531,Food,29,failed,10000,710.0,9,7.1
+2532,Film & Video,14,successful,2000,2034.0,34,101.7
+2533,Food,30,successful,7500,10060.0,48,134.13
+2534,Music,30,failed,12000,488.0,8,4.07
+2535,Food,37,successful,25000,29087.37,272,116.35
+2536,Film & Video,30,failed,7001,321.0,3,4.59
+2537,Publishing,30,successful,4500,4624.0,35,102.76
+2538,Film & Video,29,failed,100000,0.0,0,0.0
+2539,Food,30,failed,2000,0.0,0,0.0
+2540,Art,28,successful,3000,10386.0,228,346.2
+2541,Dance,30,failed,3000,10.0,1,0.33
+2542,Art,29,failed,4000,210.0,5,5.25
+2543,Technology,31,failed,44000,1536.0,22,3.49
+2544,Theater,30,successful,2000,2100.0,41,105.0
+2545,Publishing,43,failed,3500,25.0,1,0.71
+2546,Music,43,failed,6700,430.0,10,6.42
+2547,Games,27,failed,1000000,27.0,3,0.0
+2548,Publishing,30,failed,18000,35.0,1,0.19
+2549,Film & Video,33,successful,60000,60642.0,492,101.07
+2550,Food,29,successful,5000,5000.0,42,100.0
+2551,Technology,30,failed,200,45.0,2,22.5
+2552,Publishing,29,failed,6000,41.24,3,0.69
+2553,Food,45,failed,11000,315.0,5,2.86
+2554,Music,28,successful,3000,3432.0,33,114.4
+2555,Technology,21,successful,48000,67382.0,114,140.38
+2556,Publishing,31,successful,1000,1147.0,17,114.7
+2557,Film & Video,44,successful,2500,2506.0,41,100.24
+2558,Publishing,39,successful,500,654.24,31,130.85
+2559,Art,29,successful,1200,1255.0,25,104.58
+2560,Technology,30,failed,20000,2905.0,29,14.52
+2561,Film & Video,10,successful,15000,15830.0,90,105.53
+2562,Fashion,15,successful,500,900.0,37,180.0
+2563,Theater,59,failed,15000,125.0,2,0.83
+2564,Technology,40,failed,10000,2902.0,18,29.02
+2565,Publishing,30,successful,500,520.0,28,104.0
+2566,Music,30,failed,10000,0.0,0,0.0
+2567,Film & Video,57,successful,20000,26293.95,203,131.47
+2568,Design,30,failed,2000,0.0,0,0.0
+2569,Film & Video,15,successful,20000,22087.0,97,110.43
+2570,Design,30,failed,5000,15.0,2,0.3
+2571,Technology,21,failed,25000,3.0,3,0.01
+2572,Film & Video,40,failed,50000,21510.0,27,43.02
+2573,Technology,59,failed,60000,101.0,3,0.17
+2574,Music,30,successful,2500,2650.0,43,106.0
+2575,Theater,21,failed,500,58.0,5,11.6
+2576,Food,30,failed,25000,30.0,2,0.12
+2577,Publishing,30,successful,11000,11666.0,167,106.05
+2578,Music,30,successful,5000,11140.0,179,222.8
+2579,Art,9,successful,600,1034.0,24,172.33
+2580,Technology,30,successful,500,650.0,7,130.0
+2581,Technology,45,failed,40000,877.0,9,2.19
+2582,Technology,30,successful,1000,1175.0,22,117.5
+2583,Food,30,failed,250000,140.0,5,0.06
+2584,Publishing,30,successful,5000,5691.0,100,113.82
+2585,Food,30,successful,20000,21139.0,238,105.7
+2586,Art,42,successful,4000,6696.0,103,167.4
+2587,Food,22,successful,15000,17091.11,173,113.94
+2588,Publishing,25,successful,3000,3670.0,85,122.33
+2589,Film & Video,30,failed,5000,313.0,9,6.26
+2590,Technology,30,successful,10000,10087.0,90,100.87
+2591,Games,30,successful,1500,16545.0,387,1103.0
+2592,Music,30,successful,3950,5985.0,162,151.52
+2593,Film & Video,30,successful,4500,5337.0,62,118.6
+2594,Technology,28,successful,10000,12443.9,1211,124.44
+2595,Film & Video,24,successful,3000,4978.69,106,165.96
+2596,Art,25,successful,3250,3480.0,66,107.08
+2597,Music,59,successful,1500,1500.58,17,100.04
+2598,Music,29,successful,800,875.0,20,109.38
+2599,Technology,30,successful,1847,1976.0,53,106.98
