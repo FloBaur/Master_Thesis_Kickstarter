@@ -15,8 +15,6 @@ dataRequired = input()
 
 if dataRequired == 'y':
 
-    test = "GitHub"
-
     print("How many datasets do you want?")
     numOfDs = input()
 
@@ -27,7 +25,7 @@ if dataRequired == 'y':
 
     print('getting data from crawler...')
 
-    # extract relevant data
+    # extract relevant data from Files
 
     data = DataFilter.cleanColumns(numOfDs)
 
